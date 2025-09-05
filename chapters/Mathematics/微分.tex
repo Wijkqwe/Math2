@@ -1,0 +1,364 @@
+
+\chapter{微分}
+
+\section{一元函数微分学}
+
+\subsection{定义}
+
+函数\(y = f(x)\)在点\(x_0\)的某个邻域内有定义，且\(x_0 + \Delta x\)在该邻域内，对于函数增量\(\Delta y = f(x_0 + \Delta x) - f(x_0)\)，若存在与\(\Delta x\)无关的常数A使得\(\Delta y = A\Delta x + o(\Delta x)\)，则\(f(x)\)在点\(x_0\)处可微，\(y' = A\)，记\(dy|_{x = x_0} = A\Delta x\)或\(dy|_{x = x_0} = f'(x_0)dx\)
+
+函数的微分是函数增量的线性主部，\(dy = y'dx = y'\Delta x\)
+
+
+\subsection{判别}
+\begin{enumerate}
+    \item 写增量\(\Delta y = f(x_0 + \Delta x) - f(x_0)\)
+    \item 写线性增量\(A\Delta x = f'(x_0)\Delta x\)
+    \item 作极限\(\displaystyle \lim_{\Delta x \to 0}\dfrac{\Delta y - A\Delta x}{\Delta x}\)
+    \item 若极限等于0，则可微，否则不可
+\end{enumerate}
+\[\text{可微} \Leftrightarrow \text{可导} \Rightarrow \text{连续}\]
+
+
+\subsection{几何意义}
+
+若\(f(x)\)在点\(x_0\)处可微，则在点\((x_0, y_0)\)附近可用切线段近似代替曲线段
+
+
+
+\section{一阶微分方程}
+
+\begin{displaymath}
+\dfrac{dy}{dx} = f(ax + by + c)
+\end{displaymath}
+令u = ax + by + c，\begin{flalign}
+    \dfrac{du}{dx} & = a + b\dfrac{dy}{dx} \nonumber \\ 
+    \dfrac{du}{dx} & = a + bf(u) \nonumber
+\end{flalign}
+
+
+\subsection{齐次微分方程}
+\[\dfrac{dy}{dx} = f(\dfrac{y}{x})\]
+令\(u = \dfrac{y}{x}\), \(\dfrac{dy}{dx} = u + x\dfrac{du}{dx}\), 即
+\[x\dfrac{du}{dx} + u = f(u)\]
+
+
+\subsection{可化为齐次方程}
+
+\[\dfrac{dy}{dx} = \dfrac{ax + by + c}{a_1x + b_1y + c_1}\]
+
+\begin{itemize}
+    \item 若\(\dfrac{a_1}{a} \neq \dfrac{b_1}{b}\)，令\[x = X + h, y = Y + k\]
+    则\[dx = dX, dy = dY\]
+    \[\dfrac{dY}{dX} = \dfrac{aX + bY + ah + bk + c}{a_1X + b_1Y + a_1h + b_1k + c_1}\]
+    则可求出h，k使满足\(\begin{cases}
+        ah + bk + c = 0 \\
+        a_1h + b_1k + c_1 = 0
+    \end{cases}\)，上式化为
+    \[\dfrac{dY}{dX} = \dfrac{aX + bY}{a_1X + b_1Y}\]
+    将\(X = x - h, Y = y - k\)代入得到通解；
+    
+    \item 若\(\dfrac{a_1}{a} == \dfrac{b_1}{b}\)，令\(\dfrac{a_1}{a} = \dfrac{b_1}{b} = \lambda\),则
+    \[\dfrac{ax + by + c}{\lambda(ax + by) + c_1}\]
+    令\(v = ax + by\),则\[\dfrac{1}{b}(\dfrac{dv}{dx} - a) = \dfrac{v + c}{\lambda v + c_1}\]
+\end{itemize}
+
+
+\subsection{一阶线性微分方程}
+\[\dfrac{dy}{dx} + P(x)y = Q(x)\]
+若\(Q(x) \equiv 0\), 则齐次, 若\(Q(x) \not\equiv 0\),则非齐次
+
+\subsubsection{通解}
+\begin{itemize}
+    \item 齐次线性方程：\[y = Ce^{-\int_{}^{} P(x) \,dx}\]
+    \item 非齐次线性方程：\[y = e^{-\int_{}^{} P(x) \,dx}(\int_{}^{}Q(x)e^{\int_{}^{}P(x) \,dx} \,dx + C)\]
+\end{itemize}
+
+
+\subsection{伯努利方程}
+\[\dfrac{dy}{dx} + P(x)y = Q(x)y^{n}\space (n != 0, 1)\]
+令\[z = y^{1 - n}\]
+\[\dfrac{dz}{dx} = (1 - n)y^{-n}\dfrac{dy}{dx}\]
+则上式化为\[\dfrac{dz}{dx} + (1 - n)P(x)z = (1 - n)Q(x)\]
+
+
+\section{二阶可降解微分方程}
+
+\subsection{\(y'' = f(x, y')\)}
+
+令\(y' = p(x), y'' = p'(x)\)，则原方程为\[\dfrac{dp}{dx} = f(x, p)\]
+若通解为\(p = F(x, C_1)\)，即\(y' = F(x, C_1)\)，则积分。
+
+
+\subsection{\(y'' = f(y, y')\)}
+
+令\(y' = p(y), y'' = \dfrac{dp}{dx} = p(y)\dfrac{dp}{dy}\)，则原方程为\[p\dfrac{dp}{dy} = f(y, p)\]
+若通解为\(p = F(y, C_1)\)，则\(\int\dfrac{dy}{F(y, C_1)} = x + C_2\)
+
+\subsection{\(y'' = f(y')\)}
+
+既不显含y，也不显含x，按\(y'' = f(x, y')\)处理
+
+
+\section{高阶线性微分方程}
+
+\subsection{特征方程}
+对n阶常系数齐次线性微分方程\[a_ny^{(n)} + ... + a_1y' + a_0y = 0\]
+将\(y^{(k)}\)替换为\(r^k\)得\textbf{特征方程}\[a_nr^n + ... + a_1r + a_0 = 0\]
+解特征方程得根\(r_1, ..., r_n\)；
+
+
+\subsection{二阶常系数齐次线性微分方程}
+\[y'' + py' + qy = 0\]
+
+若\(y_1(x),y_2(x)\)是两个解，且\(\dfrac{y_1}{y_2} != C\)（C常数），则是线性无关解，通解为\[y(x) = C_1y_1(x) + C_2y_2(x)\]
+
+\subsubsection{特征方程}
+\(r^2 + pr + q = 0\)
+\begin{itemize}
+    \item \(p^2 - 4q > 0\)，则\(r_1 != r_2\)，通解\[y = C_1e^{r_1x} + C_2e^{r_2x}\]
+    \item \(p^2 - 4q = 0\)，则\(r_1 = r_2 = r\)，通解\[y = (C_1 + C_2)e^{rx}\]
+    \item \(p^2 - 4q < 0\)，则共轭复根\(\alpha \pm \beta i\)，通解\[y = (C_1cos\beta x + C_2sin\beta x)e^{\alpha x}\]
+\end{itemize}
+
+
+\subsection{二阶常系数非齐次线性微分方程}
+\[y'' + py' + qy = f(x)\]
+\begin{itemize}
+    \item 若\(y_1^*, y_2^*\)是非齐次方程的特解，则\(y_1^* - y_2^*\)是对应齐次方程的解；
+
+    \item 若\(y_1^*\)是\(y'' + py' + qy = f_1(x)\)的解，\(y_2^*\)是\(y'' + py' + qy = f_2(x)\)的解，则\(y_1^* + y_2^*\)是\(y'' + py' + qy = f_1(x) + f_2(x)\)的解；
+
+    \item 若\(y = C_1y_1(x) + C_2y_2(x)\)是\(y'' + py' + qy = 0\)的通解，\(y^*\)是\(y'' + py' + qy = f(x)\)的一个特解，则\(y + y^*\)是\(y'' + py' + qy = f(x)\)的特解；
+\end{itemize}
+
+\paragraph{当\(f(x) = P_n(x)e^{\alpha x}\)时}
+特解设为
+\[y^* = Q_n(x)x^ke^{\alpha x}\]其中
+\[\begin{cases}
+    e^{\alpha x}\text{ 照抄} \\
+    Q_n(x)\text{ 多项式，通常代入计算得到} \\
+    k = \begin{cases}
+        0, \alpha \neq r_1,\ \ \alpha \neq r_2 \\ 
+        1, \alpha = r_1\ \text{ or }\ \alpha = r_2 \\ 
+        2, \alpha = r_1 = r_2
+    \end{cases}
+\end{cases}\]
+
+\paragraph{当\(f(x) = [P_m(x)cos\beta x + P_n(x)sin\beta x]e^{\alpha x}\)时}
+特解设为
+\[y^* = [Q_l^1(x)cos\beta x + Q_l^2(x)sin\beta x]x^ke^{\alpha x}\]
+其中
+\[\begin{cases}
+    e^{\alpha x}\text{ 照抄} \\ 
+    l = max\{m, n\} \\ 
+    k = \begin{cases}
+        0, \alpha \pm \beta i \neq r_{1,2} \\ 
+        1, \alpha \pm \beta i = r_{1,2}
+    \end{cases}
+\end{cases}\]
+
+
+\section{n阶常系数齐次线性微分方程}
+\[a_1r^n + a_2r^{n - 1} + ... + a_n = 0\]
+
+根据特征方程得到特征根的值，根据特征根得到通解。
+\begin{itemize}
+    \item 若解中含特解\(e^{rx}\)，则r至少为单实根；
+    \item 若解中含特解\(x^{k - 1}e^{rx}\)，则r至少为k重实根；
+    \item 若解中含特解\(e^{\alpha x}cos\beta x\)或\(e^{\alpha x}sin\beta x\)，则\(\alpha \pm \beta i\)至少为单复根；
+    \item 若解中含特解\(e^{\alpha x}xcos\beta x\)或\(e^{\alpha x}xsin\beta x\)，则\(\alpha \pm \beta i\)至少为二重复根；
+\end{itemize}
+
+
+\section{欧拉方程(数一)}
+\[x^2y'' + pxy' + qy = f(x)\]
+
+当\(x > 0\)时，令\(x = e^t\)，则\(t = lnx, \dfrac{dt}{dx} = \dfrac{1}{x}\)，于是
+\[\dfrac{dy}{dx} = \dfrac{dy}{dt} \dfrac{dt}{dx} = \dfrac{1}{x} \dfrac{dy}{dt}\]
+\[\dfrac{d^2y}{dx^2} = \dfrac{d}{dx}(\dfrac{1}{x}\dfrac{dy}{dt}) = -\dfrac{1}{x^2}\dfrac{dy}{dt} + \dfrac{1}{x}\dfrac{d}{dx}(\dfrac{dy}{dt}) = -\dfrac{1}{x^2}\dfrac{dy}{dt} + \dfrac{1}{x^2}\dfrac{d^2y}{dt^2}\]
+方程化为\[\dfrac{d^2y}{dt^2} + (p - 1)\dfrac{dy}{dt} + qy = f(e^t)\]
+
+当\(x < 0\)时，令\(x = -e^t\)，同理
+
+
+\section{例}
+
+\subsubsection{根据特解求方程}
+已知\(y_1 = xe^x + e^{2x}, y_2 = xe^x + e^{-x}, y_3 = xe^x + e^{2x} - e^{-x}\)是某二阶线性非齐次微分方程的三个解，则此微分方程为：?
+\paragraph{解}
+\(y_1 - y_3 = e^{-x},\ y_1 - y_2 = e^{2x} - e^{-x}\)是对应齐次方程的解，\((y_1 - y_3) + (y_1 - y_2) = e^{2x}\)是对应齐次方程的解，\(e^{-x}, e^{2x}\)是对应齐次方程两个线性无关的特解，\(y_2 - e^{-x} = xe^x\)是非齐次方程的解。
+
+\subparagraph{方法1}
+由“\(e^{-x}, e^{2x}\)是对应齐次方程两个线性无关的特解”得\(\lambda_1 = -1, \lambda_2 = 2\)是特征方程的两个根，故特征方程\((\lambda + 1)(\lambda - 2) = 0\)，对应齐次微分方程为\[y'' - y' - 2y = 0\]
+设非齐次方程为\(y'' - y' - 2y = f(x)\)，非齐次解\(xe^x\)代入得\(f(x) = (1 - 2x)e^x\)
+
+\subparagraph{方法2}
+由非齐次特解\(xe^x\)及对应齐次方程两个线性无关解得非齐次方程通解为\[y = C_1e^{-x} + C_2e^{2x} + xe^x\]
+求得\[y' = -C_1e^{-x} + 2C_2e^{2x} + (x + 1)e^x\]
+\[y'' = C_1e^{-x} + 4C_2e^{2x} + (x + 2)e^x\]
+消去\(C_1, C_2\)\[y'' - y' = 2(C_1e^{-x} + C_2e^{2x} + xe^x) - 2xe^x + e^x = 2y + (1 - 2x)e^x\]
+故方程为\(y'' - y' - 2y = (1 - 2x)e^x\)
+
+
+\subsubsection{根据特解求方程}
+已知\(y_1 = \cos2x - \dfrac{1}{4}x\cos2x,\ y_2 = \sin2x - \dfrac{1}{4}x\cos2x\)是某二阶线性常系数非齐次微分方程得两个解，\(y_3 = \cos2x\)是它对应得齐次方程得一个解，则该微分方程是?
+
+\paragraph{解}
+\(y_1 - y_2 = \cos2x - \sin2x\)是对应齐次方程的一个解，故\(\cos2x - (\cos2x - \sin2x) = \sin2x\)也是对应齐次方程的解。根据两个线性无关解，的特征根为\(\pm2i\)，特征方程为\(\lambda^2 + 4 = 0\)，原方程为\(y'' + 4y = f(x)\)。由叠加原理得非齐次解\(-\dfrac{x}{4}\cos2x\)，代入得\(f(x) = y'' + 4y = \sin2x\)
+
+
+\subsubsection{高阶求特解}
+方程\(y''' - y' = 0\)满足条件\(y\bigg|_{x = 0} = 3, y'\bigg|_{x = 0} = -1, y''\bigg|_{x = 0} = 1\)的特解为?
+\paragraph{解}
+特征方程为\[r^3 - r = 0\]即\(r(r^2 - 1) = 0\)，得\(r_1 = 0, r_2 = 1, r_3 = -1\)，故通解为\(y = C_1 + C_2e^x + C_3e^{-x}\)，条件代入得\(y = 2 + e^{-x}\)
+
+
+\section{多元函数微分学}
+
+\subsection{邻域的几何意义}
+\(U(P_0, \delta)\)表示xOy平面上以点\(P_0(x_0, y_0)\)为中心，\(\delta > 0\)为半径的圆内部的点\(P(x, y)\)的全体。
+
+\subsection{极限}
+\[\lim_{(x, y) \to (x_0, y_0)}f(x, y) = A\ or\ \lim_{x\to x_0\ y \to y_0}f(x, y) = A\]
+
+\begin{itemize}
+    \item 二重极限有无穷多种方式
+    \item 若有两条路径使极限\(\displaystyle\lim_{(x, y) \to (x_0, y_0)}f(x, y)\)的值不相等或某一路径使极限\(\displaystyle\lim_{(x, y) \to (x_0, y_0)}f(x, y)\)的值不存在，说明\(\displaystyle\lim_{(x, y) \to (x_0, y_0)}f(x, y)\)不存在
+    \item \(\displaystyle\lim_{(x, y) \to (x_0, y_0)}f(x, y) = A \Leftrightarrow f(x, y) = A + \alpha\)，\(\alpha\)是无穷小量；
+\end{itemize}
+
+
+\subsection{连续}
+
+
+\subsection{偏导数}
+
+\subsubsection{定义}
+设函数\(z = f(x, y)\)在点\((x_0, y_0)\)的某邻域内有定义，若极限\[\lim_{\Delta x \to 0}\dfrac{f(x_0 + \Delta x, y_0) - f(x_0, y_0)}{\Delta x}\]
+存在，则此极限为对x的偏导数。
+
+
+\subsubsection{几何意义}
+
+
+\subsection{高阶偏导数}
+若函数的两个二阶混合偏导数都在区域D内连续，则在区域D内\(\dfrac{\vartheta^2z}{\vartheta x\vartheta y} = \dfrac{\vartheta^2z}{\vartheta y\vartheta x}\)
+
+
+\section{可微}
+
+\subsection{定义}
+全增量\[\Delta z = f(x + \Delta x, y + \Delta y) - f(x, y)\]
+\[\Delta z = A\Delta x + B\Delta y + o(\rho)\]
+A，B仅与点\((x, y)\)有关，与\(\Delta x,\Delta y\)无关；\(\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}\)，\(\Delta x \to 0,\Delta y \to 0\)时，\(o(\rho)\)是\(\rho\)的高阶无穷小；
+
+全微分\[dz = A\Delta x + B\Delta y\]
+
+
+\subsection{必要条件}
+若在点\((x, y)\)可微，则在该点的偏导数必存在\[A = \dfrac{\vartheta z}{\vartheta x}, B = \dfrac{\vartheta z}{\vartheta y}\]
+则全微分可记为\(dz = \dfrac{\vartheta z}{\vartheta x}dx + \dfrac{\vartheta z}{\vartheta y}dy\)
+
+
+\subsection{充分条件}
+偏导数存在且连续，则在该点可微
+
+
+\subsection{判别}
+\begin{enumerate}
+    \item 写出全增量\(\Delta z\)
+    \item 写出线性增量\(A\Delta x + B\Delta y\)
+    \item 作极限\(\displaystyle\lim_{\Delta x \to 0\ \Delta y \to 0}\dfrac{\Delta z - (A\Delta x + B\Delta y)}{\sqrt{(\Delta x)^2 + (\Delta y)^2}}\)，若极限等于0，则可微；否则不可微。
+\end{enumerate}
+
+
+
+\section{计算}
+
+\subsection{链式求导规则}
+对函数\(z = f(u, v), u = u(x, y), v = v(x, y)\)，则\[\dfrac{\vartheta z}{\vartheta x} = \dfrac{\vartheta f}{\vartheta u}\dfrac{\vartheta u}{\vartheta x} + \dfrac{\vartheta f}{\vartheta v}\dfrac{\vartheta v}{\vartheta x}\]
+\[\dfrac{\vartheta^2z}{\vartheta x\vartheta y} = \]
+
+
+\subsection{全微分形式不变性}
+设\(z = f(u, v), u = u(x, y), v = v(x, y)\)，若分别有连续偏导数，则复合函数\(z = f(u, v)\)在\((x, y)\)处的全微分仍可表示为\[dz = \dfrac{\vartheta z}{\vartheta u}du + \dfrac{\vartheta z}{\vartheta v}dv\]
+
+\subsection{隐函数存在定理（公式法）}
+\begin{enumerate}
+    \item 对方程\(F(x, y) = 0\)确定的隐函数\(y = f(x)\)，当\(F_y'(x, y) \neq 0\)时，有\[\dfrac{dy}{dx} = -\dfrac{F_x'(x, y)}{F_y'(x, y)}\]
+
+    \item 对由方程\(F(x, y, z) = 0\)确定的隐函数\(z = f(x, y)\)，当\(F_z'(x, y, z) \neq 0\)时，则有\[\dfrac{\vartheta z}{\vartheta x} = -\dfrac{F_x'(x, y, z)}{F_z'(x, y, z)}, \dfrac{\vartheta z}{\vartheta y} = -\dfrac{F_y'(x, y, z)}{F_z'(x, y, z)}\]
+\end{enumerate}
+
+
+\section{极值与最值}
+
+\subsection{无条件极值}
+\begin{enumerate}
+    \item 必要条件：在点\((x_0, y_0)\)处\(\begin{cases}
+        \text{一阶偏导数存在} \\ 
+        \text{取极值}
+    \end{cases}\)，则\(f_x'(x_0, y_0) = 0, f_y'(x_0, y_0) = 0\)
+    \item 充分条件：记\(\begin{cases}
+        f_{xx}''(x_0, y_0) = A \\ 
+        f_{xy}''(x_0, y_0) = B \\ 
+        f_{yy}''(x_0, y_0) = C
+    \end{cases}\)，则\(\Delta = AC - B^2\begin{cases}
+        > 0 \Rightarrow \text{极值}\begin{cases}
+            A < 0 \Rightarrow \text{极大值} \\ 
+            A > 0 \Rightarrow \text{极小值}
+        \end{cases} \\ 
+        < 0 \Rightarrow \text{非极值} \\ 
+        = 0 \Rightarrow \text{方法失效，换方法}
+    \end{cases}\)
+\end{enumerate}
+通过必要条件找出可疑点，使用充分条件判别。
+
+
+\subsection{条件最值与拉格朗日乘数法}
+求目标函数\(u = f(x, y, z)\)在约束条件\(\begin{cases}
+    \varphi(x, y, z) = 0 \\ 
+    \psi(x, y, z) = 0
+\end{cases}\)下的最值，则\begin{enumerate}
+    \item 构造辅助函数\(F(x, y, z, \lambda, \mu) = f(x, y, z) + \lambda\varphi(x, y, z) + \mu\psi(x, y, z)\)
+    \item 令\[\begin{cases}
+        F_x' = f_x' + \lambda\varphi_x' + \mu\psi_x' = 0 \\ 
+        F_y' = f_y' + \lambda\varphi_y' + \mu\psi_y' = 0 \\ 
+        F_z' = f_z' + \lambda\varphi_z' + \mu\psi_z' = 0 \\ 
+        F_\lambda' = \varphi(x, y, z) = 0 \\ 
+        F_\mu' = \psi(x, y, z) = 0
+    \end{cases}\]
+    \item 解方程组得备选点\(P_i\)，求\(f(P_i)\)取最值
+\end{enumerate}
+若约束条件\(\begin{cases}
+    \varphi(x, y, z) = 0 \\ 
+    \psi(x, y, z) = 0
+\end{cases}\)易得\(z = z(x, y)\)，则代入\(f(x, y, z(x, y))\)转化为无条件最值问题。
+
+
+\subsection{最远（近）点的垂线定理}
+若\(\Gamma\)是光滑闭曲线，
+
+
+
+\section{例}
+
+\subsubsection{隐函数求偏导数全微分}
+若函数\(z = z(x, y)\)由方程\(e^{x + 2y + 3z} + xyz = 1\)确定，则\(dz\bigg|_{(0, 0)} = \)?
+\paragraph{解}
+x = 0, y = 0代入得z = 0
+\subparagraph{方法1}
+原式两端微分得\[e^{x + 2y + 3z}(dx + 2dy + 3dz) + yzdx + xzdy + zydz = 0\]
+代入得\(dx + 2dy + 3dz = 0\)
+\subparagraph{方法2}
+隐函数求导公式得\[\dfrac{\vartheta z}{\vartheta x} = -\dfrac{e^{x + 2y + 3z} + yz}{3e^{x + 2y + 3z} + xy}\]
+\[\dfrac{\vartheta z}{\vartheta y} = -\dfrac{2e^{x + 2y + 3z} + xz}{3e^{x + 2y + 3z} + xy}\]
+代入得
+\subparagraph{方法3}
+将\(y = 0\)代入原式得\(e^{x + 3z} = 1\)，两端对x求导得\[e^{x + 3z}(1 + 3z_x') = 0\]
+代入得
+
+
+
+
