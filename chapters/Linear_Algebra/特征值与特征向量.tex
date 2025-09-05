@@ -1,0 +1,289 @@
+
+\chapter{特征值与特征向量}
+
+\section{概述}
+
+\subsection{定义}
+设n阶矩阵A，\(\lambda\)是一个数，若存在n维非零列向量\(\xi\)，使得\(A\xi = \lambda\xi\)，则称\(\lambda\)是A的特征值，\(\xi\)是A的对应特征值\(\lambda\)的特征向量；
+
+\subsection{求法}
+\((\lambda E - A)\xi = 0\)，因\(\xi \neq 0\)，故齐次方程组\((\lambda E - A)x = 0\)有非零解\footnote[1]{\mymatrix}，故特征方程\[|\lambda E - A| = \begin{vmatrix}
+\lambda - a_{11} & -a_{12} & ... & -a_{1n} \\ 
+-a_{21} & \lambda - a_{22} & ... & -a_{2n} \\
+... \\ 
+-a_{n1} & ... & ... & \lambda - a_{nn}
+\end{vmatrix} = 0\]是未知量\(\lambda\)的n次方程，有n个根，\(\lambda E - A\)为特征矩阵，\(|\lambda E - A|\)为特性多项式；
+
+先根据特征方程求出特征值，再解齐次线性方程组的特征向量；
+
+\subsubsection{技巧}
+\begin{enumerate}
+    \item 对于特征根单根，若A是n阶实对称矩阵，则必可相似对角化，故\(r(\lambda E - A) = n - 1\)，则必有一个方程是多余方程，若\(\lambda E - A\)中n行不成比例，则任一方程均是另外n - 1个方程的线性组合，故可去除任一方程，剩下的仍是同解方程组；
+    \item 设k次多项式方程\(f(\lambda) = a_k\lambda^k + ... + a_1\lambda + a_0 = 0\)
+
+    若\(a_0 = 0\)则\(f(0) = 0\)，则0是\(f(\lambda) = 0\)的根；
+
+    若\(a_k + ... + a_1 + a_0 = 0\)，则\(f(1) = 0\)；
+
+    若\(f(\lambda)\)偶次项系数包括\(a_0\)之和等于奇次项系数之和，则\(f(-1) = 0\)
+    \item 多项式带余除法
+    \item 设\(f(x) = 1 * x^k + a_{k - 1}x^{k - 1} + ... + a_1x + a_0\)是\(a_i\)均为整数的多项式，则\(f(x) = 0\)的有理根均为整数，且均是\(a_0\)的因子；
+\end{enumerate}
+
+
+\section{特征值性质}
+
+\(\lambda_0\)是A的特征值\(\Leftrightarrow |\lambda_0E - A| = 0\)
+
+\(\lambda_0\)不是A的特征值\(\Leftrightarrow |\lambda_0E - A| \neq 0 \Leftrightarrow\)矩阵可逆，满秩
+
+若\(|aA + bE| = 0, a \neq 0\)，则\(-\dfrac{b}{a}\)是A的特征值
+
+若0是A的特征值，则\(|A| = 0 \Leftrightarrow A\text{不可逆}\)
+
+若\(\lambda_1, ..., \lambda_n\)是A的n个特征值，则\(\begin{cases}
+|A| = \lambda_1\lambda_2...\lambda_n \\ 
+tr(A) = \lambda_1 + ... + \lambda_n
+\end{cases}\)
+
+以3阶矩阵为例，设\(A = \begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\ 
+a_{21} & a_{22} & a_{23} \\ 
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}\)，定义3阶矩阵的k阶主子式为\(\begin{vmatrix}
+    a_{i_1i_1} & ... & a_{i_1i_k} \\ 
+    ... & & ... \\ 
+    a_{i_ki_1} & ... & a_{i_ki_k}
+\end{vmatrix}\)，则\(|\lambda E - A| = \begin{vmatrix}
+    \lambda - a_{11} & ... & ... \\ 
+    ... & \lambda - a_{22} & ... \\ 
+    ... & ... & \lambda - a_{33}
+\end{vmatrix}\)是\(\lambda\)的一元三次多项式，且1阶主子式为\(a_{11}, a_{22}, a_{33}\)；2阶主子式为\(A_{11} = \begin{vmatrix}
+    a_22 & a_23 \\ 
+    a_32 & a_33
+\end{vmatrix}, A_{22} = \begin{vmatrix}
+    a_{11} & a_{13} \\ 
+    a_{31} & a_{33}
+\end{vmatrix}, A_{33} = \begin{vmatrix}
+    a_{11} & a_{12} \\ 
+    a_{21} & a_{22}
+\end{vmatrix}\)，3阶主子式为\(|A|\)，则
+\[|\lambda E - A| = 
+\begin{vmatrix}
+    \lambda & 0 & 0 \\ 
+    0 & \lambda & 0 \\ 
+    0 & 0 & \lambda
+\end{vmatrix} + \begin{vmatrix}
+    \lambda & 0 & -a_{13} \\ 
+    0 & \lambda & -a_{23} \\ 
+    0 & 0 & -a_{33}
+\end{vmatrix} + \begin{vmatrix}
+    \lambda & -a_{12} & 0 \\ 
+    0 & -a_{22} & 0 \\ 
+    0 & -a_{32} & \lambda
+\end{vmatrix} + \begin{vmatrix}
+    \lambda & -a_{12} & -a_{13} \\ 
+    0 & -a_{22} & -a_{23} \\ 
+    0 & -a_{32} & -a_{33}
+\end{vmatrix}\]
+\[ + \begin{vmatrix}
+    -a_{11} & 0 & 0 \\ 
+    -a_{21} & \lambda & 0 \\ 
+    -a_{31} & 0 & \lambda
+\end{vmatrix} + \begin{vmatrix}
+    -a_{11} & 0 & -a_{13} \\ 
+    -a_{21} & \lambda & -a_{23} \\ 
+    -a_{31} & 0 & -a_{33}
+\end{vmatrix} + \begin{vmatrix}
+    -a_{11} & -a_{12} & 0 \\ 
+    -a_{21} & -a_{22} & 0 \\ 
+    -a_{31} & -a_{32} & \lambda
+\end{vmatrix} + \begin{vmatrix}
+    -a_{11} & -a_{12} & -a_{13} \\ 
+    -a_{21} & -a_{22} & -a_{23} \\ 
+    -a_{31} & -a_{32} & -a_{33}
+\end{vmatrix}\]
+\[ = \lambda^3 - (a_{11} + a_{22} + a_{33})\lambda^2 + (A_{11} + A_{22} + A_{33})\lambda - |A|\]
+
+设\(|\lambda E - A| = (\lambda - \lambda_1)(\lambda - \lambda_2)(\lambda - \lambda_3) = \lambda^3 - (\lambda_1 + \lambda_2 + \lambda_3)\lambda^2 + (\lambda_1\lambda_2 + \lambda_1\lambda_3 + \lambda_2\lambda_3)\lambda - \lambda_1\lambda_2\lambda_3\)
+
+比较得\(\begin{cases}
+    a_{11} + a_{22} + a_{33} = \lambda_1 + \lambda_2 + \lambda_3 \\ 
+    A_{11} + A_{22} + A_{33} = \lambda_2\lambda_3 + \lambda_1\lambda_3 + \lambda_1\lambda_2 \\ 
+    |A| = \lambda_1\lambda_2\lambda_3
+\end{cases}\)
+
+设\(f(x)\)为多项式，若矩阵A满足\(f(A) = O\)，\(\lambda\)是A的任一特征值，则\(\lambda\)满足\(f(\lambda) = 0\)
+
+\section{特征向量性质}
+\begin{itemize}
+    \item \(\xi\)是A的属于\(\lambda_0\)的特征向量\(\Leftrightarrow \xi\)是\((\lambda_0E - A)x = 0\)的非零解
+    \item k重特征根\(\lambda\)至多只有k个线性无关的特征向量；
+    \item 若\(\xi_1, \xi_2\)是A的属于不同特征值\(\lambda_1, \lambda_2\)的特征向量，则\(\xi_1, \xi_2\)线性无关；
+    \item 若\(\xi_1, \xi_2\)是A的属于同一特征值\(\lambda\)的特征向量，则非零向量\(k_1\xi_1 + k_2\xi_2\)仍是A的属于特征值\(\lambda\)的特征向量
+    \item 若\(\xi_1, \xi_2\)是A的属于不同特征值\(\lambda_1, \lambda_2\)的特征向量，则当\(k_1 \neq 0, k_2 \neq 0\)时，\(k_1\xi_1 + k_2\xi_2\)不是A的任何特征值的特征向量；
+    \item 若\(\lambda_1, \lambda_2\)是A的两个不同的特征值，\(\xi\)是对应于\(\lambda_1\)的特征向量，则\(\xi\)不是对应于\(\lambda_2\)的特征向量；
+\end{itemize}
+
+
+\section{常用矩阵的特征值与特征向量}
+
+\begin{center}
+\begin{tabular}{ c c c }
+\hline
+\text{矩阵} & \text{特征值} & \text{特征向量} \\ 
+\hline
+\(A\) & \(\lambda\) & \(\xi\) \\ 
+\(kA\) & \(k\lambda\) & \(\xi\) \\ 
+\(A^k\) & \(\lambda^k\) & \(\xi\) \\ 
+\(f(A)\) & \(f(\lambda)\) & \(\xi\) \\ 
+\(A^{-1}\) & \(\dfrac{1}{\lambda}\) & \(\xi\) \\ 
+\(A^*\) & \(\dfrac{|A|}{\lambda}\) & \(\xi\) \\ 
+\(P^{-1}AP\) & \(\lambda\) & \(P^{-1}\xi\) \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\section{秩为1的n阶矩阵}
+秩为1的n阶矩阵\(A = \alpha\beta^T\)
+
+\subsubsection{特征值}
+\[\lambda_1 = ... = \lambda_{n - 1} = 0\]
+\[\lambda_n = \sum_{i = 1}^na_{ii} = \beta^T\alpha\]
+
+\paragraph{证明}
+\(r(A) = 1\)，则\(Ax = 0\)有n - 1个线性无关解\(a_1, ... a_{n - 1}\)，则\(Aa_1 = 0 = 0a_1, ..., Aa_{n - 1} = 0 = 0a_{n - 1}\)，则\(\lambda = 0\)至少A的\(n - 1\)重特征值，有\(\displaystyle\sum_{i = 1}^n\lambda_i = \sum_{i = 1}^na_{ii}\)，则\(\lambda_n = \displaystyle\sum_{i = 1}^na_{ii} = \beta^T\alpha\)
+
+
+\section{例}
+
+\paragraph{0}
+设\(A = (a_{ij})\)为3阶矩阵，\(A_{ij}\)为\(a_{ij}\)的代数余子式，若A每行元素之和均为2，且\(|A| = 3\)，则\(A_{11} + A_{21} + A_{31} = ?\)
+
+\subparagraph{解}
+由\(A\begin{bmatrix}
+    1 \\ 
+    1 \\ 
+    1
+\end{bmatrix} = 2\begin{bmatrix}
+    1 \\ 
+    1 \\ 
+    1
+\end{bmatrix}\)得A的一个特征值\(\lambda = 2\)，其对应特征向量为\(\alpha\begin{bmatrix}
+    1 \\ 
+    1 \\ 
+    1
+\end{bmatrix}\)，则\(A^*\)的一个特征值为\(\dfrac{|A|}{\lambda}\)，其对应特征向量也为\(\alpha\)，由\(A^*\alpha = \dfrac{|A|}{\lambda}\alpha, A^* = \begin{bmatrix}
+    A_{11} & A_{21} & A_{31} \\
+    ... \\
+    ...
+\end{bmatrix}\)得\(A^*\begin{bmatrix}
+    1 \\ 
+    1 \\ 
+    1
+\end{bmatrix} = \begin{bmatrix}
+    A_{11} + A_{21} + A_{31} \\ 
+    ... \\ 
+    ...
+\end{bmatrix} = \dfrac{|A|}{\lambda}\begin{bmatrix}
+    1 \\ 
+    1 \\ 
+    1
+\end{bmatrix}\)，即\(A_{11} + A_{21} + A_{31} = \dfrac{3}{2}\)
+
+\paragraph{0}
+已知\(\alpha = [1, k, 1]^T\)是\(A^{-1}\)的特征向量，其中\(A = \begin{bmatrix}
+    2 & 1 & 1 \\ 
+    1 & 2 & 1 \\ 
+    1 & 1 & 2
+\end{bmatrix}\)，求k及\(\alpha\)对应的\(A^{-1}\)的特征值
+
+\subparagraph{解}
+由题可知\(A^{-1}\alpha = \lambda\alpha\)，\(\lambda\)是\(A^{-1}\)对应\(\alpha\)的特征值，两端左乘A得\(\alpha = \lambda A\alpha\)
+\(\because \alpha \neq 0,\ \therefore \lambda \neq 0, A\alpha = \dfrac{1}{\lambda}\alpha\)，记\(\mu = \dfrac{1}{\lambda}\)，则
+\[A\begin{bmatrix}
+    1 \\ 
+    k \\ 
+    1
+\end{bmatrix} = \mu\begin{bmatrix}
+    1 \\ 
+    k \\ 
+    1
+\end{bmatrix}\]
+则\(\begin{cases}
+    3 + k = \mu \\ 
+    2 + 2k = k\mu \\ 
+    3 + k = \mu
+\end{cases}\)，得\(k = 1, -2\)，\(\lambda = \dfrac{1}{\mu} = \dfrac{1}{3 + k}\)
+
+\paragraph{0}
+设\(A = \begin{bmatrix}
+    1 & -2 & 0 & 0 \\ 
+    -1 & 0 & 0 & 0 \\ 
+    0 & 0 & 2 & 1 \\ 
+    0 & 0 & 0 & 2
+\end{bmatrix}\)，求\(A^n, n >= 2\)
+
+\subparagraph{解}
+记\(B = \begin{bmatrix}
+    1 & -2 \\ 
+    -1 & 0
+\end{bmatrix}, C = \begin{bmatrix}
+    2 & 1 \\ 
+    0 & 2
+\end{bmatrix}\)，则\(A = \begin{bmatrix}
+    B & O \\ 
+    O & C
+\end{bmatrix}, A^n = \begin{bmatrix}
+    B^n & O \\ 
+    O & C^n
+\end{bmatrix}\),
+
+对B，由\(|\lambda E - B| = (\lambda + 1)(\lambda - 2) = 0\)，得特征值\(\lambda_1 = -1, \lambda_2 = 2,\ B^n = P^{-1}\begin{bmatrix}
+    -1 & 0 \\ 
+    0 & 2
+\end{bmatrix}^nP,\ P = \begin{bmatrix}
+    1 & -2 \\ 
+    1 & 1
+\end{bmatrix}\)
+
+对C，当\(n >= 2\)时，\(\begin{bmatrix}
+    0 & 1 \\ 
+    0 & 0
+\end{bmatrix}^n = O\)，故\(C^n = (2E + \begin{bmatrix}
+    0 & 1 \\ 
+    0 & 0
+\end{bmatrix})^n = 2^nE^n + n * 2^{n - 1}E^{n - 1}\begin{bmatrix}
+    0 & 1 \\ 
+    0 & 0
+\end{bmatrix} = \begin{bmatrix}
+    2^n & n * 2^{n - 1} \\ 
+    0 & 2^n
+\end{bmatrix}\)
+
+\paragraph{0}
+已知1，1，-1是实对称矩阵A的特征值，向量\(\xi_1 = [1, 1, 1]^T,\ \xi_2 = [2, 2, 1]^T\)是对应于\(\lambda_1 = \lambda_2 = 1\)的特征向量，求A
+\subparagraph{解}
+设\(\lambda_3 = -1\)对应特征向量\(\xi_3 = [x_1, x_2, x_3]^T,\ \because A\)为实对称矩阵，有\[\begin{cases}
+    (\xi_1, \xi_3) = x_1 + x_2 + x_3 = 0 \\ 
+    (\xi_2, \xi_3) = 2x_1 + 2x_2 + x_3 = 0
+\end{cases}\]
+取\(\xi_3 = [-1, 1, 0]^T\)，得\(P = [\xi_1, \xi_2, \xi_3],\ \therefore A = P\Lambda P^{-1}\)
+
+\subsection{特征值和一个特征向量求矩阵}
+已知二次型\(f = x^TAx\)在正交变换\(x = Qy\)下标准形为\(y_1^2 + y_2^2\)且Q第3列为\([\dfrac{1}{\sqrt{2}}, 0, \dfrac{1}{\sqrt{2}}]^T\)(1)求矩阵A(2)证明\(A + E\)为正定矩阵
+
+\paragraph{解1}
+由题可知特征值1,1,0，设\([x_1, x_2, x_3]^T\)是对应特征值1的特征向量，由不同特征值的特征向量正交得\([\dfrac{1}{\sqrt{2}}, 0, \dfrac{1}{\sqrt{2}}]\begin{bmatrix}
+    x_1 \\ 
+    x_2 \\ 
+    x_3
+\end{bmatrix} = 0\)，即\(x_1 + x_3 = 0\)，得\(\xi_1 = []^T, \xi_2 = []^T\)，故\(Q = [\xi_1, \xi_2, \xi_3], \therefore\ A = Q\begin{bmatrix}
+    1 \\ 
+    & 1 \\ 
+    & & 0
+\end{bmatrix}Q^T\)
+
+\paragraph{证明2}
+
+
