@@ -340,9 +340,9 @@ O & O
 
 \section{相似矩阵}
 
-设A，B为n阶矩阵，
+设A，B为n阶矩阵，若
 \[P^{-1}AP = B\]
-A，B为相似矩阵，对A进行相似变换得到B，记作\(A \sim B\)；
+则A，B为相似矩阵，对A进行相似变换得到B，记作\(A \sim B\)；
 
 \subsection{性质}
 若\(A \sim B\)，则
@@ -384,16 +384,13 @@ A，B为相似矩阵，对A进行相似变换得到B，记作\(A \sim B\)；
 \end{bmatrix}\)，则\(\lambda_1, ..., \lambda_n\)为A的特征值
 
 \paragraph{证明}
-若\(A \sim B\)，有可逆矩阵P，使得\(P^{-1}AP = B\)，
-
-()由\(B^k = B...B = (P^{-1}AP)...(P^{-1}AP) = P^{-1}A^kP\)，知\(A^k \sim B^k\)
-
-()两边取逆，有\(P^{-1}A^{-1}P = B^{-1}, A^{-1} \sim B^{-1}\)
-
-()两边取伴随，有\(P^*A^*(P^{-1})^* = B^*\)，取\(P^*A^*(P^*)^{-1} = B^*, A^* \sim B^*\)。由于\(P^* = |P|P^{-1}, |P|P^{-1}A^*\dfrac{1}{|P|}P = B^*, P^{-1}A^*P = B^*\)
-
-()两边取转置，有\(P^TA^T(P^{-1})^T = B^T, P^TA^T(P^T)^{-1} = B^T, A^T \sim B^T\)，故\(A^T,\ B^T\)相似手段与上述三种不同，如\(A^2 + A^T, B^2 + B^T\)不相似
-
+若\(A \sim B\)，有可逆矩阵P，使得\(P^{-1}AP = B\)
+\begin{enumerate}
+    \item 由\(B^k = B...B = (P^{-1}AP)...(P^{-1}AP) = P^{-1}A^kP\)，知\(A^k \sim B^k\)
+    \item 两边取逆，有\(P^{-1}A^{-1}P = B^{-1}, A^{-1} \sim B^{-1}\)
+    \item 两边取伴随，有\(P^*A^*(P^{-1})^* = B^*\)，取\(P^*A^*(P^*)^{-1} = B^*, A^* \sim B^*\)。由于\(P^* = |P|P^{-1}\)，\(|P|P^{-1}A^*\dfrac{1}{|P|}P = B^*, P^{-1}A^*P = B^*\)
+    \item 两边取转置，有\(P^TA^T(P^{-1})^T = B^T, P^TA^T(P^T)^{-1} = B^T, A^T \sim B^T\)，故\(A^T,\ B^T\)相似手段与上述三种不同，如\(A^2 + A^T, B^2 + B^T\)不相似
+\end{enumerate}
 
 
 \subsection{判别与证明}
@@ -405,7 +402,7 @@ A，B为相似矩阵，对A进行相似变换得到B，记作\(A \sim B\)；
 
 
 \section{矩阵对角化}
-对n阶矩阵A，求相似变换矩阵P，使得\(P^{-1}AP = \Lambda, \Lambda\)是对角矩阵，则A可相似对角化，记\(A \sim \Lambda\)，称\(\Lambda\)是\(A\)的相似标准形；
+对n阶矩阵A，求相似变换矩阵P，使得\(P^{-1}AP = \Lambda\)，\(\Lambda\)是对角矩阵，则A可\textbf{相似对角化}，记\(A \sim \Lambda\)，称\(\Lambda\)是\(A\)的\textbf{相似标准形}；
 
 \subsection{可相似对角化的条件}
 \begin{itemize}
@@ -416,30 +413,30 @@ A，B为相似矩阵，对A进行相似变换得到B，记作\(A \sim B\)；
 \end{itemize}
 
 \subsection{判断步骤}
-\begin{itemize}
+\begin{enumerate}
     \item 是否实对称矩阵
     \item 特征值是否都是单根，是则相似
     \item 特征值是k重根，若对应k个线性无关的特征向量(\(r(\lambda_kE - A) = n - k\))，则相似
+\end{enumerate}
+
+
+\subsection{对称矩阵对角化}
+\paragraph{性质}
+\begin{itemize}
+    \item 对称矩阵特征值为实数；
+    \item 设\(\lambda_1, \lambda_2\)是两个特征值，\(p_1, p_2\)是对应特征向量，若\(\lambda_1 \neq \lambda_2\)，则\(p_1,p_2\)正交；
+    \item 设A为n阶对称矩阵，则必存在矩阵P，使得\(PAP^{-1} = P^{-1}AP = \Lambda\)；
+    \item 设A为n阶对称矩阵，\(\lambda\)是A的特征方程的k重根，则\(r(A - \lambda E) = n - k\)，\(\lambda\)有k个线性无关的特征向量；
 \end{itemize}
 
 
-\subsection{对称矩阵对角化性质}
-
-对称矩阵特征值为实数；
-
-设\(\lambda_1, \lambda_2\)是两个特征值，\(p_1, p_2\)是对应特征向量，若\(\lambda_1 \neq \lambda_2\)，则\(p_1,p_2\)正交；
-
-设A为n阶对称矩阵，则必存在矩阵P，使得\(PAP^{-1} = P^{-1}AP = \Lambda\)；
-
-设A为n阶对称矩阵，\(\lambda\)是A的特征方程的k重根，则\(r(A - \lambda E) = n - k\)，\(\lambda\)有k个线性无关的特征向量；
-
-\subsection{对称矩阵对角化步骤}
-求可逆矩阵P
-\begin{itemize}
-    \item 求出全部\(k_i\)重特征值\(\lambda_i, \displaystyle\sum_{i = 1}^s k_i = n\);
+\paragraph{步骤}
+即求可逆矩阵P：
+\begin{enumerate}
+    \item 求出全部\(k_i\)重特征值\(\lambda_i,\ \ \displaystyle\sum_{i = 1}^s k_i = n\);
     \item 对每个\(\lambda_i\)，求出\((A - \lambda_iE)x = 0\)的基础解系，得到\(k_i\)个线性无关特征向量，并正交化单位化，得到\(k_i\)个两两正交的单位特征向量，即n个两两正交的单位特征向量；
     \item 将n个两两正交的单位特征向量构造为正交阵P；
-\end{itemize}
+\end{enumerate}
 
 \subsection{有特征值、特征向量反求A}
 若可逆矩阵P，使得\(P^{-1}AP = \Lambda\)则\(A = P\Lambda P^{-1}\)
@@ -465,12 +462,12 @@ A，B为相似矩阵，对A进行相似变换得到B，记作\(A \sim B\)；
 
 \paragraph{基本步骤}
 求正交矩阵Q，Q不唯一
-\begin{itemize}
+\begin{enumerate}
     \item 求A的特征值\(\lambda_1, ..., \lambda_n\)
     \item 求特征值对应的特征向量\(\xi_1, ..., \xi_n\)
     \item 将特征向量正交化，单位化为\(\eta_1, ..., \eta_n\)
     \item 令\(Q = [\eta_1, ..., \eta_n]\)，则Q为正交矩阵，且\(Q^{-1}AQ = Q^TAQ = \Lambda\)
-\end{itemize}
+\end{enumerate}
 
 
 
@@ -533,6 +530,20 @@ A，B为相似矩阵，对A进行相似变换得到B，记作\(A \sim B\)；
 \end{bmatrix}, P = (\alpha_1, \alpha_2, \alpha_3)\)可逆，则矩阵A关于特征值\(\lambda = 1\)的特征向量是?
 \subparagraph{解}
 当\(P^{-1}AP = \Lambda\)时，P的每一列都是A的相应的特征向量，故\(\lambda = 1\)的特征向量为\(k_1\alpha + k_2\alpha,\ \ k_1, k_2\)不全为0。
+
+\paragraph{相似对角求矩阵}
+已知矩阵\(A = \begin{bmatrix}
+    3 & 1 & 2 \\ 
+    0 & 2 & a \\ 
+    0 & 0 & 3
+\end{bmatrix}\)和对角矩阵相似，则\(a=\)?
+\subparagraph{解}
+\begin{flalign}
+    A \sim \Lambda & \Leftrightarrow \lambda = 3\text{有两个线性无关特征向量} \nonumber \\ 
+    & \Leftrightarrow (3E - A)x = 0\text{有两个线性无关解} \nonumber \\ 
+    & \Leftrightarrow r(3E - A) = 1 \nonumber
+\end{flalign}
+故\(a = -2\)
 
 
 

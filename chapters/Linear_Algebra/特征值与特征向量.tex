@@ -12,7 +12,7 @@
 -a_{21} & \lambda - a_{22} & ... & -a_{2n} \\
 ... \\ 
 -a_{n1} & ... & ... & \lambda - a_{nn}
-\end{vmatrix} = 0\]是未知量\(\lambda\)的n次方程，有n个根，\(\lambda E - A\)为特征矩阵，\(|\lambda E - A|\)为特性多项式；
+\end{vmatrix} = 0\]是未知量\(\lambda\)的n次方程，有n个根，\(\lambda E - A\)为\textbf{特征矩阵}，\(|\lambda E - A|\)为\textbf{特性多项式}；
 
 先根据特征方程求出特征值，再解齐次线性方程组的特征向量；
 
@@ -32,19 +32,16 @@
 
 
 \section{特征值性质}
-
-\(\lambda_0\)是A的特征值\(\Leftrightarrow |\lambda_0E - A| = 0\)
-
-\(\lambda_0\)不是A的特征值\(\Leftrightarrow |\lambda_0E - A| \neq 0 \Leftrightarrow\)矩阵可逆，满秩
-
-若\(|aA + bE| = 0, a \neq 0\)，则\(-\dfrac{b}{a}\)是A的特征值
-
-若0是A的特征值，则\(|A| = 0 \Leftrightarrow A\text{不可逆}\)
-
-若\(\lambda_1, ..., \lambda_n\)是A的n个特征值，则\(\begin{cases}
-|A| = \lambda_1\lambda_2...\lambda_n \\ 
-tr(A) = \lambda_1 + ... + \lambda_n
-\end{cases}\)
+\begin{itemize}
+    \item \(\lambda_0\)是A的特征值\(\Leftrightarrow |\lambda_0E - A| = 0\)
+    \item \(\lambda_0\)不是A的特征值\(\Leftrightarrow |\lambda_0E - A| \neq 0 \Leftrightarrow\)矩阵可逆，满秩
+    \item 若\(|aA + bE| = 0, a \neq 0\)，则\(-\dfrac{b}{a}\)是A的特征值
+    \item 若0是A的特征值，则\(|A| = 0 \Leftrightarrow A\text{不可逆}\)
+    \item 若\(\lambda_1, ..., \lambda_n\)是A的n个特征值，则\(\begin{cases}
+        |A| = \lambda_1\lambda_2...\lambda_n \\ 
+        tr(A) = \lambda_1 + ... + \lambda_n
+    \end{cases}\)
+\end{itemize}
 
 以3阶矩阵为例，设\(A = \begin{bmatrix}
 a_{11} & a_{12} & a_{13} \\ 
@@ -144,15 +141,6 @@ a_{31} & a_{32} & a_{33}
 \end{tabular}
 \end{center}
 
-\section{秩为1的n阶矩阵}
-秩为1的n阶矩阵\(A = \alpha\beta^T\)
-
-\subsubsection{特征值}
-\[\lambda_1 = ... = \lambda_{n - 1} = 0\]
-\[\lambda_n = \sum_{i = 1}^na_{ii} = \beta^T\alpha\]
-
-\paragraph{证明}
-\(r(A) = 1\)，则\(Ax = 0\)有n - 1个线性无关解\(a_1, ... a_{n - 1}\)，则\(Aa_1 = 0 = 0a_1, ..., Aa_{n - 1} = 0 = 0a_{n - 1}\)，则\(\lambda = 0\)至少A的\(n - 1\)重特征值，有\(\displaystyle\sum_{i = 1}^n\lambda_i = \sum_{i = 1}^na_{ii}\)，则\(\lambda_n = \displaystyle\sum_{i = 1}^na_{ii} = \beta^T\alpha\)
 
 
 \section{例}
