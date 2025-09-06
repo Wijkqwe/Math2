@@ -2,7 +2,7 @@
 \chapter{向量}
 
 
-\subsection{概念}
+\section{概念}
 
 \section{运算}
 
@@ -18,11 +18,11 @@
 \(k\alpha = [ka_1, ..., ka_n]\)
 
 
-\paragraph{内积}
+\subsection{内积}
 设\(\alpha = [a_1, ..., a_n]^T, \beta = [b_1, ..., b_n]^T\)，则称\[\alpha^T\beta = \sum_{i = 1}^{n} a_ib_i = a_1b_1 + ... + a_nb_n\]为\(\alpha, \beta\)的内积，记作\((\alpha, \beta) = \alpha^T\beta\)
 
 
-\subsubsection{正交}
+\subsection{正交}
 当\(\alpha^T\beta = 0\)时，\(\alpha, \beta\)是正交向量。
 
 \paragraph{施密特正交化公式}
@@ -31,24 +31,19 @@
 则\(\beta_1, \beta_2, \beta_3\)相互正交
 
 
-\subsubsection{模}
+\subsection{模}
 \(||\alpha|| = \displaystyle \sqrt{\sum_{i = 1}^{n}a_i^2}\)称为\(\alpha\)的模（长度）
 
 当\(||\alpha|| = 1\)时，\(\alpha\)为单位向量
 
 
-\subsubsection{标准正交向量组}
+\subsection{标准正交向量组}
 若列向量组\(\alpha_1, ..., \alpha_n\)满足\[\alpha_i^T\alpha_j = 
 \begin{cases}
 0, i \neq j \\ 
 1, i = j
 \end{cases}
 \]则称为标准或单位正交向量组，也叫规范正交基。
-
-
-\section{正交矩阵}
-设A为n阶方阵，满足\(A^TA = E\)，则A为正交矩阵。
-\[A\text{为正交矩阵} \Leftrightarrow A^TA = E \Leftrightarrow A^T = A^{-1} \Leftrightarrow A\text{行(列)向量组是规范正交基}\]
 
 
 \section{线性相关}
