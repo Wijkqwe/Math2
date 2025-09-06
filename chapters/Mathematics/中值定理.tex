@@ -1,0 +1,168 @@
+
+\chapter{中值定理}
+
+\subsection{涉及函数}
+设\(f(x)\)在\([a, b]\)上连续，则
+\paragraph{有界与最值定理}
+\(m <= f(x) <= M\)，其中\(m, M\)为\(f(x)\)在\([a, b]\)上最小值与最大值；
+
+\paragraph{介值定理}
+当\(m <= \mu <= M\)，存在\(\xi \in [a, b]\)，使得\(f(\xi) = \mu\)；
+
+\paragraph{平均值定理}
+当\(a < x_1 < ... < x_n < b\)时，在\([x_1, x_n]\)内至少存在一点\(\xi\)使得\(f(\xi) = \dfrac{f(x_1) + f(x_2) + ... + f(x_n)}{n}\)；
+
+\paragraph{零点定理}
+当\(f(a) * f(b) < 0\)时，存在\(\xi \in (a, b)\)，使得\(f(\xi) = 0\)；
+
+\subsection{涉及导数(微分)}
+\paragraph{费马定理}
+设\(f(x)\)在点\(x_0\)处满足\(\begin{cases}
+\text{可导} \\ 
+\text{取极值}
+\end{cases}\)，则\(f'(x) = 0\)；
+
+\paragraph{导数零点定理}
+设\(f(x)\)在\([a, b]\)上可导，证明当\(f'_+(a) * f'_-(b) < 0\)时，存在\(\xi \in (a, b)\)，使得\(f'(\xi) = 0\)
+
+\subsubsection{罗尔定理}
+设\(f(x)\)，满足\(\begin{cases}
+\text{在}[a, b]\text{上连续} \\ 
+\text{在}(a, b)\text{内可导} \\ 
+f(a) = f(b)
+\end{cases}\)，则存在\(\xi \in (a, b)\)使得\(f'(\xi) = 0\)；
+
+设\(f(x)\)在\((a, b)\)内可导，\(\displaystyle\lim_{x \to a^+}f(x) = \lim_{x \to b^-}f(x) = A\)，则在\((a, b)\)内至少存在一点\(\xi\)，使得\(f'(\xi) = 0\)；A可是有限数也可是无穷，区间\((a, b)\)可有限区间也可无穷区间；\textbf{}
+
+\paragraph{构造辅助函数}
+()乘积求导公式的逆用
+\[[f(x)f(x)]' = [f^2(x)]' = 2f(x) * f'(x)\]
+对于\(f(x)f'(x)\)，令\(F(x) = f^2(x)\)；
+\[[f(x) * f'(x)]' = [f'(x)]^2 + f(x)f''(x)\]
+对于\([f'(x)]^2 + f(x)f''(x)\)，令\(F(x) = f(x) * f'(x)\)；
+\[[f(x)e^{\varphi(x)}]' = f'(x)e^{\varphi(x)} + f(x)e^{\varphi(x)} * \varphi'(x) = [f'(x) + f(x)\varphi'(x)]e^{\varphi(x)}\]
+对于\(f'(x) + f(x)\varphi'(x)\)，令\(F(x) = f(x)e^{\varphi(x)}\),
+
+\(\varphi(x) = x \Rightarrow f'(x) + f(x), F(x) = f(x)e^x\)
+
+\(\varphi(x) = -x \Rightarrow f'(x) - f(x), F(x) = f(x)e^{-x}\)
+
+\(\varphi(x) = kx \Rightarrow f'(x) + kf(x), F(x) = f(x)e^{kx}\)
+
+()商的求导公式\((\dfrac{u}{v})' = \dfrac{u'v - uv'}{v^2}\)的逆用
+
+\[[\dfrac{f(x)}{x}]' = \dfrac{xf'(x) - f(x)}{x^2}\]
+对于\(xf'(x) - f(x), x \neq 0\)，令\(F(x) = \dfrac{f(x)}{x}\)
+\[[\dfrac{f'(x)}{f(x)}]' = \dfrac{f''(x)f(x) - [f'(x)]^2}{f^2(x)}\]
+对于\(f''(x)f(x) - [f'(x)]^2, f(x) \neq 0\)，令\(F(x) = \dfrac{f'(x)}{f(x)}\)
+\[[\ln f(x)]' = \dfrac{f'(x)}{f(x)}, [\ln f(x)]'' = \dfrac{f''(x)f(x) - [f'(x)]^2}{f^2(x)}\]
+对于\(f''(x)f(x) - [f'(x)]^2, f(x) > 0\)，令\(F(x) = \ln f(x)\)
+
+\subsubsection{拉格朗日中值定理}
+设\(f(x)\)满足\(\begin{cases}
+\text{在}[a, b]\text{上连续} \\ 
+\text{在}(a, b)\text{内可导}
+\end{cases}\)，则存在\(\xi \in (a, b)\)，使得\(f(b) - f(a) = f'(\xi)(b - a)\)，\(f'(\xi) = \dfrac{f(b) - f(a)}{b - a}\)
+
+\subsubsection{柯西中值定理}
+设\(f(x), g(x)\)满足\(\begin{cases}
+[a, b]\text{上连续} \\ 
+(a, b)\text{内可导} \\ 
+g'(x) \neq 0
+\end{cases}\)，则存在\(\xi \in (a, b)\)，使得\(\dfrac{f(b) - f(a)}{g(b) - g(a)} = \dfrac{f'(\xi)}{g'(\xi)}\)
+
+\subsubsection{泰勒公式}
+
+\paragraph{带拉格朗日余项的n阶泰勒公式}
+设\(f(x)\)在点\(x_0\)的某个邻域内n + 1阶导数存在，则对该邻域内有任意点x，有\[f(x) = f(x_0) + f'(x_0)(x - x_0) + ... + \dfrac{1}{n!}f^{(n)}(x_0)(x - x_0)^n + \dfrac{f^{(n + 1)}(\xi)}{(n + 1)!}(x - x_0)^{n + 1}\]
+
+\paragraph{带佩亚诺余项的n阶泰勒公式}
+设\(f(x)\)在点\(x_0\)处\(n\)阶可导，则存在\(x_0\)的一个邻域，对于该邻域内的任意点x，有\[f(x) = f(x_0) + f'(x)(x - x_0) + ... + \dfrac{1}{n!}f^{(n)}(x_0)(x - x_0)^n + 0((x - x_0)^n)\]
+
+\paragraph{麦克劳林公式}
+当\(x_0 = 0\)时的泰勒公式为麦克劳林公式；
+
+
+\subsection{微分等式}
+
+\subsubsection{零点定理(证明根的存在性)}
+
+\subsubsection{单调性(证明根的唯一性)}
+
+\subsubsection{罗尔定理及推论}
+
+\subsubsection{实系数奇次方程至少一个实根}
+
+\subsection{微分不等式}
+
+\subsubsection{用函数性态证明不等式}
+包括单调性，凹凸性，最值等
+
+()若有\(f'(x) >= 0, a < x < b\)，则有\(f(a) <= f(x) <= f(b)\)
+
+()若有\(f''(x) >= 0, a < x < b\)，则有\(f'(a) <= f'(x) <= f'(b)\)
+
+()()当\(f'(a) > 0\)时，\(f'(x) > 0 \Rightarrow f(x)\)单调增加
+
+()()当\(f'(b) < 0\)时，\(f'(x) < 0 \Rightarrow f(x)\)单调减少
+
+()设\(f(x)\)在\(I\)内连续，且有唯一极值点\(x_0\)，则\[\begin{cases}
+x_0\text{为极大值时，即为I内的最大值点，有}f(x_0) >= f(x) \\ 
+x_0\text{为极小值时，即为I内的最小值点，有}f(x_0) <= f(x)
+\end{cases}\]
+
+()若有\(f''(x) > 0, a < x < b, f(a) = f(b) = 0\)，则有\(f(x) < 0\)
+
+
+\subsubsection{用常数变量化证明不等式}
+若不等式中都是常数，则可将其中一个或几个常数变量化；
+
+
+\subsubsection{用中值定理证明不等式}
+
+
+\subsection{例}
+
+\subsubsection{0}
+设实数\(a_0, a_1, ..., a_n\)满足\(a_0 + \dfrac{a_1}{2} + ... + \dfrac{a_n}{n + 1} = 0\)，证明：方程\(a_0 + a_1x + a_2x^2 + ... + a_nx^n = 0\)在 \((0, 1)\)内至少一根。
+
+\paragraph{解}
+设\(F(x) = a_0x + \dfrac{a_1}{2}x^2 + \dfrac{a_2}{3}x^3 + ... + \dfrac{a_n}{n + 1}x^{n + 1}, 0 <= x <= 1\)，显然\(F(0) = 0\)，且\(F(1) = a_0 + ... + \dfrac{a_n}{n + 1} = 0\)，由罗尔定理知，存在\(\xi \in (0, 1), F'(\xi) = 0\)
+
+
+\subsubsection{0}
+已知\(f(x)\)在\([0, 1]\)上连续，\((0, 1)\)内可导，且\(f(0) = 0, f(1) = 1\)，证明：存在\(\eta, \tau \in (0, 1), \eta \neq \tau\)，使得\(f'(\eta)f'(\tau) = 1\)
+
+\paragraph{证明}
+易知存在\(\xi \in (0, 1)\)，使得\(f(\xi) = 1 - \xi\)，用\(\xi\)将\([0, 1]\)划分为\([0, \xi], [\xi, 1]\)由拉格朗日中值定理有\[f(\xi) - f(0) = f'(\eta)(\xi - 0), \eta \in (0, \xi)\]
+\[f(1) - f(\xi) = f'(\tau)(1 - \xi), \tau \in (\xi, 1)\]
+则\(f'(\eta) = \dfrac{f(\xi) - f(0)}{\xi} = \dfrac{1 - \xi}{\xi}, f'(\tau) = \dfrac{f(1) - f(\xi)}{1 - \xi} = \dfrac{\xi}{1 - \xi}\)，故\(f'(\eta)f'(\tau) = 1\)
+
+
+\subsubsection{0}
+设函数\(f(x)\)在\([0, 1]\)上二阶可导，且\(f(0) = f(1) = 0, \displaystyle \min_{x \in [0, 1]}\{f(x)\} = -1\)，证明：存在\(\xi \in (0, 1)\)，使得\(f''(\xi) >= 8\)
+
+\paragraph{证明}
+利用一阶泰勒公式，由于\(f(x)\)在[0, 1]上连续，因此\(\exists x_0 \in [0, 1]\)使得\[f(x_0) = \displaystyle\min_{x \in [0, 1]}\{f(x)\} = -1\]
+由于\(f(0) = f(1) = 0 > f(x_0)\)，因此\(x_0 \in (0, 1), f'(x_0) = 0\)；由一阶泰勒公式得\[f(x) = f(x_0) + f'(x_0)(x - x_0) + \dfrac{1}{2!}f''(\eta)(x - x_0)^2 = -1 + \dfrac{1}{2}f''(\eta)(x - x_0)^2\]
+
+于是当\(x = 0\)时，\(f(0) = -1 + \dfrac{1}{2}f''(\xi_1)x_0^2\)，即\(f''(\xi_1) = \dfrac{2}{x_0^2}, \xi_1\)是对应\(x = 0\)是的\(\eta\)
+
+当\(x = 1\)时，\(f(1) = -1 + \dfrac{1}{2}f''(\xi_2)(1 - x_0)^2\)，即\(f''(\xi_2) = \dfrac{2}{(1 - x_0)^2}, \xi_2\)是对应\(x = 1\)是的\(\eta\)
+
+记\(f''(\xi) = \max\{f''(\xi_1), f''(\xi_2)\}, \xi = \xi_1 or \xi_2\)，于是\(\exists \xi \in (0, 1)\)使得\(f''(\xi) = 2\max\{\dfrac{1}{x_0^2}, \dfrac{1}{(1 - x_0)^2}\} >= 2 * \dfrac{1}{(\dfrac{1}{2})^2} = 8\)
+
+若要证明\(\exists \xi \in (a, b)\)使得\(f''(\xi)\)大于或小于某个非零常数时，往往利用泰勒公式；
+
+
+
+
+
+
+
+
+
+
+
+
+
