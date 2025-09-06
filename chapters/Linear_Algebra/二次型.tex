@@ -1,0 +1,362 @@
+
+\chapter{二次型}
+
+\section{概念}
+
+\subsection{定义}
+n元变量\(x_1, ..., x_n\)的二次齐次多项式
+\[f(x_1,..., x_n) = a_{11}x_1^2 + 2a_{12}x_1x_2 + ... + 2a_{1n}x_1x_n + a_{22}x_2^2 + ... + 2a_{2n}x_2x_n + ... + a_{nn}x_n^2\]
+称为n元二次型，简称二次型。
+
+只考虑系数\(a_{ij} \in R\)的情况，又称实二次型。
+\begin{flalign}
+    f(x_1, ..., x_n) = & a_{11}x_1^2 + a_{12}x_1x_2 + ... + a_{1n}x_1x_n \nonumber \\ 
+    & + a_{21}x_2x_1 + a_{22}x_2^2 + ... + a_{2n}x_2x_n + ... \nonumber \\ 
+    & + a_{n1}x_nx_1 + ... + a_{nn}x_n^2 \\ 
+    = & \sum_{i = 1}^n\sum_{j = 1}^na_{ij}x_ix_j
+\end{flalign}
+其中（1）为完全展开式，（2）为和式。
+
+\subsection{矩阵表示}
+令\[A = \begin{bmatrix}
+    a_{11} & ... & a_{1n} \\ 
+    a_{21} & ... & a_{2n} \\ 
+    ... & ... & ... \\ 
+    a_{n1} & ... & a_{nn}
+\end{bmatrix}, x = \begin{bmatrix}
+    x_1 \\ 
+    x_2 \\ 
+    ... \\ 
+    x_n
+\end{bmatrix}\]
+则二次型可表示为（矩阵表达式）\[f(x) = x^TAx\]
+实对称矩阵A称为二次型f(x)的矩阵；二次型有不同的写法，使用对称矩阵表示的二次型写法唯一。
+
+\section{性质}
+
+\begin{itemize}
+    \item 二次型系数矩阵A的秩为二次型\(f(x)\)的秩
+\end{itemize}
+
+
+\section{合同变换}
+
+\subsection{线性变换}
+
+\subsubsection{定义}
+
+对n元二次型\(f(x_1, ..., x_n)\)，若令
+\[\begin{cases}
+    x_1 = c_{11}y_1 + c_{12}y_2 + ... + c_{1n}y_n \\ 
+    x_2 = c_{21}y_1 + c_{22}y_2 + ... + c_{2n}y_n \\ 
+    ... \\ 
+    x_n = c_{n1}y_1 + c_{n2}y_2 + ... + c_{nn}y_n
+\end{cases}\tag{*}\]
+记\(x = \begin{bmatrix}
+    x_1 \\ 
+    ... \\ 
+    x_n
+\end{bmatrix}, C = \begin{bmatrix}
+    c_{11} & ... & ... \\ 
+    ... & & ... \\ 
+    c_{n1} & ... & c_{nn}
+\end{bmatrix}, y = \begin{bmatrix}
+    y_1 \\ 
+    ... \\ 
+    y_n
+\end{bmatrix}\)，则(*)式（线性变换）可写为\[x = Cy\]
+(*)称为线性变换；若线性变换的系数矩阵C可逆\footnote{\mymatrix}，则称为可逆线性变换，则\[f(x) = (Cy)^TA(Cy) = y^T(C^TAC)y\]
+记\(B = C^TAC\)，则\[f(x) = y^TBy = g(y)\]
+即二次型f(x)通过线性变换得到二次型g(y)
+
+
+\subsection{矩阵合同}
+
+\subsubsection{定义}
+设A，B为n阶矩阵，若存在可逆矩阵C，使得\[C^TAC = B\]
+则称A与B合同，记作\(A \simeq B\)，对应二次型\(f(x), g(y)\)为合同二次型。
+
+在二次型背景下，A为f(x)的“形态”，B为g(y)的“形态”，而f(x)=g(y)，故A，B分别代表同一事物在不同参照系\(x, y\)下的不同“形态”。
+
+综上，二次型中，A与B的合同指同一二次型在可逆线性变换下的两个不同状态的联系。
+
+
+\subsubsection{性质}
+\begin{itemize}
+    \item \(A \simeq A\)反身性
+    \item 若\(A \simeq B, B \simeq A\)对称性
+    \item 若\(A \simeq B, B \simeq C\)，则\(A \simeq C\)传递性
+    \item \(A \simeq B, r(A) = r(B)\)，可逆线性变换不会改变二次型的秩
+    \item 与对称矩阵合同的矩阵必是对称矩阵
+\end{itemize}
+
+
+\subsubsection{充要条件}
+两个二次型合同的充要条件是有相同的正负惯性指数，或有相同的秩及正（或负）惯性指数，或有相同的正负特征值数。
+
+
+\subsection{标准形与规范形}
+
+若二次型中只有平方项，没有交叉项（交叉项系数为0）则其为标准形（一般不唯一）
+
+若标准形中，系数取值范围为\{1, -1, 0\}，则其为规范形
+
+
+\subsubsection{定理}
+\begin{itemize}
+    \item 任何二次型均可通过配方法（作可逆线性变换\(x = Cy\)）化成标准形及规范形；用矩阵描述即：任何实对称矩阵A，必存在可逆矩阵C（不唯一），使得\(C^TAC = \Lambda\)其中\[\Lambda = \text{标准形}\begin{bmatrix}
+        d_1 \\ 
+        & d_2 \\ 
+        & & ... \\ 
+        & & & d_n
+    \end{bmatrix}\ ||\ \Lambda = \text{规范形}\begin{bmatrix}
+        1 \\ 
+        & ... \\ 
+        & & -1 \\ 
+        & & & ... \\ 
+        & & & & 0
+    \end{bmatrix}\]
+    此时C的列向量一般不为A的特征向量，\(d_i\)一般不为A特征值；
+    \item 任何二次型可通过正交变换\(x = Qy\)化为标准形；用矩阵描述即：任何实对称矩阵A，一定存在正交矩阵Q（不唯一），使得\(Q^{-1}AQ = Q^TAQ = \Lambda\)，其中\[\Lambda = \begin{bmatrix}
+        \lambda_1 \\ 
+        & ... \\ 
+        & & \lambda_n
+    \end{bmatrix}\]
+    此时Q的列向量均为A的特征向量，\(\lambda_i\)均为A的特征值；
+\end{itemize}
+
+
+\section{惯性定理}
+无论选取怎样的可逆线性变换，将二次型化成标准形或规范形，其中正项个数p，负项个数q都是不变的，p为正惯性指数，q为负惯性指数；
+
+若二次型的秩为r，则\(r = p + q\)
+
+
+
+
+\section{计算}
+
+\subsection{求可逆线性变换C}
+
+\subsubsection{配方法}
+\begin{enumerate}
+    \item 对二次型配方
+    \item 作线性变换
+    \item 将二次型化成标准形，
+    \item 将线性变换表示成矩阵形式，即\(x = Cy\)
+\end{enumerate}
+
+将某个变量的平方项及其有关的混合项一次配完，配成一个完全平方，减少一个未配完全平方的变量，使得总的平方项的项数小于等于变量个数。目的是保证所用变换是可逆的；
+
+当总的完全平方项的项数小于变量个数时，如三元二次型，完全平方项个数是2，应视作\(f(x_1, x_2, x_3) = (...)^2 + a(...)^2 + 0x_3^2\)，变换为\(\begin{cases}
+    y_1 = ... \\ 
+    y_2 = ... \\ 
+    y_3 = x_3
+\end{cases}\)
+
+若有平方项，应将平方项及其混合项配成完全平方；若没有平方项，作可逆线性变换\(\begin{cases}
+    x_1 = y_1 + y_2 \\ 
+    x_2 = y_1 - y_2 \\ 
+    x_3 = y_3
+\end{cases}\)，使其出现完全平方项，然后再配平方；
+
+配方法提供了\begin{itemize}
+    \item 所作的可逆线性变换
+    \item 与A合同的对角矩阵
+    \item 二次型（或A）的秩
+    \item 正负惯性指数
+    \item 是否正定
+\end{itemize}
+
+
+\subsection{求正交变换Q}
+
+\subsubsection{化为标准形}
+求正交矩阵Q，Q不唯一
+\begin{itemize}
+    \item 求A的特征值\(\lambda_1, ..., \lambda_n\)
+    \item 求特征值对应的特征向量\(\xi_1, ..., \xi_n\)
+    \item 将特征向量正交化，单位化为\(\eta_1, ..., \eta_n\)
+    \item 令\(Q = [\eta_1, ..., \eta_n]\)，则Q为正交矩阵，且\(Q^{-1}AQ = Q^TAQ = \Lambda\)
+\end{itemize}
+
+\subsubsection{化为二次型}
+\begin{itemize}
+    \item 分别求出使两个二次型化为对角矩阵的正交矩阵\(Q_1, Q_2\)
+    \item 则\(Q_1^TAQ_1 = Q_2^TBQ_2\)，故\((Q_1Q_2^T)^TA(Q_1Q_2^T) = B\)
+    \item 故\(Q = Q_1Q_2^T\)为所求矩阵
+\end{itemize}
+
+
+\subsubsection{性质}
+\begin{itemize}
+    \item 只能化二次型为标准形，不能化为规范形（除非特征值\(\in \{0, -1, 1\}\)）
+    \item 正交变换不唯一，化成的标准形唯一（不考虑特征值顺序），为\(\lambda_1y_1^2 + ... + \lambda_ny_n^2\)
+    \item 对多重根，在解方程组时同时考虑正交化
+\end{itemize}
+
+
+\subsection{例}
+
+\subsubsection{正交变换化为标准形}
+设二次型f在正交变换\(x = Py\)下的标准形为\(2y_1^2 + y_2^2 - y_3^2\)，其中\(P = [e_1, e_2, e_3]\)，若\(Q = [e_1, -e_3, e_2]\)则二次型f在\(x = Qy\)下的标准形为?(\(2y_1^2 - y_2^2 + y_3^2\))
+
+\paragraph{解}
+\(e_1, e_2, e_3\)分别是A对应于特征值2, 1, -1的特征向量，于是\(-e_3\)对应特征值-1的特征向量，故
+
+
+\subsubsection{正交变换化为二次型}
+设二次型\(f(x_1, x_2) = x_1^2 - 4x_1x_2 + ax_2^2\)经过正交变换\(\begin{bmatrix}
+    x_1 \\ 
+    x_2
+\end{bmatrix} = Q\begin{bmatrix}
+    y_1 \\ 
+    y_2
+\end{bmatrix}\)化为二次型\(g(y_1, y_2) = 4y_1^2 + 4y_1y_2 + by_2^2\)
+\begin{enumerate}
+    \item 求a，b值
+    \item 求正交矩阵Q
+\end{enumerate}
+
+\paragraph{解1}
+由题可知，二次型f，g的矩阵分别为\(A = \begin{bmatrix}
+    1 & -2 \\ 
+    -2 & a
+\end{bmatrix}, B = \begin{bmatrix}
+    4 & 2 \\ 
+    2 & b
+\end{bmatrix}\)，且\(Q^TAQ = B\)由于Q为正交矩阵，于是有\(Q^{-1}AQ = B\)，因此\(tr(A) = tr(B), |A| = |B|\)，得\(a = 4, b = 1\)
+
+\paragraph{解2}
+由\(|\lambda E - A| = |\lambda E - B| = \lambda(\lambda - 5)\)得特征值为\(0, 5\)
+
+矩阵A对应特征值\(\lambda_1 = 0\)得特征向量\(a_1\)，对应特征值\(\lambda_2 = 5\)得特征向量\(a_2\)。令\(Q_1 = [a_1, a_2]\)，则\(Q_1\)为正交矩阵
+
+矩阵B对应特征值\(\lambda_1 = 0\)得特征向量\(b_1\)，对应特征值\(\lambda_2 = 5\)得特征向量\(b_2\)。令\(Q_2 = [b_1, b_2]\)，则\(Q_2\)为正交矩阵
+
+由\(Q_1^TAQ_1 = Q_2^TBQ_2, \therefore\ Q = Q_1Q_2^T\)
+
+
+\subsubsection{惯性指数}
+设二次型\(f(x_1, x_2, x_3) = x_1^2 - x_2^2 + 2ax_1x_3 + 4x_2x_3\)的负惯性指数为1，则a的取值范围为?
+
+\paragraph{解}
+\(f = x_1^2 + 2ax_1x_3 + a^2x_3^2 - x_2^2 + 4x_2x_3 - 4x_3^2 + 4x_3^2 - a^2x_3^2 = (x_1 + ax_3)^2 - (x_2 - 2x_3)^2 + (4 - a^2)x_3^2\)
+
+\(\because\ 4 - a^2 >= 0, \therefore\ -2 <= a <= 2\)
+
+
+\section{正定二次型}
+
+\subsection{定义}
+n元二次型\(f(...) = x^TAx\)，若对任意的\(x = [x_1,..., x_n]^T \neq 0\)均有\(x^TAx > 0\)，则称f为正定二次型，对应矩阵A为正定矩阵。
+
+
+\subsection{充要条件}
+\begin{flalign}
+    & n\text{元二次型}f = x^TAx\text{正定} \nonumber \\ 
+    \Leftrightarrow & \text{对任意}x \neq 0, \text{有}x^TAx > 0 \nonumber \\ 
+    \Leftrightarrow & f\text{的正惯性指数}p = n \nonumber \\ 
+    \Leftrightarrow & \text{存在可逆矩阵}D, \text{使}A = D^TD \nonumber \\ 
+    \Leftrightarrow & A \simeq E \nonumber \\ 
+    \Leftrightarrow & A\text{的特征值}\lambda_i > 0 \nonumber \\ 
+    \Leftrightarrow & A\text{的全部顺序主子式均大于}0 \nonumber \\ 
+    \Leftrightarrow & A^{-1}\text{正定} \nonumber
+\end{flalign}
+
+
+\subsection{顺序主子式}
+设\(A = (a_{ij})_{n * n}\)，则
+\[|A_k| = \begin{vmatrix}
+    a_{11} & a_{12} & ... & a_{1k} \\ 
+    a_{21} & a_{22} & ... & a_{2k} \\ 
+    ... \\ 
+    a_{k1} & a_{k2} & ... & a_{kk}
+\end{vmatrix}\]
+称为n阶矩阵A的k阶顺序主子式（或左上角主子式），
+
+
+\subsection{必要条件}
+\begin{itemize}
+    \item \(a_{ii} > 0, (i = 1, ..., n)\)
+    \item \(|A| > 0\)
+    \item \(A^*\)正定
+\end{itemize}
+
+\subsection{例}
+
+\subsubsection{判别正定性}
+判别\(f(x_1, x_2, x_3) = 2x_1^2 + 2x_2^2 + 2x_3^2 + 2x_1x_2 + 2x_1x_3 + 2x_2x_3\)的正定性
+
+\paragraph{方法一}
+判断各阶顺序主子式\[2 > 0, \begin{vmatrix}
+    2 & 1 \\ 
+    1 & 2
+\end{vmatrix} = 3 > 0, |A| = 4 > 0\]
+
+\paragraph{方法二}
+判断特征值是否全部大于0
+
+\paragraph{方法三}
+配方法化为标准形，判断正惯性指数p是否等于n
+
+\paragraph{方法四}
+定义验证是否对任意\(x = [x_1, x_2, x_3]^T \neq 0\)有\(x^TAx > 0\)\[f = (x_1 + x_2)^2 + (x_1 + x_3)^2 + (x_2 + x_3)^2\]
+故有\(f >= 0\)，且\[f = 0 \Leftrightarrow \begin{cases}
+    x_1 + x_2 = 0 \\ 
+    x_1 + x_3 = 0 \\ 
+    x_2 + x_3 = 0
+\end{cases}\tag{*}\]
+方程组(*)的系数行列式\( = 2 \neq 0\)，故(*)只有零解，故\(x = [x_1, x_2, x_3]^T \neq 0\)时\(f > 0\)
+
+\subparagraph{注}
+对\(f = (...)^2 + (...)^2 + ...\)可直接计算系数行列式
+
+
+\subsubsection{判断二次型矩阵}
+设矩阵\[B = \begin{bmatrix}
+    1 & 2 & 3 \\ 
+    -2 & 0 & 1 \\ 
+    0 & 4 & 5
+\end{bmatrix}, x = \begin{bmatrix}
+    x_1 \\ 
+    x_2 \\ 
+    x_3
+\end{bmatrix}\]问\(f = x^TBx\)是否为关于\(x_1, x_2, x_3\)的二次型？B是否为f的矩阵？写出\(f\)的矩阵表达式
+
+\(f\)是关于\(x_1, x_2, x_3\)的二次型，B不是f的矩阵
+\paragraph{方法一}
+由于
+\begin{flalign}
+    f & = \begin{bmatrix}
+        x_1, & x_2, & x_3
+    \end{bmatrix}B\begin{bmatrix}
+        x_1 \\ 
+        x_2 \\ 
+        x_3
+    \end{bmatrix} \nonumber \\ 
+    & = \begin{bmatrix}
+        x_1, & x_2, & x_3
+    \end{bmatrix}\begin{bmatrix}
+        x_1 + 2x_2 + 3x_3 \\ 
+        -2x_1 + x_3 \\ 
+        4x_2 + 5x_3
+    \end{bmatrix} \nonumber \\ 
+    & = x_1^2 + 5x_3^2 + 3x_1x_3 + 5x_2x_3 \nonumber
+\end{flalign}
+故矩阵为\[A = \begin{bmatrix}
+    1 & 0 & \dfrac{3}{2} \\ 
+    0 & 0 & \dfrac{5}{2} \\ 
+    \dfrac{3}{2} & \dfrac{5}{2} & 5
+\end{bmatrix}\]
+
+\paragraph{方法二}
+注意到\(x^TBx\)是\(1 * 1\)矩阵，故转置不变，故有
+\begin{flalign}
+    f & = x^TBx = (x^TBx)^T = \dfrac{1}{2}[x^TBx + (x^TBx)^T] \nonumber \\ 
+    & = \dfrac{1}{2}(x^TBx + x^TB^Tx) = \dfrac{1}{2}x^T(B + B^T)x = x^T\dfrac{B + B^T}{2}x
+\end{flalign}
+故\[A = \dfrac{B + B^T}{2}\]
+
+
+
