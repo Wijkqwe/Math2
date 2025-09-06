@@ -1,0 +1,175 @@
+
+\chapter{数列}
+
+\subsubsection{定义}
+
+\subsubsection{前n项和}
+
+\begin{flalign}
+\sum_{k = 1}^nk & = \dfrac{n(n + 1)}{2} \nonumber \\ 
+\sum_{k = 1}^nk^2 & = \dfrac{n(n + 1)(n + 2)}{6} \nonumber \\ 
+\sum_{k = 1}^n\dfrac{1}{k(k + 1)} & = \dfrac{n}{n + 1} \nonumber
+\end{flalign}
+
+
+\subsubsection{重要数列}
+
+\paragraph{\((1 + \dfrac{1}{n})^n\)}
+单调递增，\(\displaystyle\lim_{x \to \infty}(1 + \dfrac{1}{n})^n = e\)
+
+
+\subsubsection{数列极限}
+
+\paragraph{定义}
+设数列\(\{x_n\}\)，若存在常数a，对于\(\forall \epsilon > 0, \exists N \in Z_+\)，使得当n > N时，\(|x_n - a| < \epsilon\)恒成立，则称常数a是数列的极限，或数列收敛于a，记为\(\displaystyle\lim_{n \to \infty}x_n = a\);
+
+若不存在a，则数列是发散的。
+
+\(\displaystyle \lim_{n \to \infty}x_n = a\)，当a = 0时，称\(x_n\)为\(n \to \infty\)时的无穷小量；
+
+\(\displaystyle \lim_{n \to \infty}x_n = \infty\)，称\(x_n\)为\(n \to \infty\)时的无穷大量；
+
+
+\paragraph{定理}
+若数列\(\{a_n\}\)收敛，则其任意子列\(\{a_{n_k}\}\)也收敛，且\(\displaystyle \lim_{k \to \infty}a_{n_k} = \lim_{n \to \infty}a_n\)。反之，若存在发散子列，则原数列发散；若至少两个收敛子列收敛到不同极限，则原数列发散。
+
+\paragraph{定理}
+对数列\(\{x_n\}\)若\(\displaystyle \lim_{n \to \infty}x_n = a\)存在，则a唯一；
+
+\paragraph{定理}
+对数列\(\{x_n\}\)若极限存在，则数列有界；
+
+\paragraph{定理}
+设\(\displaystyle \lim_{n \to \infty}x_n = a >(<) b\)，则存在\(N > 0\)，当n > N时，有\(x_n >(<) b\)；若从某项起有\(x_n >=(<=) b\)，且\(\lim_{n \to \infty}x_n = a\)，则\(a >=(<=) b\)，其中b为任意实数，如b = 0。
+
+
+\paragraph{四则运算}
+设\(\displaystyle \lim_{n \to \infty}x_n = a, \lim_{n \to \infty}y_n = b\)，则
+\[\lim_{n \to \infty}(x_n \pm y_n) = a \pm b\]
+\[\lim_{n \to \infty}x_ny_n = ab\]
+\[\lim_{n \to \infty}\dfrac{x_n}{y_n} = \dfrac{a}{b},b \neq 0\]
+
+
+\paragraph{海涅定理/归结原则}
+设\(f(x)\)在\(U(x_0, \delta)\)内有定义，则
+\[\displaystyle \lim_{x \to x_0}f(x) = A\text{存在} \Leftrightarrow \text{对任意}U(x_0, \delta)\text{内以}x_0\text{为极限的数列，极限}\lim_{x \to \infty}f(x_n) = A\text{存在}\]
+
+在极限存在的情况下，函数极限和数列极限可以相互转化；
+
+当\(x \to 0\)，取\(x_n = \dfrac{1}{n}\)，即若\(\displaystyle \lim_{x \to 0}f(x) = A\)，则\(\displaystyle \lim_{n \to \infty}f(\frac{1}{n}) = A\)
+
+当\(x \to \infty\)，取\(x_n = n\)，即若\(\displaystyle \lim_{x \to \infty}f(x) = A\)，则\(\displaystyle \lim_{n \to \infty}f(n) = A\)
+
+当\(x \to a\)，且\(x_n \neq a\)时，若\(\displaystyle \lim_{x \to a}f(x) = A\)，则\(\displaystyle \lim_{n \to \infty}f(x_n) = A\)
+
+\subsubsection{夹逼准则}
+
+设数列{\(x_n\)}，{\(y_n\)}，{\(z_n\)}满足以下条件：
+
+()从某项起，\(\exists n_0 \in N_+\)当n > \(n_0\)时，\(y_n <= x_n <= z_n\)
+
+()\(\displaystyle \lim_{n \to \infty}y_n = a, \displaystyle \lim_{n \to \infty}z_n = a\)
+
+则数列{\(x_n\)}极限存在，\(\displaystyle \lim_{n \to \infty}x_n = a\)
+
+\section{放缩}
+常用方法
+
+\subsection{简单放大缩小}
+\[
+\begin{cases}
+n * u_{min} <= u_1 + ... + u_n <= n * u_{max} \\ 
+\text{当}u_i >= 0, 1 * u_{max} <= u_1 + ... + u_n <= n * u_{max}
+\end{cases}
+\]
+
+\subsection{重要不等式}
+\begin{enumerate}
+    \item 设\(a, b\)实数，则\(|a \pm b| <= |a| + |b|, ||a| - |b|| <= |a - b|\)，即\[|a_1 \pm a_2 \pm ... \pm a_n| <= |a_1| + ... + |a_n|\]
+    \item \begin{itemize}
+        \item \(\sqrt{ab} <= \dfrac{a + b}{2} <= \sqrt{\dfrac{a^2 + b^2}{2}}(a, b >= 0)\)
+        \item \(\sqrt[3]{abc} <= \dfrac{a + b + c}{3} <= \sqrt{\dfrac{a^2 + b^2 + c^2}{3}}(a, b, c >= 0)\)
+        \item \(|ab| <= \dfrac{a^2 + b^2}{2}\)，若\(u_n > 0\)，则\(\dfrac{u_n}{n} = u_n * \dfrac{1}{n} <= \dfrac{u_n^2 + \dfrac{1}{n^2}}{2}\)
+    \end{itemize}
+    \item 设\(a >= b >= 0\)，则\(
+    \begin{cases}
+    m > 0, a^m >= b^m \\ 
+    m < 0, a^m <= b^m
+    \end{cases}\)
+    \item 若\(0 < a < x < b, 0 < c < y < d\)，则\(\dfrac{c}{b} < \dfrac{y}{x} < \dfrac{d}{a}\)，如\(n\pi < x < (n + 1)\pi, 2n < S(x) < 2(n + 1), \dfrac{2n}{(n + 1)\pi} < \dfrac{S(x)}{x} < \dfrac{2(n + 1)}{n\pi}\)
+    \item \(\sin x < x < \tan x(0 < x < \dfrac{\pi}{2})\)
+    \item \(\sin x < x(x > 0)\)，如当\(x_n > 0, x_{n + 1} = \sin x_n < x_n\)，故{\(x_n\)}单调递减
+    \item \(x < \tan x < \dfrac{4}{\pi}x, (0 < x < \dfrac{\pi}{4})\)
+    \item \(\sin x > \dfrac{2}{\pi}x, (0 < x < \dfrac{\pi}{2})\)
+    \item \(\arctan x <= x <= \arcsin x, (0 <= x <= 1\)，如当\(x_n > 0\)时，\(x_{n + 1} = \arctan x_n < x_n\)，故{\(x_n\)}单调递减
+    \item \(e^x >= x + 1\)，如当\(x_{n + 1} = e^x - 1\)时，\(e^x - 1 >= x_n, x_{n + 1} >= x_n\)
+    \item \(x - 1 >= \ln x, (x > 0)\)，如当\(x_n > 0\)时，\(x_{n + 1} = \ln x_n + 1, \ln x_n + 1 <= x_n, x_{n + 1} <= x_n\)
+    \item \(\dfrac{1}{1 + x} < \ln(1 + \dfrac{1}{x}) < \dfrac{1}{x}, (x > 0), \dfrac{x}{1 + x} < \ln(1 + n) < x, (x > 0)\)
+\end{enumerate}
+
+
+
+
+
+
+\subsection{3}
+利用闭区间上连续函数必有最大值与最小值；
+
+\subsection{压缩映射原理}
+需证明过程
+
+(1)对数列{\(x_n\)}，若存在常数k(0 < k< 1)，使得\(|x_{n + 1} - a| <= k|x_n - a|, n = 1, 2, ...\)，则{\(x_n\)}收敛于\(a\)；
+
+证明：\(0 <= |x_{n + 1} - a| <= k|x_n - a| <= k^2|x_{n - 1} - a| <= ... <= k^n|x_1 - a|\)，由\(\displaystyle \lim_{n \to \infty}k^n = 0\)，夹逼准则得\(\displaystyle \lim_{n \to \infty}|x_{n + 1} - a| = 0\)，即{\(x_n\)}收敛于\(a\)；
+
+(2)对数列{\(x_n\)}，若\(x_{n + 1} = f(x_n), n = 1, 2, ..., f(x)\)可导，\(a\)是\(f(x) = x\)的唯一解，且\(\forall x \in R, |f'(x)| <= k < 1\)，则{\(x_n\)}收敛于\(a\)；
+
+证明：\(|x_{n + 1} - a| = |f(x_n) - f(a)| = |f'(\xi)||x_n - a| <= k|x_n - a|\)，其中\(\xi\)介于\(a, x_n\)之间，由(1)得{\(x_n\)}收敛于\(a\)；
+
+
+\section{单调有界准则}
+单调有界数列必有极限，即若数列{\(x_n\)}单调增加（减少）且有上界（下界），则\(\displaystyle \lim_{x \to \infty}x_n\)存在；
+
+\paragraph{证明数列单调性}
+：\begin{itemize}
+    \item \(x_{n + 1} - x_n >(<) 0, \dfrac{x_{n + 1}}{x_n} >(<) 1\)
+    \item 数学归纳法；
+    \item 重要不等式（同夹逼准则）；
+    \item \(x_n - x_{n - 1}, x_{n - 1} - x_{n - 2}\)同号，则数列单调
+    \item 对\(x_{n + 1} = f(x_n)\)，\(x_n \in\)区间I\begin{itemize}
+        \item 若\(f'(x) > 0\)，则数列单调，且\(\begin{cases}
+        \text{当}x_2 > x_1\text{时，数列}\{x_n\}\text{单调增加} \\ 
+        \text{当}x_2 < x_1\text{时，数列}\{x_n\}\text{单调减少}
+        \end{cases}\)
+        \item 若\(f'(x) < 0\)，则数列不单调
+    \end{itemize}
+\end{itemize}
+
+
+
+
+
+\section{计算}
+
+对于分奇偶数列\(x_n\)，分别求\(\displaystyle \lim_{n \to \infty}x_{2n}\)与\(\displaystyle \lim_{n \to \infty}x_{2n - 1}\)并比较
+
+\(\displaystyle \lim_{n \to \infty}\sqrt[n]{a_1^n + ... + a_n^n} = \max\{a_1, ..., a_n\}\)
+
+当\(0 < a < b\)时，\(\displaystyle \lim_{n \to \infty}(a^{-n} + b^{-n})^{\frac{1}{n}} = \lim_{n \to \infty}\sqrt[n]{(\dfrac{1}{a})^n + (\dfrac{1}{b})^n} = \dfrac{1}{a}\)
+
+当\(0 <= x <= \dfrac{\pi}{2}\)时，\(\displaystyle \lim_{n \to \infty}\sqrt[n]{\sin^nx + \cos^nx} = 
+\begin{cases}
+\cos x, 0 <= x <= \dfrac{\pi}{4} \\ 
+\sin x, \dfrac{\pi}{4} < x <= \dfrac{\pi}{2}
+\end{cases}
+\)
+
+\(\displaystyle \lim_{n \to \infty}\sqrt[n]{1 + |x|^{3n}} = 
+\begin{cases}
+1,\ \ \ \ |x| <= 1 \\ 
+|x|^3, |x| > 1
+\end{cases}
+\)
+
+对\(x_n = f(x_{n - 1})\)，设\(\displaystyle\lim_{n \to +\infty}x_n = a\)，解\(a = f(a)\)
+

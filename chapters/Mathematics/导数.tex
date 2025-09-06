@@ -1,0 +1,167 @@
+
+\chapter{导数}
+
+\section{定义}
+\[f'(x_0) = \lim_{\Delta x \to 0}\dfrac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} = 
+\lim_{x \to x_0}\dfrac{f(x) - f(x_0)}{x - x_0}\]
+
+\subsection{单侧导数}
+\(f'_-(x_0) = \displaystyle \lim_{\Delta x \to 0^-}\dfrac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}\)
+
+\subsection{判别}
+
+\(f(x)\)在\(x = a\)处可导，即\(f'_-(a) = f'_+(a)\)
+
+若\(f(x)\)在\(x = x_0\)处连续，则\(F(x) = |x - x_0|f(x)\)在点\(x_0\)处可导的充要条件是\(f(x_0) = 0\)
+
+函数不具备导数存在条件时，往往仅能用导数定义求导。
+
+设\(f(x) = g(x) + h(x)\)，若\(g(x), h(x)\)可导，则\(f(x)\)可导；
+
+\[\text{可导} \Leftrightarrow \text{可微} \Rightarrow \text{连续}\]
+
+
+\section{几何意义}
+
+\subsection{斜率}
+f(x)在点\(x_0\)处的导数值\(f'(x_0)\)是曲线\(y = f(x)\)在点\((x_0, y_0)\)处切线的斜率k，即\(k = f'(x_0)\)，切线方程为\(y - y_0 = f'(x_0)(x - x_0)\)，法线方程为\(y - y_0 = -\dfrac{1}{f'(x_0)}(x - x_0), (f'(x_0) \neq 0)\)
+
+\subsection{倾角}
+设\(y(x)\)具有二阶导数，记\(\alpha\)为\(y(x)\)在点(x, y)处切线的倾角，则\[y' = tan\,\alpha\]
+
+
+\subsection{曲率}
+y(x)在任意点的曲率\(K = \dfrac{|y''(x)|}{(1 + y'^2(x))^{\frac{3}{2}}}\)
+
+
+\subsection{曲率圆方程}
+曲率半径\[\rho = \dfrac{1}{K}\]
+
+曲率中心坐标\[\alpha = x - \dfrac{y'(1 + y'^2)}{y''}\]
+\[\beta = y + \dfrac{1 + y'^2}{y''}\]
+
+曲率圆方程\[(x - \alpha)^2 + (y - \beta)^2 = \rho^2\]
+
+
+\section{高阶导数}
+
+\subsection{归纳法}
+\begin{flalign}
+(e^{ax + b})^{(n)} & = a^ne^{ax + b} \nonumber \\ 
+[\sin(ax + b)]^{(n)} & = a^n\sin(ax + b + \dfrac{n\pi}{2}) \nonumber \\ 
+[\cos(ax + b)]^{(n)} & = a^n\cos(ax + b + \dfrac{n\pi}{2}) \nonumber \\ 
+[\ln(ax + b)]^{(n)} & = (-1)^{n - 1}a^n\dfrac{(n - 1)!}{(ax + b)^n} \nonumber \\ 
+(\dfrac{1}{ax + b})^{(n)} & = (-1)^na^n\dfrac{n!}{(ax + b)^{n + 1}} \nonumber
+\end{flalign}
+
+\subsection{莱布尼茨公式}
+设\(u(x), v(x)\)n阶可导，则
+\[(u \pm v)^{(n)} = u^{(n)} \pm v^{(n)}\]
+\[(uv)^{(n)} = u^{(n)}v + C_n^1u^{(n - 1)}v' + ... + C_n^{(n - 1)}u'v^{(n - 1)} + uv^{(n)} = \sum_{k = 0}^nC_n^ku^{(n - k)}v^{(k)}\]
+
+\subsection{泰勒展开式}
+根据展开式的唯一性，比较系数
+\begin{flalign}
+f(x) & = \sum_{n = 0}^\infty\dfrac{f^{(n)}(x_0)}{n!}(x - x_0)^n \nonumber \\ 
+f(x) & = \sum_{n = 0}^\infty\dfrac{f^{(n)}(0)}{n!}x^n \nonumber \\ 
+e^x & = \sum_{n = 0}^\infty\dfrac{x^n}{n!} = 1 + x + \dfrac{x^2}{2!} + ... + \dfrac{x^n}{n!} + ... \nonumber \\ 
+sin\ x & = \sum_{n = 0}^\infty(-1)^n\dfrac{x^{2n + 1}}{(2n + 1)!} = x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - ... + (-1)^{n - 1}\dfrac{x^{2n - 1}}{(2n - 1)!} + ... \nonumber \\ 
+cos\ x & = \sum_{n = 0}^\infty(-1)^n\dfrac{x^{2n}}{(2n)!} = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - ... + (-1)^{n}\dfrac{x^{2n}}{(2n)!} + ... \nonumber \\ 
+tan\ x & =x + \dfrac{x^3}{3} + ... \nonumber \\ 
+arcsin\ x & = x + \dfrac{x^3}{3!} + ... \nonumber \\ 
+arctan\ x & = x - \dfrac{x^3}{3} + ... \nonumber \\ 
+\ln(1 + x) & = \sum_{n = 1}^\infty(-1)^{n - 1}\dfrac{x^n}{n} = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - ... + (-1)^{n - 1}\dfrac{x^n}{n} + ..., -1 < x <= 1 \nonumber \\ 
+(1 + x)^\alpha & = 1 + \alpha x + \dfrac{\alpha(\alpha - 1)}{2!}x^2 + ... + \dfrac{\alpha(\alpha - 1)...(\alpha - n + 1)}{n!}x^n + ... \nonumber \\ 
+\dfrac{1}{1 + x} & = \sum_{n = 0}^\infty(-1)^nx^n = 1 -x + x^2 - x^3 + ... + (-1)^nx^n + ..., -1 < x < 1 \nonumber \\ 
+\dfrac{1}{1 - x} & = \sum_{n = 0}^\infty x^n = 1 + x + x^2 + x^3 + ... + x^n + ..., -1 < x < 1 \nonumber
+\end{flalign}
+
+
+\section{计算}
+
+\subsection{复合函数导数}
+
+\begin{flalign}
+\{f[g(x)]\}' &= \dfrac{d\{f[g(x)]\}}{dx} \nonumber \\ 
+f'[g(x)] &= \dfrac{d\{f[g(x)]\}}{d[g(x)]} \nonumber
+\end{flalign}
+
+
+\subsection{分段函数导数}
+
+设\(f(x) = 
+\begin{cases}
+f_1(x), x >= x_0 \\ 
+f_2(x), x < x_0
+\end{cases}\)，其中\(f_1(x), f_2(x)\)分别在\(x > x_0, x < x_0\)可导，则\begin{itemize}
+    \item 分段点\(x_0\)处用导数定义求导：\(f'_+(x_0) = \displaystyle \lim_{x \to x^+_0}\dfrac{f_1(x) - f(x_0)}{x - x_0}, f'_-(x_0) = \displaystyle \lim_{x \to x^-_0}\dfrac{f_2(x) - f(x_0)}{x - x_0}\)
+    \item 非分段点用导数公式
+\end{itemize}
+
+
+\subsection{反函数导数}
+
+设\(y = f(x)\)为单调可导函数且\(f'(x) \neq 0\)，则存在反函数\(x = \varphi(y)\)，且\(\dfrac{dx}{dy} = \dfrac{1}{\dfrac{dy}{dx}}\)，即\(\varphi'(y) = \dfrac{1}{f'(x)}\)
+
+\subsubsection{二阶导数}
+设\(y = f(x)\)为单调二阶可导函数，且\(f'(x) \neq 0\)，则存在反函数\(x = \varphi(y)\)，记\(f'(x) = y'_x, \varphi'(y) = x'_y\)，则有\[y'_x = \dfrac{dy}{dx} = \dfrac{1}{\dfrac{dx}{dy}} = \dfrac{1}{x'_y}\]
+\[y''_{xx} = \dfrac{d^2y}{dx^2} = \dfrac{d\dfrac{dy}{dx}}{dx} = \dfrac{d\dfrac{1}{x'_y}}{dx} = \dfrac{d\dfrac{1}{x'_y}}{dy} * \dfrac{1}{x'_y} = -\dfrac{1}{(x'_y)^2} * (x'_y)' * \dfrac{1}{x'_y} = -\dfrac{x''_{yy}}{(x'_y)^2} * \dfrac{1}{x'_y} = -\dfrac{x''_{yy}}{(x'_y)^3}\]
+反之，有\(x'_y = \dfrac{1}{y'_x}, x''_{yy} = -\dfrac{y''_{xx}}{(y'_x)^3}\)
+
+
+\subsection{隐函数导数}
+
+设\(y = y(x)\)是由\(F(x, y) = 0\)确定的可导函数，则\begin{enumerate}
+    \item 方程\(F(x, y) = 0\)两边对自变量x求导，将y看作中间变量，得到关于\(y'\)的方程；
+    \item 解该方程求出\(y'\)
+\end{enumerate}
+
+
+\subsection{参数方程确定函数导数}
+
+设函数\(y = y(x)\)由参数方程\(\begin{cases}
+x = \varphi(t) \\ 
+y = \psi(t)
+\end{cases}\)确定，其中t是参数，且\(\varphi(t), \psi(t)\)均可导，\(\varphi'(t) \neq 0\)，则\[\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt} = \dfrac{\psi'(t)}{\varphi'(t)}\]
+
+\subsubsection{二阶导数}
+
+\[\dfrac{d^2y}{dx^2} = \dfrac{d\dfrac{dy}{dx}}{dx} = \dfrac{d\dfrac{dy}{dx} / dt}{dx / dt} = \dfrac{\psi''(t)\varphi'(t) - \psi'(t)\varphi''(t)}{[\varphi'(t)]^3}\]
+
+\subsection{对数求导法}
+
+对多项相乘、相除、开方、乘方的式子，一般先取对数在求导，设\(y = f(x), (f(x) > 0)\)，则\begin{enumerate}
+    \item 等式两边取对数，得\(\ln y = \ln f(x)\)
+    \item 两边对自变量x求导，得\(\dfrac{1}{y}y' = [\ln f(x)]' \Rightarrow y' = \dfrac{yf'(x)}{f(x)}\)
+\end{enumerate}
+
+
+\subsection{幂指函数求导法}
+
+对\(u(x)^{v(x)}, u(x) > 0\)且\(u(x) \neq 1\)，可化为指数函数\[u(x)^{v(x)} = e^{v(x)\ln u(x)}\]后求导\[[u(x)^{v(x)}]' = [e^{v(x)\ln u(x)}]' = u(x)^{v(x)}[v'(x)\ln u(x) + v(x)\dfrac{u'(x)}{u(x)}]\]
+
+
+
+
+\subsection{例}
+
+\paragraph{1}
+设\(f(x)\)在\(x = x_0\)处二阶可导，且\(f'(x_0) = 0, f''(x_0) \neq 0\)证明：
+
+1）\(f''(x_0) < 0\)时，f(x)在\(x_0\)处取极大值；
+
+2）\(f''(x_0) > 0\)时，f(x)在\(x_0\)处取极小值；
+
+1)：\(f''(x_0) = \displaystyle \lim_{x \to x_0}\dfrac{f'(x) - f'(x_0)}{x - x_0} < 0\)，根据函数极限的局部保号性，存在\(x_0\)的去心邻域\(U(x_0, \delta)\)，当\(x \in U(x_0, \delta)\)，有\(\dfrac{f'(x) - f'(x_0)}{x - x_0} < 0\)，因为\(f'(x_0) = 0\)，\(f'(x)\)与\(x - x_0\)符号相反，根据判别极值第一充分条件，\(f(x)\)在点\(x_0\)处极大值。
+
+\paragraph{2}
+已知\(g(x)\)在\(x = 0\)处二阶可导，且\(g(0) = g'(0) = 0\)，设\(f(x) = \begin{cases}
+\dfrac{g(x)}{x}, x\neq 0, \\ 
+0, x = 0,
+\end{cases}\)，证明：\(f(x)\)导函数在x = 0处连续
+
+\(f'(0) = \displaystyle \lim_{x \to 0}\dfrac{\dfrac{g(x)}{x} - 0}{x - 0} = \lim_{x \to 0}\dfrac{g(x)}{x^2} = \lim_{x \to 0}\dfrac{g'(x)}{2x} = \dfrac{1}{2}\lim_{x \to 0}\dfrac{g'(x) - g'(0)}{x - 0} = \dfrac{1}{2}g''(0)\)
+
+当\(x \neq 0\)时，\(f'(x) = \dfrac{xg'(x) - g(x)}{x^2}\)，则\(\displaystyle\lim_{x \to 0}f'(x) = \lim_{x \to 0}\dfrac{xg'(x) - g(x)}{x^2} = \lim_{x \to 0}\dfrac{g'(x)}{x} - \lim_{x \to 0}\dfrac{g(x)}{x^2} = g''(0) - \dfrac{1}{2}g''(0) = f'(0)\)，因此连续。
+
+

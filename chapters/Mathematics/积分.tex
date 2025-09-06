@@ -1,0 +1,1031 @@
+
+\chapter{积分}
+
+\section{概念性质}
+
+\subsection{不定积分}
+\(\int f(x)dx = F(x) + C, F(x)\)是\(f(x)\)在区间\(I\)上的一个原函数；
+
+\paragraph{原函数存在定理}
+连续函数\(f(x)\)必有原函数\(F(x)\)
+
+含第一类间断点和无穷间断点的函数在包含间断点的区间内必无原函数
+
+
+\subsection{定积分}
+
+\subsubsection{定义}
+\(\displaystyle \int_a^b f(x)dx = \lim_{\lambda\to 0}\sum_{k = 1}^nf(\xi_k)\Delta x_k\)
+
+\paragraph{几何意义}
+在\([a,\ b]\)上，
+\begin{enumerate}
+    \item 若\(f(x) >= 0\)定积分\(\displaystyle\int_a^bf(x)dx\)表示由曲线\(y = f(x)\)，直线\(x = a,\ x = b\)与x轴围成的曲边梯形的面积
+    \item 若\(f(x) <= 0\)定积分\(\displaystyle\int_a^bf(x)dx\)表示由曲线\(y = f(x)\)，直线\(x = a,\ x = b\)与x轴围成的曲边梯形的面积的负值
+    \item 若\(f(x)\)既有正值也有负值，则表示x轴上方面积减去x轴下方面积
+\end{enumerate}
+
+\paragraph{精确定义}
+\[\int_a^bf(x)dx = \lim_{x \to \infty}\sum_{i = 1}^nf(a + \dfrac{b - a}{n}i)\dfrac{b - a}{n}\]
+\[\int_0^1f(x)dx = \lim_{x \to \infty}\sum_{i = 1}^nf(\dfrac{i}{n})\dfrac{1}{n}\]
+
+
+\subsubsection{存在定理}
+一元函数的（常义）可积性，即“黎曼”可积性，“常义”指区间有限，函数有界；
+
+\paragraph{充分条件}
+\begin{enumerate}
+    \item 若\(f(x)\)在[a, b]上连续，则\(\displaystyle\int_a^bf(x)dx\)存在
+    \item 若\(f(x)\)在[a, b]上单调，则\(\displaystyle\int_a^bf(x)dx\)存在
+    \item 若\(f(x)\)在[a, b]上有界，且只有有限个间断点，则\(\displaystyle\int_a^bf(x)dx\)存在
+\end{enumerate}
+
+\paragraph{必要条件}
+可积函数必有界，若定积分\(\displaystyle\int_a^bf(x)dx\)存在，则\(f(x)\)在[a, b]上必有界
+
+\subsubsection{性质}
+假设积分均存在
+\begin{itemize}
+    \item 当\(a = b\)时，\(\displaystyle\int_a^bf(x)dx = 0\)
+    \item 当\(a > b\)时，\(\displaystyle\int_a^bf(x)dx = -\int_b^af(x)dx\)
+\end{itemize}
+
+\paragraph{求区间长度}
+设\(a < b\)，则\(\displaystyle\int_a^bdx = b - a = L\)，L为[a, b]的长度
+
+\paragraph{积分的线性性质}
+设\(k_1, k_2\)常数，则\(\displaystyle\int_a^b[k_1f(x) \pm k_2g(x)]dx = k_1\int_a^bf(x)dx \pm k_2\int_a^bg(x)dx\)
+
+\paragraph{可加（拆）性}
+总有\(\displaystyle \int_a^bf(x)dx = \int_a^cf(x)dx + \int_c^bf(x)dx\)
+
+\paragraph{保号性}
+若区间[a, b]上\(f(x) <= g(x)\)，则\(\displaystyle\int_a^bf(x)dx <= \int_a^bg(x)dx\)
+\[\displaystyle|\int_a^bf(x)dx| <= \int_a^b|f(x)|dx\]
+
+\paragraph{估值定理}
+设M，m为\(f(x)\)在区间[a, b]上最大值与最小值，L为[a, b]长度，则有\[mL <= \displaystyle\int_a^bf(x)dx <= ML\]
+
+\paragraph{中值定理}
+设\(f(x)\)在区间[a, b]上连续，则[a, b]上至少存在一点\(\xi\)，使得\[\displaystyle\int_a^bf(x)dx = f(\xi)(b - a)\]
+
+\subparagraph{证明}
+\(\because\ f(x)\)连续，\(\therefore\ \)有最大值M最小值m
+\[m(b - a) <= \int_a^bf(x)dx <= M(b - a)\]
+\[m <= \dfrac{1}{b - a}\int_a^bf(x)dx <= M\]
+由介值定理得\(\exists \xi \in [a, b]\)使得\(f(\xi) = \dfrac{1}{b - a}\int_a^bf(x)dx\)
+
+
+\subsection{变限积分}
+
+\subsubsection{定义}
+\[F(x) = \int_a^xf(t)dt,\ a <= x <= b\]
+变上限定积分
+
+\subsubsection{性质}
+\begin{itemize}
+    \item 函数\(f(x)\)在\(I\)上可积，则函数\(F(x) = \displaystyle \int_a^xf(t)dt\)在\(I\)上连续
+    \item 函数\(f(x)\)在\(I\)上连续，则函数\(F(x) = \displaystyle \int_a^xf(t)dt\)在\(I\)上可导，且\(F'(x) = f(x)\)
+    \item \begin{itemize}
+        \item 若\(x = x_0\in I\)是\(f(x)\)的唯一跳跃间断点，则\(F(x) = \int_a^xf(t)dt\)在\(x_0\)处不可导，且\(\begin{cases}
+            F'_-(x_0) = \lim_{x \to x_0^-}f(x) \\ 
+            F'_+(x_0) = \lim_{x \to x_0^+}f(x)
+        \end{cases}\)
+        \item 若\(x = x_0\in I\)是\(f(x)\)的唯一可去间断点，则\(F(x) = \int_a^xf(t)dt\)在\(x_0\)处可导，且\(F'(x_0) = \lim_{x \to x_0}f(x)\)
+    \end{itemize}
+    \item 变限积分存在则必连续
+\end{itemize}
+
+
+\subsection{反常积分}
+定积分的两个必要条件：积分区间有限，被积函数有界；破坏积分区间的有限性，引出无穷区间上的反常积分；破坏被积函数的有界性，引出无界函数的反常积分。
+\subsubsection{定义}
+
+\paragraph{无穷区间上}
+设\(F(x)\)是\(f(x)\)在对应区间上的原函数
+\begin{itemize}
+    \item \(\displaystyle\int_a^{+\infty}f(x)dx = \lim_{x \to +\infty}F(x) - F(a)\)若极限存在，则反常积分收敛，否则发散
+    \item \(\displaystyle\int_{-\infty}^bf(x)dx = F(b) - \lim_{x \to -\infty}F(x)\)若极限存在，则反常积分收敛，否则发散
+    \item \(\displaystyle\int_{-\infty}^{+\infty}f(x)dx = \int_{-\infty}^{x_0}f(x)dx + \int_{x_0}^{+\infty}f(x)dx\)若右端两积分都收敛，则反常积分收敛，否则发散
+\end{itemize}
+
+\paragraph{无界函数的}
+设\(F(x)\)是\(f(x)\)在对应区间上的原函数，\(x_0\)为\(f(x)\)的瑕点\footnote{使\(f(x)\)在\(x_0\)的邻域内无界的点为瑕点}
+\begin{itemize}
+    \item 若\(x = b\)是唯一瑕点，则\(\displaystyle\int_a^{b}f(x)dx = \lim_{x \to b^-}F(x) - F(a)\)若极限存在，则反常积分收敛，否则发散
+    \item 若\(x = a\)是唯一瑕点，则\(\displaystyle\int_{a}^bf(x)dx = F(b) - \lim_{x \to a^+}F(x)\)若极限存在，则反常积分收敛，否则发散
+    \item 若\(x = c \in (a, b)\)是唯一瑕点，则\(\displaystyle\int_{a}^{b}f(x)dx = \int_{a}^{c}f(x)dx + \int_{c}^{b}f(x)dx\)若右端两积分都收敛，则反常积分收敛，否则发散
+\end{itemize}
+
+
+\subsubsection{敛散性判别}
+
+反常积分中，通常将\(\infty\)与瑕点统称为奇点，在判别积分敛散性时，一个积分只能有一个奇点；若出现两个及以上，需拆分
+
+\paragraph{无穷区间}
+
+\subparagraph{比较判别法}
+设函数\(f(x), g(x)\)在区间\([a, +\infty)\)上连续，且\(0 <= f(x) <= g(x), a <= x < +\infty\)则
+\begin{itemize}
+    \item 当\(\displaystyle\int_a^{+\infty}g(x)dx\)收敛时，\(\displaystyle\int_a^{+\infty}f(x)dx\)收敛
+    \item 当\(\displaystyle\int_a^{+\infty}f(x)dx\)发散时，\(\displaystyle\int_a^{+\infty}g(x)dx\)发散
+\end{itemize}
+
+\subparagraph{比较判别法的极限形式}
+设函数\(f(x), g(x)\)在区间\([a, +\infty)\)上连续，且\(f(x) >= 0, g(x) > 0, \displaystyle\lim_{x \to +\infty}\dfrac{f(x)}{g(x)} = \lambda\)（有限或\(\infty\)），则
+\begin{itemize}
+    \item 当\(\lambda \neq 0\ \&\&\ \lambda \neq \infty\)时，\(\displaystyle\int_a^{+\infty}f(x)dx\)与\(\displaystyle\int_a^{+\infty}g(x)dx\)有相同的敛散性
+    \item 当\(\lambda = 0\)时，若\(\displaystyle\int_a^{+\infty}g(x)dx\)收敛，则\(\displaystyle\int_a^{+\infty}f(x)dx\)也收敛
+    \item 当\(\lambda = \infty\)时，若\(\displaystyle\int_a^{+\infty}g(x)dx\)发散，则\(\displaystyle\int_a^{+\infty}f(x)dx\)也发散
+\end{itemize}
+
+
+\paragraph{无界函数}
+
+\subparagraph{比较判别法}
+设函数\(f(x), g(x)\)在区间\((a, b]\)上连续，瑕点同为\(x = a\)，且\(0 <= f(x) <= g(x), a < x <= b \)则
+\begin{itemize}
+    \item 当\(\displaystyle\int_a^{b}g(x)dx\)收敛时，\(\displaystyle\int_a^{b}f(x)dx\)收敛
+    \item 当\(\displaystyle\int_a^{b}f(x)dx\)发散时，\(\displaystyle\int_a^{b}g(x)dx\)发散
+\end{itemize}
+
+\subparagraph{比较判别法的极限形式}
+设函数\(f(x), g(x)\)在区间\((a, b]\)上连续，瑕点同为\(x = a\)，且\(f(x) >= 0, g(x) > 0, \displaystyle\lim_{x \to a^+}\dfrac{f(x)}{g(x)} = \lambda\)（有限或\(\infty\)），则
+\begin{itemize}
+    \item 当\(\lambda \neq 0\ \ \&\&\ \ \lambda \neq \infty\)时，\(\displaystyle\int_a^{b}f(x)dx\)与\(\displaystyle\int_a^{b}g(x)dx\)有相同的敛散性
+    \item 当\(\lambda = 0\)时，若\(\displaystyle\int_a^{b}g(x)dx\)收敛，则\(\displaystyle\int_a^{b}f(x)dx\)也收敛
+    \item 当\(\lambda = \infty\)时，若\(\displaystyle\int_a^{b}g(x)dx\)发散，则\(\displaystyle\int_a^{b}f(x)dx\)也发散
+\end{itemize}
+
+
+\paragraph{重要结论}
+
+\begin{enumerate}
+    \item \(\displaystyle\int_0^1\dfrac{1}{x^p}dx
+    \begin{cases}
+        \text{收敛，}0 < p < 1 \\ 
+        \text{发散，}p >= 1
+    \end{cases}\)对与x趋于0的“速度”相同的函数\(f(x)\)均适用，即\(x \to 0,\ f(x) \sim x\)
+    \item \(\displaystyle\int_1^{+\infty}\dfrac{1}{x^p}dx
+    \begin{cases}
+        \text{收敛},\ p > 1 \\ 
+        \text{发散},\ p <= 1
+    \end{cases}\)
+    \item \begin{itemize}
+        \item 当\(f(x)\)偶函数且\(\int_0^{+\infty}f(x)dx\)收敛时，\(\displaystyle\int_{-\infty}^{+\infty}f(x)dx = 2\int_0^{+\infty}f(x)dx\)
+        \item 当\(f(x)\)奇函数且\(\int_0^{+\infty}f(x)dx\)收敛时，\(\displaystyle\int_{-\infty}^{+\infty}f(x)dx = 0\)
+    \end{itemize}
+\end{enumerate}
+
+
+
+\subsection{例}
+
+\subsubsection{判断原函数与定积分}
+\begin{enumerate}
+    \item \(f(x) = \begin{cases}
+    2,\ x > 0 \\ 
+    1,\ x = 0 \\ 
+    -1,\ x < 0
+    \end{cases}\)，没有原函数，定积分存在；
+    \item \(f(x) = \begin{cases}
+        2x\sin\dfrac{1}{x^2} - \dfrac{2}{x}\cos\dfrac{1}{x^2},\ x \neq 0 \\ 
+        0,\ x = 0
+    \end{cases}\)，
+    \item \(f(x) = \begin{cases}
+        \dfrac{1}{x},\ x \neq 0 \\ 
+        0,\ x = 0
+    \end{cases}\)
+    \item \(f(x) = \begin{cases}
+        2x\cos\dfrac{1}{x} + sin\dfrac{1}{x},\ x \neq 0 \\ 
+        0,\ \ x = 0
+    \end{cases}\)
+\end{enumerate}
+
+\paragraph{解}
+\begin{enumerate}
+    \item x = 0为跳跃间断点，任意包含x = 0的区间上不存在原函数；满足定积分存在定理，定积分存在
+    \item x = 0，是振荡间断点，设\(F(x) = \begin{cases}
+        x^2\sin\dfrac{1}{x^2},\ x \neq 0 \\ 
+        0,\ x = 0
+    \end{cases}\)，则\(F'(x) = f(x), -\infty < x < +\infty\)，故存在原函数；由于\(\infty\cos\infty\)为无界振荡，在任一包含x = 0的区间上定积分不存在；
+    \item x = 0无穷间断点，在任一包含x = 0的区间上不存在原函数；定积分不存在
+    \item 存在原函数\(F(x) = \begin{cases}
+        x^2\cos\dfrac{1}{x},\ x \neq 0 \\ 
+        0,\ \ x = 0
+    \end{cases}\)；有界且只有一个振荡间断点，定积分存在
+\end{enumerate}
+
+\subsubsection{定积分定义}
+先提\(\dfrac{1}{n}\)，再凑\(\dfrac{i}{n}\)，由于\(\dfrac{i}{n} = 0 + \dfrac{1 - 0}{n}i\)，\(\dfrac{i}{n}\)可读作0到1上的x，\(\dfrac{1}{n}\)可读作0到1上的dx
+\begin{flalign}
+\lim_{x \to \infty}(\dfrac{n + 1}{n^2 + 1} + ... + \dfrac{n + n}{n^2 + n^2}) & = \lim_{x \to \infty}\sum_{i = 1}^n\dfrac{n + i}{n^2 + i^2} \\ 
+& = \lim_{x \to \infty}\sum_{i = 1}^n\dfrac{n^2 + ni}{n^2 + i^2} * \dfrac{1}{n} \\ 
+& = \lim_{x \to \infty}\sum_{i = 1}^n\dfrac{1 + \dfrac{i}{n}}{1 + (\dfrac{i}{n})^2} * \dfrac{1}{n} \\ 
+& = \int_0^1\dfrac{1 + x}{1 + x^2}dx
+\end{flalign}
+
+\subsubsection{函数有界}
+设\(a > 0, f(x)\)在\([0, \infty)\)内连续有界，C为常数；证明\(y = e^{-ax}(\int_0^xf(t)e^{at}dt + C)\)有界。
+\paragraph{证明}
+设\(|f(x)| <= M\)，当\(x >= 0\)时，有
+\begin{flalign}
+    |y(x)| & = |e^{-ax}(C + \int_0^xf(t)e^{at}dt)| <= |Ce^{-ax}| + e^{-ax}|\int_0^xf(t)e^{at}dt| \\ 
+    & <= |C| + e^{-ax}\int_0^x|f(t)e^{at}|dt <= |C| + Me^{-ax}\int_0^xe^{at}dt \\ 
+    & = |C| + \dfrac{M}{a}(1 - e^{-ax}) <= |C| + \dfrac{M}{a}
+\end{flalign}
+
+
+\subsubsection{敛散性}
+设\(a > b > 0\)，反常积分\(\displaystyle\int_0^{+\infty}\dfrac{1}{x^a + x^b}dx\)收敛，则?
+
+\paragraph{解}
+\(I = \displaystyle\int_0^1\dfrac{1}{x^a + x^b}dx + \int_1^{+\infty}\dfrac{1}{x^a + x^b}dx = I_1 + I_2\)，
+
+对\(I_1\)看\(x \to 0^+\)，由于\(a > b > 0\)，\(x^b\)趋于0的“速度”慢于\(x^a\)趋于0的“速度”，\(x^a + x^b \sim x^b\)，则\(b < 1\),
+
+对\(I_2\)看\(x \to +\infty\)，由于\(a > b > 0\)，\(x^a\)趋于\(+\infty\)“速度”大于\(x^b\)趋于\(+\infty\)的“速度”，\(x^a + x^b \sim x^a\)，\(a > 1\)
+
+
+\subsubsection{敛散性，比较判别}
+已知\(a > 0\)，则对反常积分\(\displaystyle\int_0^1\dfrac{\ln x}{x^a}dx\)敛散性的判别：
+
+\paragraph{解}
+当\(a < 1\)时，取充分小正数\(\varepsilon\)使得\(a + \varepsilon < 1\)，由于\[\lim_{x \to 0^+}\dfrac{\dfrac{\ln x}{x^a}}{\dfrac{1}{x^{a + \varepsilon}}} = \lim_{x \to 0^+}\dfrac{\ln x}{x^{-\varepsilon}} = \lim_{x \to 0^+}\dfrac{\dfrac{1}{x}}{-\varepsilon x^{-\varepsilon - 1}} = \lim_{x \to 0^+}(-\dfrac{1}{\varepsilon}x^\varepsilon) = 0\]
+由于\(\int_0^1\dfrac{1}{x^{a + \varepsilon}}dx\)收敛，故\(\int_0^1\dfrac{\ln x}{x^a}dx\)收敛，
+
+当\(a >= 1\)时，由于\(\lim_{x \to 0^+}x^a\dfrac{\ln x}{x^a} = \infty,\ \int_0^1\dfrac{1}{x^a}dx\)发散，故\(\int_0^1\dfrac{\ln x}{x^a}dx\)发散
+
+
+\subsubsection{敛散性，比较判别}
+已知\(a > 0\)，则对反常积分\(\displaystyle\int_1^{+\infty}\dfrac{\ln x}{x^a}dx\)敛散性的判别：
+
+\paragraph{解}
+当\(a <= 1\)且x充分大时，\(\dfrac{\ln x}{x^a} > \dfrac{1}{x^a}\)，由于\(\int_1^{+\infty}\dfrac{1}{x^a}dx\)发散，故\(\int_1^{+\infty}\dfrac{\ln x}{x^a}dx\)发散
+
+当\(a > 1\)时，取充分小正数\(\varepsilon\)使得\(a - \varepsilon > 1\)，由于\(\lim_{x \to +\infty}\dfrac{\dfrac{\ln x}{x^a}}{\dfrac{1}{x^{a - \varepsilon}}} = \lim_{x \to +\infty}\dfrac{\ln x}{x^\varepsilon} = 0,\ \int_1^{+\infty}\dfrac{1}{x^{a - \varepsilon}}dx\)收敛，故\(\int_1^{+\infty}\dfrac{\ln x}{x^a}dx\)收敛
+
+
+\subsubsection{定积分定义放缩}
+\(\displaystyle\lim_{n \to \infty}\sum_{i = 1}^n\dfrac{\sin\dfrac{i\pi}{n}}{n + \dfrac{1}{i}} = ?\)
+
+\paragraph{解}
+当各项分母均为n时，\(\displaystyle\lim_{n \to \infty}\sum_{i = 1}^n\dfrac{\sin\dfrac{i\pi}{n}}{n} = \int_0^1\sin\pi xdx\)。因此先进行放缩
+\[\sum_{i = 1}^n\dfrac{\sin\dfrac{i\pi}{n}}{n + 1} <= \sum_{i = 1}^n\dfrac{\sin\dfrac{i\pi}{n}}{n + \dfrac{1}{i}} <= \sum_{i = 1}^n\dfrac{\sin\dfrac{i\pi}{n}}{n}\]
+\[\because\ \lim_{n \to \infty}\sum_{i = 1}^n\dfrac{\sin\dfrac{i\pi}{n}}{n + 1} = \lim_{n \to \infty}\dfrac{n}{n + 1} * \dfrac{1}{n}\sum_{i = 1}^n\sin\dfrac{i}{n}\pi = \int_0^1\sin\pi x\,dx\]
+\[\lim_{n \to \infty}\sum_{i = 1}^n\dfrac{\sin\dfrac{i\pi}{n}}{n} = \lim_{n \to \infty}\dfrac{1}{n}\sum_{i = 1}^n\sin\dfrac{i}{n}\pi = \int_0^1\sin\pi x\,dx\]
+\[\therefore\ \lim_{n \to \infty}\sum_{i = 1}^n\dfrac{\sin\dfrac{i\pi}{n}}{n + \dfrac{1}{i}} = \dfrac{2}{\pi}\]
+
+
+\subsubsection{反常积分敛散性判别}
+讨论\(\displaystyle\int_2^{+\infty}\dfrac{1}{x\ln^px}dx\)敛散性，其中p为任意实数
+
+\paragraph{解}
+\begin{enumerate}
+    \item 当p = 1时，\(\displaystyle\int_2^{+\infty}\dfrac{1}{x\ln x}dx = \ln|\ln x|\bigg|_2^{+\infty} = +\infty\)，发散
+    \item 当\(p \neq 1\)时，\[\int_2^{+\infty}\dfrac{dx}{x\ln^px} = \dfrac{1}{1 - p}(\ln x)^{1 - p}\bigg|_2^{+\infty}\]\begin{itemize}
+        \item 当\(p > 1\)时，\(\displaystyle\lim_{x \to +\infty}(\ln x)^{1 - p} = 0\)，收敛
+        \item 当\(p < 1\)时，\(\displaystyle\lim_{x \to +\infty}(\ln x)^{1 - p} = +\infty\)，发散
+    \end{itemize}
+\end{enumerate}
+综上，\(\displaystyle\int_2^{+\infty}\dfrac{1}{x\ln^px}dx\begin{cases}
+    \text{收敛},\ p > 1 \\ 
+    \text{发散},\ p <= 1
+\end{cases}\)
+
+\section{计算}
+
+\subsection{分部积分}
+
+\begin{displaymath}
+\int_{}^{} u \,dv
+= uv -
+\int_{}^{} v \,du
+\end{displaymath}
+
+
+\subsection{表格积分法}
+
+\begin{center}
+\begin{tabular}{ c|c|c|c|c|c }
+\(u\) & \(u'\) & \(u''\) & ... & \(u^{(n-1)}\) & \(u^{(n)}\) \\ 
+\hline
+\(v^{(n)}\) & \(v^{(n-1)}\) & \(v^{(n-2)}\) & ... & \(v'\) & \(v\)
+\end{tabular}
+\end{center}
+u多次求导结果为0,u导n次,v积n次,交错相乘,正负交替
+
+\begin{displaymath}
+\int_{}^{} uv^{(n)} \,dx
+= uv^{(n-1)} - u'v^{(n - 2)} + u''v^{(n - 3)} - ...
++(-1)^{n-1}u^{(n-1)}v + (-1)^{n}
+\int_{}^{} u^{(n)}v \,dx
+\end{displaymath}
+
+
+\subsection{积分化为行列式}
+
+\begin{displaymath}
+\int_{}^{} xe^{ax} \,dx = 
+\frac{1}{a^2}
+\begin{vmatrix}
+  x & e^{ax}\\ 
+  (x)' & (e^{ax})'
+\end{vmatrix}
++ C
+\end{displaymath}
+
+\begin{displaymath}
+\int_{}^{} x\sin ax \,dx 
+= \frac{1}{a^2}
+\begin{vmatrix}
+  (x)' & (\sin ax)' \\ 
+  x & \sin ax
+\end{vmatrix}
++ C
+\end{displaymath}
+
+\begin{displaymath}
+\int_{}^{} e^{ax}\sin bx \,dx 
+= \frac{1}{a^2 + b^2}
+\begin{vmatrix}
+  (e^{ax})' & (\sin bx)' \\ 
+  e^{ax} & \sin bx
+\end{vmatrix}
++ C
+\end{displaymath}
+
+\begin{displaymath}
+\int_{}^{} e^{ax}\cos bx \,dx 
+= \frac{1}{a^2 + b^2}
+\begin{vmatrix}
+  (e^{ax})' & (\cos bx)' \\ 
+  e^{ax} & \cos bx
+\end{vmatrix}
++ C
+\end{displaymath}
+
+
+\subsection{三角函数积分}
+\begin{center}
+\begin{tabular}{ c c c }
+\hline
+\(\displaystyle \int_{}^{} f(x) \,dx\) & \(f(x)\) & \(f'(x)\) \\
+\hline
+\(-\cos x + C\) & \(\sin x\) & \(\cos x\) \\
+\(\sin x + C\) & \(\cos x\) & \(-\sin x\) \\
+\(ln|\csc x - \cot x| + C\) & \(\csc x\) & \(-\csc\,x\,\cot\,x\) \\
+\(ln|\sec x + \tan x| + C\) & \(\sec x\) & \(\sec\,x\,\tan\,x\) \\
+\(ln|\sec x| + C = -ln|\cos x| + C\) & \(\tan x\) & \(\sec^{2}x\) \\
+\(-ln|\csc x| + C = ln|\sin x| + C\) & \(\cot x\) & \(-\csc^{2}x\) \\
+\(x\arcsin x + \sqrt{1 - x^{2}} + C\) & \(\arcsin x\) & \(\dfrac{1}{\sqrt{1 - x^{2}}}\) \\
+\(x\arccos x - \sqrt{1 - x^{2}} + C\) & \(\arccos x\) & \(\dfrac{-1}{\sqrt{1 - x^{2}}}\) \\
+\(x\arctan x - \dfrac{1}{2}ln|x^{2} + 1| + C\) & \(\arctan x\) & \(\dfrac{1}{1 + x^{2}}\) \\
+null & \(arccsc x\) & \(\dfrac{-1}{|x|\sqrt{x^{2} - 1}}\) \\
+null & \(arcsec x\) & \(\dfrac{1}{|x|\sqrt{x^{2} - 1}}\) \\
+null & \(arccot x\) & \(\dfrac{-1}{1 + x^{2}}\) \\
+\(\cosh x + C\) & \(\sinh x\) & \(\cosh x\) \\
+\(\sinh\,x + C\) & \(\cosh\,x\) & \(\sinh\,x\) \\
+\(x\,arcsinh\,x - \sqrt{x^{2} + 1} + C\) & \(arcsinh\,x\) & \(\dfrac{1}{\sqrt{x^{2} + 1}}\) \\
+\(x\,arccosh\,x - \sqrt{x^{2} - 1} + C\) & \(arccosh\,x\) & \(\dfrac{1}{\sqrt{x^{2} - 1}}\) \\
+\(\dfrac{-\sin\,2x + 2x}{4} + C\) & \(\sin^{2}x\) & \(\sin2x\) \\
+\(\dfrac{\sin\,2x + 2x}{4} + C\) & \(\cos^{2}x\) & \(-\sin2x\) \\
+\(\tan\,x - x + C\) & \(\tan^{2}x\) & null \\
+\(-\cot\,x - x + C\) & \(\cot^{2}x\) & null \\
+\(\dfrac{\sinh\,2x - 2x}{4} + C\) & \(\sinh^{2}x\) & \(\sinh2x\) \\
+\(\dfrac{\sinh\,2x + 2x}{4} + C\) & \(\cosh^{2}x\) & \(\sinh2x\) \\
+\hline
+\end{tabular}
+\end{center}
+
+\[\int\sin^nxdx = -\dfrac{1}{n}\sin^{n - 1}x\cos x + \dfrac{n - 1}{n}\int\sin^{n - 2}xdx\]
+\[\int\cos^nxdx = \dfrac{1}{n}\cos^{n - 1}x\sin x + \dfrac{n - 1}{n}\int\cos^{n - 2}xdx\]
+
+
+\subsection{根号积分}
+\begin{flalign}
+    \int_{}^{} \dfrac{1}{x^{2} - a^{2}} \,dx & =
+\dfrac{1}{2a}\ln|\dfrac{x - a}{x + a}| + C \nonumber \\ 
+    \int_{}^{} \dfrac{1}{a^{2} - x^{2}} \,dx & =
+\dfrac{1}{2a}\ln|\dfrac{x + a}{x - a}| + C \nonumber \\ 
+    \int_{}^{} \dfrac{1}{x^{2} + a^{2}} \,dx & =
+\dfrac{1}{a}\arctan\dfrac{x}{a} + C \nonumber \\ 
+    \int_{}^{} \dfrac{1}{\sqrt{a^{2} - x^{2}}} \,dx & =
+\arcsin\dfrac{x}{a} + C \nonumber \\ 
+    \int_{}^{} \dfrac{1}{\sqrt{x^{2} + a^{2}}} \,dx & = 
+\ln(\sqrt{x^{2} + a^{2}} + x) + C =
+\arcsin h\frac{x}{a} + C + \ln a \nonumber \\ 
+    \int_{}^{} \dfrac{1}{\sqrt{x^{2} - a^{2}}} \,dx & = 
+\ln|\sqrt{x^{2} - a^{2}} + x| + C =
+\arccos h\frac{x}{a} + C + \ln a \nonumber \\ 
+    \int_{}^{} \sqrt{x^{2} + a^{2}} \,dx & =
+\frac{1}{2}(x\sqrt{x^{2} + a^{2}} + a^{2}\arcsin h\frac{x}{a}) + C \nonumber \\ 
+    \int_{}^{} \sqrt{x^{2} - a^{2}} \,dx & =
+\frac{1}{2}(x\sqrt{x^{2} - a^{2}} - a^{2}\arccos h\frac{x}{a}) + C \nonumber \\ 
+    \int_{}^{} \sqrt{a^{2} - x^{2}} \,dx & =
+\frac{1}{2}(x\sqrt{a^{2} - x^{2}} + a^{2}\arcsin\frac{x}{a}) + C \nonumber 
+\end{flalign}
+
+
+\subsection{凑积分}
+\[\int f[g(x)]g'(x)dx = \int f[g(x)]d[g(x)] = \int f(u)du\]
+
+\begin{flalign}
+    \int xf(x^2)dx & = \dfrac{1}{2}\int f(x^2)d(x^2) \nonumber \\ 
+    \int\sqrt{x}f(x^{\frac{3}{2}})dx & = \dfrac{2}{3}\int f(x^{\frac{3}{2}})d(x^{\frac{3}{2}}) \nonumber \\ 
+    \int\dfrac{f(\sqrt{x})}{\sqrt{x}}dx & = 2\int f(\sqrt{x})d(\sqrt{x}) \nonumber \\ 
+    \int\dfrac{f(-\dfrac{1}{x})}{x^2}dx & = \int f(-\dfrac{1}{x})d(-\dfrac{1}{x}) \nonumber \\ 
+    \int\dfrac{f(\ln x)}{x}dx & = \int f(\ln x)d(\ln x) \nonumber \\ 
+    \int e^xf(e^x)dx & = \int f(e^x)d(e^x) \nonumber \\ 
+    \int a^xf(a^x)dx & = \dfrac{1}{\ln a}\int f(a^x)d(a^x) \nonumber \\ 
+    \int \sin xf(-\cos x)dx & = \int f(-\cos x)d(-\cos x) \nonumber \\ 
+    \int\cos xf(\sin x)dx & = \int f(\sin x)d(\sin x) \nonumber \\ 
+    \int\dfrac{f(\tan x)}{\cos^2 x}dx & = \int f(\tan x)d(\tan x) \nonumber \\ 
+    \int \dfrac{f(-\cot x)}{\sin^2x}dx & = \int f(-\cot x)d(-\cot x) \nonumber \\ 
+    \int\dfrac{f(\arctan x)}{1 + x^2}dx & = \int f(\arctan x)d(\arctan x) \nonumber \\ 
+    \int\dfrac{f(\arcsin x)}{\sqrt{1 - x^2}}dx & = \int f(\arcsin x)d(\arcsin x) \nonumber
+\end{flalign}
+
+
+\subsection{换元}
+\begin{enumerate}
+    \item 三角函数代换，\(a > 0\)\[\begin{cases}
+        \sqrt{a^2 - x^2}\rightarrow x = a\sin t,\ |t| < \dfrac{\pi}{2} \\ 
+        \sqrt{a^2 + x^2}\rightarrow x = a\tan t,\ |t| < \dfrac{\pi}{2} \\ 
+        \sqrt{x^2 - a^2}\rightarrow x = a\sec t,\ \begin{cases}
+            x > 0,\ 0 < t < \dfrac{\pi}{2} \\ 
+            x < 0,\ \dfrac{\pi}{2} < t < \pi
+        \end{cases}
+    \end{cases}\]
+    \item 恒等变形后三角函数代换
+    \item 根式代换
+    \item 倒代换
+    \item 复杂函数直接代换
+\end{enumerate}
+
+
+\subsection{分段函数积分}
+\(f(x)\)连续，则必存在原函数\(F(x) = \displaystyle\int f(x)dx\)连续
+
+\subsubsection{分段函数的变限积分}
+对每一分段求变限积分。
+
+
+\subsection{有理函数积分}
+
+\subsubsection{定义}
+形如\(\displaystyle\int\dfrac{P_n(x)}{Q_m(x)}dx,\ (n < m)\)的积分称为有理函数积分，其中\(P_n(x), Q_m(x)\)分别为x的n次多项式和m次多项式
+
+\subsubsection{思想}
+若\(Q_m(x)\)在实数域内可因式分解，则因式分解后再把\(\dfrac{P_n(x)}{Q_m(x)}\)拆成若干项最简有理分式之和（每个分式为真分式）
+
+\subsubsection{方法}
+\begin{enumerate}
+    \item \(Q_m(x)\)的一次单因式\(ax + b\)产生一项\(\dfrac{A}{ax + b}\)
+    \item \(Q_m(x)\)的k重一次因式\((ax + b)^k\)产生k项，分别为\(\dfrac{A_1}{ax + b}, ..., \dfrac{A_k}{(ax + b)^k}\)
+    \item \(Q_m(x)\)的二次单因式\(px^2 + qx + r\)产生一项\(\dfrac{Ax + B}{px^2 + qx + r}\)\ ，（\(q^2 - 4pr < 0\)）
+    \item \(Q_m(x)\)的k重二次因式\((px^2 + qx + r)^k\)产生k项\(\dfrac{A_ix + B_i}{(px^2 + qx + r)^i}\)
+    \item 求出对应的系数
+\end{enumerate}
+
+\subsubsection{求待定系数}
+\begin{itemize}
+    \item 通分后展开，左右x的同次幂的系数相等
+    \item 在恒等式中赋予x适当的值，得到简单条件
+    \item 留数法：左右同乘某个因子，再令该因子为0，代入对应x
+\end{itemize}
+
+
+\subsection{定积分计算}
+\[\int_a^bf(x)dx = F(x)\bigg|_a^b = F(b) - F(a)\]
+
+若\(f(x)\)在\([a, b]\)上分段有函数，如\([a, c)\)上有原函数\(F_1(x)\)，\((c, b]\)上有原函数\(F_2(x)\)，则\[\int_a^bf(x)dx = \int_a^cf(x)dx + \int_c^bf(x)dx = F_1(c - 0) - F_1(a) + F_2(b) - F_2(c + 0)\]
+\begin{itemize}
+    \item 若\(F_1(c - 0), F_2(c + 0)\)均存在，则\(\displaystyle\int_a^bf(x)dx\)收敛
+    \item 若\(F_1(c - 0), F_2(c + 0)\)至少一个不存在，则\(\displaystyle\int_a^bf(x)dx\)发散
+\end{itemize}
+
+\subsubsection{结论}
+\begin{itemize}
+    \item 设\(f(x)\)连续偶函数，则\[\int_{-a}^af(x)dx = 2\int_0^af(x)dx\]
+    \item 设\(f(x)\)连续奇函数，则\[\int_{-a}^af(x)dx = 0\]
+    \item 设\(f(x)\)为以T为周期的连续函数，则对任意实数\(a\)有\[\int_a^{a + T}f(x)dx = \int_0^Tf(x)dx\]
+    \item 设\(f(x)\)连续函数，则\[\int_a^bf(x)dx = \int_a^bf(a + b - x)dx\]
+    \item \(\displaystyle\int_0^{\frac{\pi}{2}}\sin^nxdx = \int_0^{\frac{\pi}{2}}\cos^nxdx = \begin{cases}
+        \dfrac{n - 1}{n} * \dfrac{n - 3}{n - 2} * ... * \dfrac{2}{3} * 1,\ \ n\text{为大于1的奇数} \\ 
+        \dfrac{n - 1}{n} * \dfrac{n - 3}{n - 2} * ... * \dfrac{1}{2} * \dfrac{\pi}{2},\ \ n\text{为正偶数}
+    \end{cases}\)
+    \item \(\displaystyle\int_0^\pi\sin^nxdx = \begin{cases}
+        2 * \dfrac{n - 1}{n} * \dfrac{n - 3}{n - 2} * ... * \dfrac{2}{3} * 1,\ \ n\text{为大于1的奇数} \\ 
+        2 * \dfrac{n - 1}{n} * \dfrac{n - 3}{n - 2} * ... * \dfrac{1}{2} * \dfrac{\pi}{2},\ \ n\text{为正偶数}
+    \end{cases}\)
+    \item \(\displaystyle\int_0^\pi\cos^nxdx = \begin{cases}
+        0, \ \ n\text{为正奇数} \\ 
+        2 * \dfrac{n - 1}{n} * \dfrac{n - 3}{n - 2} * ... * \dfrac{1}{2} * \dfrac{\pi}{2},\ \ n\text{为正偶数}
+    \end{cases}\)
+    \item \(\displaystyle\int_0^{2\pi}\cos^nxdx = \int_0^{2\pi}\sin^nxdx = \begin{cases}
+        0,\ \  n\text{为正奇数} \\ 
+        4 * \dfrac{n - 1}{n} * \dfrac{n - 3}{n - 2} * ... * \dfrac{1}{2} * \dfrac{\pi}{2},\ \ n\text{为正偶数}
+    \end{cases}\)
+\end{itemize}
+
+
+\subsection{变限积分计算}
+\subsubsection{求导公式}
+设\(F(x) = \displaystyle\int_{\varphi_1(x)}^{\varphi_2(x)}f(t)dt\)，其中\(f(t)\)在\([a, b]\)上连续，可导函数\(\varphi_1(x), \varphi_2(x)\)的值域在\([a, b]\)上，则在函数\(\varphi_1(x), \varphi_2(x)\)的公共定义域上，有\[F'(x) = \dfrac{d}{dx}[\int_{\varphi_1(x)}^{\varphi_2(x)}f(t)dt] = f[\varphi_2(x)]\varphi_2'(x) - f[\varphi_1(x)]\varphi_1'(x)\]
+
+\subsubsection{结论}
+\begin{itemize}
+    \item 只有被积函数可积，就可有变限积分相关性质
+    \item 只有被积函数连续，才能谈原函数相关性质
+\end{itemize}
+\begin{enumerate}
+    \item \(f(x)\)为可积奇函数\(\Rightarrow \begin{cases}
+        \int_0^xf(t)dt\text{为偶函数} \\ 
+        \int_a^xf(t)dt\text{为偶函数}
+    \end{cases}\)
+    \item \(f(x)\)为可积偶函数\(\Rightarrow \begin{cases}
+        \int_0^xf(t)dt\text{为奇函数} \\ 
+        \int_a^xf(t)dt\ (a \neq 0) \begin{cases}
+            \text{若}\int_a^xf(t)dt = \int_0^xf(t)dt\text{，为奇函数} \\ 
+            \text{若}\int_a^xf(t)dt \neq \int_0^xf(t)dt\text{，为非奇非偶函数}
+        \end{cases}
+    \end{cases}\)
+    \item \(f(x)\)可积且以T为周期，则\(\int_0^xf(t)dt\)是以T为周期的周期函数\(\Leftrightarrow \int_0^Tf(x)dx = 0\)
+\end{enumerate}
+
+
+\subsection{反常积分计算}
+注意识别奇点（端点、内部）
+
+
+\subsection{\(\Gamma\)函数}
+\subsubsection{定义}
+\[\Gamma(\alpha) = \int_0^{+\infty}x^{\alpha - 1}e^{-x}dx \xrightarrow{x = t^2}2\int_0^{+\infty}t^{2\alpha - 1}e^{-t^2}dt\ (x, t > 0)\]
+
+\subsubsection{递推}
+\begin{flalign}
+    \Gamma(\alpha + 1) & = \int_0^{+\infty}x^{\alpha}e^{-x}dx = -\int_0^{+\infty}x^{\alpha}d(e^{-x}) \nonumber \\ 
+    & = -x^{\alpha}e^{-x}\bigg|_0^{+\infty} + \int_0^{+\infty}e^{-x}\alpha x^{\alpha - 1}dx = \alpha\Gamma(\alpha) \nonumber
+\end{flalign}
+
+其中\(\Gamma(1) = 1, \Gamma(\dfrac{1}{2}) = \sqrt{\pi}\)，
+\(\therefore\ \Gamma(n + 1) = n!,\ \Gamma(2) = 1,\ \Gamma(\dfrac{5}{2}) = \dfrac{3}{2} * \dfrac{1}{2} * \Gamma(\dfrac{1}{2}) = \dfrac{3}{4}\sqrt{\pi}\)
+
+
+
+\subsection{例}
+
+\subsubsection{换元，分部积分}
+求\(\displaystyle\int\dfrac{xe^x}{\sqrt{e^x - 1}}dx\)
+
+\paragraph{解}
+令\(u = \sqrt{e^x - 1},\ x = \ln(1 + u^2),\ dx = \dfrac{2u}{1 + u^2}du\)，则
+\begin{flalign}
+    \int\dfrac{xe^x}{\sqrt{e^x - 1}}dx & = \int\dfrac{(1 + u^2)\ln(1 + u^2)}{u} * \dfrac{2u}{1 + u^2}du = 2\int\ln(1 + u^2)du \nonumber \\ 
+    & = 2u\ln(1 + u^2) - \int\dfrac{4u^2}{1 + u^2}du
+\end{flalign}
+
+
+\subsubsection{换元}
+求\(\displaystyle\int\dfrac{xe^{\arctan x}}{(1 + x^2)^{\frac{3}{2}}}dx\)
+
+\paragraph{解}
+令\(x = \tan t\)，则\[\int\dfrac{xe^{\arctan x}}{(1 + x^2)^{\frac{3}{2}}}dx = \int\dfrac{e^t\tan t}{(1 + \tan^2t)^\frac{3}{2}}\sec^2tdt = \int e^t\sin tdt\]
+
+
+\subsubsection{}
+\(\displaystyle\int\dfrac{1}{1 + e^x}dx\)
+
+\paragraph{解}
+\[\int\dfrac{1}{1 + e^x}dx = \int(1 - \dfrac{e^x}{1 + e^x})dx = x - \ln(1 + e^x) + C\]
+
+
+\subsubsection{分部积分}
+求\(\displaystyle\int e^{2x}(\tan x + 1)^2dx\)
+
+\paragraph{解}
+\begin{flalign}
+    \int e^{2x}(\tan x + 1)^2dx & = \int e^{2x}(\sec^2x + 2\tan x)dx \nonumber \\ 
+    & = \int e^{2x}\sec^2xdx + 2\int e^{2x}\tan xdx \nonumber \\ 
+    & = e^{2x}\tan x - 2\int e^{2x}\tan xdx + 2\int e^{2x}\tan xdx \nonumber \\ 
+    & = e^{2x}\tan x + C \nonumber
+\end{flalign}
+
+
+\subsubsection{分式积分}
+\(\displaystyle\int\dfrac{2x + 3}{x^2 - x + 1}dx\)
+
+\paragraph{解}
+\begin{flalign}
+    \text{上式} & = \int\dfrac{2x - 1}{x^2 - x + 1}dx + \int\dfrac{4}{x^2 -x + 1}dx \nonumber \\ 
+    & = \ln(x^2 - x + 1) + 4\int\dfrac{1}{(x - \frac{1}{2})^2 + (\frac{\sqrt{3}}{2})^2}d(x - \dfrac{1}{2}) \nonumber \\ 
+    & = \ln(x^2 - x + 1) + (\dfrac{8}{\sqrt{3}}\arctan \dfrac{2x - 1}{\sqrt{3}}) + C
+\end{flalign}
+
+
+\subsubsection{换元为奇函数}
+\(\displaystyle\lim_{n \to \infty}\dfrac{1}{n}\sum_{i = 1}^n[\ln(3n - 2i) - \ln(n + 2i)] = \)
+
+\paragraph{解}
+\begin{flalign}
+    \text{上式} & = \int_0^1\ln\dfrac{3 - 2x}{1 + 2x}dx = \int_0^1\ln\dfrac{\frac{3}{2} - x}{\frac{1}{2} + x}dx \nonumber \\ 
+    & = \int_{-\frac{1}{2}}^{\frac{1}{2}}\ln\dfrac{1 - t}{1 + t}dt = 0
+\end{flalign}
+
+
+\subsubsection{换元}
+\(\displaystyle\int_0^1x\arcsin\sqrt{4x - 4x^2}dx\)
+
+\paragraph{解}
+\begin{flalign}
+    \int_0^1x\arcsin\sqrt{4x - 4x^2}dx & = \int_0^1x\arcsin\sqrt{1 - (1 - 2x)^2}dx \nonumber \\ 
+    & = \dfrac{1}{2}\int_1^{-1}(1 - t)\arcsin\sqrt{1 - t^2}(-\dfrac{1}{2}dt) = \dfrac{1}{4}\int_{-1}^1(1 - t)\arcsin\sqrt{1 - t^2}dt \nonumber \\ 
+    & = \dfrac{1}{2}\int_0^1\arcsin\sqrt{1 - t^2}dt = \dfrac{1}{2}
+\end{flalign}
+
+
+\subsubsection{变限两个未知数}
+\(F(x) = \displaystyle\int_0^{\frac{\pi}{2}}|\sin x - \sin t|dt,\ (x >= 0)\)在\(x \to 0^+\)处的二次泰勒多项式为\(a + bx + cx^2\)，则\(abc = ?\)
+
+\paragraph{解}
+当\(x \to 0^+\)时，
+\begin{flalign}
+    F(x) & = \displaystyle\int_0^x(\sin x - \sin t)dt + \int_x^{\frac{\pi}{2}}(\sin t - \sin x)dt \nonumber \\ 
+    & = x\sin x + (\cos x - 1) + \cos x - \sin x * (\dfrac{\pi}{2} - x) \nonumber \\ 
+    & = (2x - \dfrac{\pi}{2})\sin x + 2\cos x - 1
+\end{flalign}
+
+\subparagraph{方式1}
+直接展开
+\[\sin x = x + o(x^2)\]
+\[\cos x = 1 - \dfrac{1}{2}x^2 + o(x^2)\]
+\[F(x) = 1 - \dfrac{\pi}{2}x + x^2 + o(x^2)\]
+得\(abc = -\dfrac{\pi}{2}\)
+
+\subparagraph{方式2}
+\[F'(x) = (2x - \dfrac{\pi}{2})\cos x\]
+\[F''(x) = 2\cos x - (2x - \dfrac{\pi}{2})\sin x\]
+\[\therefore F(0) = 1, F'_+(0) = -\dfrac{\pi}{2}, F''_+(0) = 2\]
+\[F(x) = F(0) + F'_+(0)x + \dfrac{F''_+(0)}{2!}x^2 + ...\]
+得\(abc = -\dfrac{\pi}{2}\)
+
+
+\subsubsection{无穷区间，换元}
+\(\displaystyle\int_3^{+\infty}\dfrac{dx}{(x - 1)^4\sqrt{x^2 - 2x}}\)
+
+\paragraph{解}
+\begin{flalign}
+    & = \int_3^{+\infty}\dfrac{dx}{(x - 1)^4\sqrt{(x - 1)^2 - 1}} \xrightarrow{x - 1 = \sec \theta}\int_\frac{\pi}{3}^\frac{\pi}{2}\dfrac{\sec\theta\tan\theta}{\sec^4\theta\tan\theta}d\theta \nonumber \\ 
+    & = \int_\frac{\pi}{3}^\frac{\pi}{2}(1 - \sin^2\theta)\cos\theta d\theta = \dfrac{2}{3} - \dfrac{3\sqrt{3}}{8} \nonumber
+\end{flalign}
+
+
+\subsubsection{\(\Gamma\)函数}
+设\(f(x) = \begin{cases}
+    \dfrac{4x^2}{a^3\sqrt{\pi}}e^{-\frac{x^2}{a^2}}\ ,\ x > 0 \\ 
+    0\ ,\ x <= 0
+\end{cases}\)，a为正常数，则\(\displaystyle\int_0^{+\infty}x^2f(x)dx =\)?
+
+\paragraph{解}
+\begin{flalign}
+    \int_0^{+\infty}x^2f(x)dx & = \dfrac{2a^2}{\sqrt{\pi}} * 2\int_0^{+\infty}(\dfrac{x}{a})^{2 * \frac{5}{2} - 1}e^{-(\frac{x}{a})^2}\ d(\dfrac{x}{a}) \nonumber \\ 
+    & = \dfrac{2a^2}{\sqrt{\pi}} * \Gamma(\dfrac{5}{2}) = \dfrac{3}{2}a^2 \nonumber
+\end{flalign}
+
+
+\subsubsection{分段函数}
+\(\displaystyle\int\ \max\{1, |x|\}\ dx\)
+
+\paragraph{解}
+\(\max\{1, |x|\} = \begin{cases}
+    -x,\ x < -1 \\ 
+    1,\ -1 <= x <= 1 \\ 
+    x,\ x > 1
+\end{cases}\)
+由于f(x)连续，则必存在原函数\(F(x) = \begin{cases}
+    -\dfrac{x^2}{2} + C_1,\ x < -1 \\ 
+    x + C_2,\ -1 <= x <= 1 \\ 
+    \dfrac{x^2}{2} + C_3,\ x > 1
+\end{cases}\)
+又F(x)连续，则\(\begin{cases}
+    -\dfrac{1}{2} + C_1 = -1 + C_2 \\ 
+    1 + C_2 = \dfrac{1}{2} + C_3
+\end{cases}\)，得原式\(= \begin{cases}
+    -\dfrac{x^2}{2} + C,\ x < -1 \\ 
+    x + \dfrac{1}{2} + C,\ -1 <= x <= 1 \\ 
+    \dfrac{x^2}{2} + 1 + C,\ x > 1
+\end{cases}\)
+
+
+\subsubsection{换元}
+\(\displaystyle\int\arcsin\sqrt{\dfrac{x}{a + x}}dx\)
+
+\paragraph{解}
+令\(\arcsin\sqrt{\dfrac{x}{a + x}} = t,\ x = \dfrac{a\sin^2t}{1 - \sin^2t} = a\tan^2t\)
+\begin{flalign}
+    \int\arcsin\sqrt{\dfrac{x}{a + x}}dx = & \int td(a\tan^2t) = at\tan^2t - a\int\tan^2tdt \nonumber \\ 
+    = & at\tan^2t + a\int(1 - \sec^2t)dt = at\tan^2t + at - a\tan t + C \nonumber \\ 
+    = & (a + x)\arcsin\sqrt{\dfrac{x}{a + x}} - \sqrt{ax} + C \nonumber
+\end{flalign}
+
+
+\subsubsection{求满足条件函数，换元}
+求连续函数\(f(x)\)使其满足\(\int_0^1f(tx)dt = f(x) + x\sin x\)
+
+\paragraph{解}
+令\(tx = u\)，则原式化为\(\displaystyle\dfrac{1}{x}\int_0^xf(u)du = f(x) + x\sin x\)，即\[\displaystyle\int_0^xf(u)du = xf(x) + x^2\sin x\]
+两边对x求导得：\[f(x) = f(x) + xf'(x) + 2x\sin x + x^2\cos x\]
+\[f'(x) = -2\sin x - x\cos x\]
+积分得\[f(x) = \cos x - x\sin x + C\]
+
+
+\subsubsection{换元，三角函数}
+设\(f(x) = \begin{cases}
+    \dfrac{1}{1 + \sin x},\ x >= 0 \\ 
+    \dfrac{1}{1 + e^x},\ x < 0
+\end{cases}\)，求\(\displaystyle\int_{-1}^{\frac{\pi}{4}}f(x)dx\)
+
+\paragraph{解}
+\begin{flalign}
+    \int_{-1}^0\dfrac{dx}{1 + e^x} & \xrightarrow{e^x = t} \int_{e^{-1}}^1\dfrac{1}{1 + t} * \dfrac{1}{t}dt = \int_{e^{-1}}^1(\dfrac{1}{t} - \dfrac{1}{1 + t})dt \nonumber \\ 
+    & = \ln\dfrac{t}{1 + t}\bigg|_{e^{-1}}^1 = -\ln 2 + \ln(1 + e) \nonumber
+\end{flalign}
+
+\begin{flalign}
+    \int_0^{\frac{\pi}{4}}\dfrac{dx}{1 + \sin x} & = \int_0^{\frac{\pi}{4}}\dfrac{1 - \sin x}{\cos^2x}dx = \int_0^{\frac{\pi}{4}}\sec^2xdx - \int_0^{\frac{\pi}{4}}\dfrac{\sin x}{\cos^2x}dx \nonumber \\ 
+    & =\tan x\bigg|_0^{\frac{\pi}{4}} - \dfrac{1}{\cos x}\bigg|_0^{\frac{\pi}{4}} = 2 - \sqrt{2} \nonumber
+\end{flalign}
+
+
+\subsubsection{换元，奇偶性}
+\(\displaystyle\int_{-1}^1\dfrac{x + 1}{1 + \sqrt[3]{x^2}}dx\)
+
+\paragraph{解}
+\begin{flalign}
+    \int_{-1}^1\dfrac{x + 1}{1 + \sqrt[3]{x^2}}dx & = \int_{-1}^1\dfrac{x}{1 + \sqrt[3]{x^2}}dx + \int_{-1}^1\dfrac{1}{1 + \sqrt[3]{x^2}}dx = 0 + 2\int_0^1\dfrac{1}{1 + \sqrt[3]{x^2}}dx \nonumber \\ 
+    & \xrightarrow{\sqrt[3]{x^2} = t} 3\int_0^1\dfrac{\sqrt{t}}{1 + t}dt \xrightarrow{\sqrt{t} = u} 6\int_0^1\dfrac{u^2}{1 + u^2}du \nonumber \\ 
+    & = 6 - 6\arctan 1 = 6 - \dfrac{3}{2}\pi \nonumber
+\end{flalign}
+
+
+\subsubsection{三角函数}
+\(\displaystyle\int_0^{\frac{3}{4}\pi}\dfrac{1}{1 + \cos^2x}dx\)
+
+\paragraph{解}
+\begin{flalign}
+    \int_0^{\frac{3}{4}\pi}\dfrac{1}{1 + \cos^2x}dx & = \int_0^{\frac{\pi}{2}}\dfrac{1}{1 + \cos^2x}dx + \int_{\frac{\pi}{2}}^{\frac{3}{4}\pi}\dfrac{1}{1 + \cos^2x}dx \nonumber \\ 
+    & = \lim_{x \to (\frac{\pi}{2})^-}F(x) - F(0) + F(\dfrac{3}{4}\pi) - \lim_{x \to (\frac{\pi}{2})^+}F(x) \nonumber \\ 
+    & = \dfrac{\pi}{\sqrt{2}} - \dfrac{1}{\sqrt{2}}\arctan\dfrac{1}{\sqrt{2}} \nonumber
+\end{flalign}
+其中，\begin{flalign}
+    F(x) &  = \int\dfrac{1}{1 + \cos^2x}dx = \int\dfrac{\sec^2x}{2 + \tan^2x}dx \nonumber \\ 
+    & = \int\dfrac{\sqrt{2}d(\dfrac{\tan x}{\sqrt{2}})}{2[1 + (\dfrac{\tan x}{\sqrt{2}})^2]} = \dfrac{1}{\sqrt{2}}\arctan\dfrac{\tan x}{\sqrt{2}} + C \nonumber
+\end{flalign}
+
+
+\subsubsection{三角函数，换元}
+\(\displaystyle\int_0^\pi\dfrac{x\sin x}{1 + \cos^2x}dx\)
+
+\paragraph{解}
+\begin{flalign}
+    \int_0^\pi\dfrac{x\sin x}{1 + \cos^2x}dx & \xrightarrow{x = \pi - t} \int_\pi^0\dfrac{(\pi - t)\sin(\pi - t)}{1 + \cos^2(\pi - t)}(-dt) \nonumber \\ 
+    & = \int_0^\pi\dfrac{(\pi - t)\sin t}{1 + \cos^2t}dt = \pi\int_0^\pi\dfrac{\sin t}{1 + \cos^2t}dt - \int_0^\pi\dfrac{t\sin t}{1 + \cos^2t}dt \nonumber \\ 
+    & = \pi\int_0^\pi\dfrac{\sin t}{1 + \cos^2t}dt - \int_0^\pi\dfrac{x\sin x}{1 + \cos^2x}dx \nonumber \\ 
+    \int_0^\pi\dfrac{x\sin x}{1 + \cos^2x}dx & = \dfrac{\pi}{2}\int_0^\pi\dfrac{\sin t}{1 + \cos^2t}dt = -\dfrac{\pi}{2}\int_0^\pi\dfrac{1}{1 + \cos^2t}d(\cos t) \nonumber \\ 
+    & = -\dfrac{\pi}{2}\arctan(\cos t)\bigg|_0^\pi = \dfrac{\pi^2}{4} \nonumber
+\end{flalign}
+
+
+\subsubsection{三角函数}
+\(\displaystyle\int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}}e^{\dfrac{x}{2}}\dfrac{\cos x - \sin x}{\sqrt{\cos x}}dx\)
+
+\paragraph{解}
+\begin{flalign}
+    \int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}}e^{\dfrac{x}{2}}\dfrac{\cos x - \sin x}{\sqrt{\cos x}}dx & = \int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}}e^{\dfrac{x}{2}}\sqrt{\cos x}dx - \int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}}e^{\dfrac{x}{2}}\dfrac{\sin x}{\sqrt{\cos x}}dx \nonumber \\ 
+    & = \int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}}e^{\dfrac{x}{2}}\sqrt{\cos x}dx + 2\int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}}e^{\dfrac{x}{2}}d(\sqrt{\cos x}) \nonumber \\ 
+    & = \int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}}e^{\dfrac{x}{2}}\sqrt{\cos x}dx + 2e^{\dfrac{x}{2}}\sqrt{\cos x}\bigg|_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}} - \int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}}e^{\dfrac{x}{2}}\sqrt{\cos x}dx \nonumber \\ 
+    & = \sqrt[4]{8}(e^{\frac{\pi}{8}} - e^{-\frac{\pi}{8}}) \nonumber
+\end{flalign}
+
+
+\subsubsection{三角函数，换元}
+\(\displaystyle\int_{\frac{1}{2}}^{\frac{3}{2}}\dfrac{(1 - x)\arcsin(1 - x)}{\sqrt{2x - x^2}}dx\)
+
+\paragraph{解}
+\begin{flalign}
+    \int_{\frac{1}{2}}^{\frac{3}{2}}\dfrac{(1 - x)\arcsin(1 - x)}{\sqrt{2x - x^2}}dx & \xrightarrow{1 - x = \sin t} \int_{-\dfrac{\pi}{6}}^{\dfrac{\pi}{6}}\dfrac{t\sin t}{\cos t}\cos tdt = \int_{-\dfrac{\pi}{6}}^{\dfrac{\pi}{6}}t\sin tdt \nonumber \\ 
+    & = -\int_{-\dfrac{\pi}{6}}^{\dfrac{\pi}{6}}td(\cos t) = -(t\cos t - \sin t)\bigg|_{-\dfrac{\pi}{6}}^{\dfrac{\pi}{6}} \nonumber \\ 
+    & = 1 - \dfrac{\sqrt{3}\pi}{6} \nonumber
+\end{flalign}
+
+
+\subsubsection{定积分定义夹逼}
+\(\displaystyle\lim_{n \to \infty}\sum_{i = 1}^n\dfrac{n}{n^2 + i^2 + 1} = \)
+
+\subparagraph{解}
+\[\sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{(i + 1)^2}{n^2}} <= \sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{i^2 + 1}{n^2}} <= \sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{i^2}{n^2}}\]
+\[\sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{(1 + i)^2}{n^2}} = \sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{i^2}{n^2}} - \dfrac{1}{n}\dfrac{1}{1 + \dfrac{1}{n^2}} + \dfrac{1}{n}\dfrac{1}{1 + \dfrac{(n + 1)^2}{n^2}}\]
+\[\therefore\ \lim_{n \to \infty}\sum_{i = 1}^n\dfrac{n}{n^2 + i^2 + 1} = \dfrac{\pi}{4}\]
+
+
+\subsubsection{反常函数积分}
+\(\displaystyle\int_0^{+\infty}\dfrac{xe^{-x}}{(1 + e^{-x})^2}dx = \)
+
+\subparagraph{解}
+\begin{flalign}
+    \text{原式} & = \lim_{b \to +\infty}\int_0^bxd(\dfrac{1}{1 + e^{-x}}) = \lim_{b \to +\infty}(\dfrac{x}{1 + e^{-x}}\bigg|_0^b - \int_0^b\dfrac{dx}{1 + e^{-x}}) \nonumber \\ 
+    & = \lim_{b \to +\infty}(\dfrac{b}{1 + e^{-b}} - \ln(1 + e^{-x})\bigg|_0^b) = \ln2 + \lim_{b \to +\infty}(\dfrac{b}{1 + e^{-b}} - \ln(e^b + 1)) \nonumber \\ 
+    & = \ln2 + \lim_{b \to +\infty}\dfrac{1}{1 + e^{-b}}(b - (1 + e^{-b})\ln(e^b + 1)) \nonumber \\ 
+    & = \ln2 + \lim_{b \to +\infty}(\ln e^b - (1 + e^b)\dfrac{\ln(1 + e^b)}{e^b}) \nonumber \\ 
+    & = \lim_{b \to +\infty}(\ln\dfrac{e^b}{e^b + 1} - \dfrac{\ln(1 + e^b)}{e^b}) = \ln2 + \ln1 - 0 \nonumber \\
+    & = \ln2 \nonumber
+\end{flalign}
+
+
+\section{几何应用}
+
+\subsection{定积分表示计算旋转体体积}
+
+曲线\(y=f(x)\)与\(x=a,x=b(a < b)\)及x轴所围成的曲边梯形绕x轴旋转一周所得到的旋转体的体积
+\begin{displaymath}
+V_{x} = \pi \int_{a}^{b} f^{2}(x) \,dx
+\end{displaymath}
+
+曲线\(y = f(x)\)与直线\(y = h\)围成的区域绕直线\(y = h\)旋转一周所得旋转体的体积为\[V = \pi\int_a^b[f(x) - h]^2dx\]
+\[V = 2\pi\int_q^p(y - h)x(y)dy\]
+
+曲线\(y=f(x)\)与\(x=a,x=b(0 \leq a \leq b)\)及x轴所围成的曲边梯形绕y轴旋转一周所得到的旋转体的体积
+\begin{displaymath}
+V_{y} = 2\pi \int_{a}^{b} x \lvert f(x) \rvert \,dx
+\end{displaymath}
+
+曲线\(y = f(x)\)绕直线\(x = h\)旋转一周所得旋转体的体积为\[V = 2\pi\int_a^b|x - h||f(x)|dx\]
+
+设平面曲线\(L_1 : y = f(x), a \leq x \leq b, f(x)\)可导, \\
+定直线\(L : Ax + By + C = 0\),且过\(L\)的任一条垂线与\(L_1\)至多有一个交点,则\(L_1\)绕L旋转一周所得旋转体体积为
+\begin{displaymath}
+V = \frac{\pi}{(A^2 + B^2)^{\frac{3}{2}}}
+\int_{a}^{b} (Ax + Bf(x) + C)^2 \lvert Af'(x) - B \rvert \,dx
+\end{displaymath}
+其中a,b为过\(L\)的垂线与\(L_1\)的端点的交点的横坐标.
+
+
+\subsection{定积分表示计算函数平均值}
+
+设\(x \in [a, b]\),函数\(y = f(x)\)在[a,b]上平均值为\(\overline{y} = \frac{1}{b- a} \int_{a}^{b} f(x) \,dx\)
+
+
+\subsection{平面上的曲边梯形的形心坐标公式}
+
+设平面区域\(D = \{ (x, y) | 0 \leq y \leq f(x), a \leq x \leq b \}, y = f(x)\)在[a, b]上连续,则D的形心坐标\((\overline{x}, \overline{y})\)公式为
+
+\begin{displaymath}
+\overline{x} = \frac{\iint_{D} x \,d\sigma}{\iint_{D} \,d\sigma} = 
+\frac{\int_{a}^{b} \,dx \int_{0}^{f(x)} x \,dy}{\int_{a}^{b} \,dx \int_{0}^{f(x)} \,dy} =
+\frac{\int_{a}^{b} xf(x) \,dx}{\int_{a}^{b} f(x) \,dx}
+\end{displaymath}
+
+\begin{displaymath}
+\overline{y} = \frac{\iint_{D} y \,d\sigma}{\iint_{D} \,d\sigma} = 
+\frac{\int_{a}^{b} \,dx \int_{0}^{f(x)} y \,dy}{\int_{a}^{b} \,dx \int_{0}^{f(x)} \,dy} =
+\frac{\frac{1}{2}\int_{a}^{b} f^2(x) \,dx}{\int_{a}^{b} f(x) \,dx}
+\end{displaymath}
+
+
+\subsection{平面曲线弧长}
+
+\begin{displaymath}
+由直角坐标方程y = f(x)(a \leq x \leq b)给出,
+则s = \int_{a}^{b} \sqrt{1 + (f'(x))^2} \,dx
+\end{displaymath}
+
+\begin{displaymath}
+由参数方程
+\begin{cases}
+x = x(t) \\
+y = y(t)
+\end{cases}
+(\alpha \leq t \leq \beta)给出,
+则s = \int_{\alpha}^{\beta} \sqrt{[x'(t)]^2 + [y'(t)]^2} \,dt
+\end{displaymath}
+
+\begin{displaymath}
+由极坐标方程\rho = \rho(\theta)(\alpha \leq \theta \leq \beta)给出,
+则s = \int_{\alpha}^{\beta} \sqrt{[\rho(\theta)]^2 + [\rho'(\theta)]^2} \,d\theta
+\end{displaymath}
+
+
+\subsection{旋转曲面侧面积}
+
+曲线\(L : y = f(x), a \leq x \leq b\)绕x轴一周所得旋转曲面面积
+\begin{displaymath}
+S = 2\pi \int_{a}^{b}|y|\sqrt{1 + (y_x')^2} \,dx
+\end{displaymath}
+
+曲线
+\(
+L : 
+\begin{cases}
+x = x(t) \\
+y = y(t)
+\end{cases},
+\alpha \leq t \leq \beta, x'(t) \neq 0
+\),
+绕x轴一周所得旋转曲面面积
+\begin{displaymath}
+S = 2\pi \int_{\alpha}^{\beta}|y(t)|\sqrt{(x_t')^2 + (y_t')^2} \,dt
+\end{displaymath}
+
+曲线\(L : \rho = \rho(\theta), \alpha \leq \theta \leq \beta\)绕x轴一周所得旋转曲面面积
+\begin{displaymath}
+S = 2\pi \int_{\alpha}^{\beta}|\rho(\theta)sin\theta|
+\sqrt{[\rho(\theta)]^2 + [\rho'(\theta])^2} \,d\theta
+\end{displaymath}
+
+
+\subsection{平面截面面积为已知的立体体积}
+
+在区间[a, b]上, 垂直于x轴的平面截立体\(\Omega\)所得到的截面面积为x的连续函数A(x), 则\(\Omega\)的体积为
+\begin{displaymath}
+V = \int_{a}^{b} A(x) \,dx
+\end{displaymath}
+
+
+\subsection{例}
+
+\subsubsection{参数方程/微分/旋转体体积}
+摆线\(x = a(t - \sin t), y = a(1 - \cos t),\ (0 <= t <= 2\pi)\)与x轴围成图形绕\(y = 2a\)旋转体体积V = ?
+
+\subparagraph{解}
+摆线\(y = y(x),\ (0 <= x <= 2\pi a)\)。
+
+设摆线与直线\(y = 2a, x = 0, x = 2\pi a\)围成图形绕\(y = 2a\)旋转一周所成的旋转体的体积\(V_1\)。任取\([x, x + dx] \subset [0, 2\pi a]\)，对应部分相应体积微元为\(dV_1 = \pi[2a - y(x)]^2dx\)，则\begin{flalign}
+    V_1 & = \pi\int_0^{2\pi a}(2a - y)^2dx \xrightarrow{x = a(t - \sin t)} \pi\int_0^{2\pi}[2a - a(1 - \cos t)]^2a(1 - \cos t)dt \nonumber \\ 
+    & = \pi a^3\int_0^{2\pi}(1 + \cos t)^2(1 - \cos t)dt = \pi a^3\int_0^{2\pi}(1 + \cos t - \cos^2 t - \cos^3t)dt \nonumber \\ 
+    & = \pi^2a^3 \nonumber
+\end{flalign}
+故\(V = \pi(2a)^{2\pi a} - V_1 = 7\pi^2a^3\)
+
+
+\subsubsection{参数方程/面积/弧长/旋转体体积/侧面积}
+设星形线方程\(\begin{cases}
+    x = a\cos^3t \\ 
+    y = a\sin^3t
+\end{cases}\)，则围成的面积A为?弧长L为?绕x轴旋转得旋转体体积V为?旋转体侧面积S为?
+
+\subparagraph{解}
+\begin{flalign}
+    A & = 4\int_0^aydx = 4\int_{\frac{\pi}{2}}^0a\sin^3t * 3a\cos^2t(-\sin t)dt \nonumber \\ 
+    & = 12\int_0^\frac{\pi}{2}a^2(\sin^4t - \sin^6t)dt \nonumber \\ 
+    & = 12a^2 * (\dfrac{1 * 3}{2 * 4} - \dfrac{1 * 3 * 5}{2 * 4 * 6})\dfrac{\pi}{2} = \dfrac{3}{8}\pi a^2 \nonumber
+\end{flalign}
+\begin{flalign}
+    L & = 4\int_0^\frac{\pi}{2}\sqrt{(x')^2 + (y')^2}dt = 4\int_0^\frac{\pi}{2}\sqrt{3^2a^2(\cos^4t\sin^2t + \sin^4t\cos^2t)}dt \nonumber \\ 
+    & = 4\int_0^\frac{\pi}{2}3a\cos t\sin tdt = 6a(\sin t)^2\bigg|_0^\frac{\pi}{2} = 6a \nonumber
+\end{flalign}
+\begin{flalign}
+    V & = 2\int_0^a\pi y^2dx = 2\int_\frac{\pi}{2}^0\pi a^2\sin^6t * 3a\cos^2t(-\sin t)dt \nonumber \\ 
+    & = 6\pi a^3\int_0^\frac{\pi}{2}\sin^7t(1 - \sin^2t)dt \nonumber \\ 
+    & = 6\pi a^3[\dfrac{6 * 4 * 2}{7 * 5 * 3}(1 - \dfrac{8}{9})] = \dfrac{32}{105}\pi a^3 \nonumber
+\end{flalign}
+\begin{flalign}
+    S & = 2\pi\int_0^\pi a\sin^3t\sqrt{x'^2(t) + y'^2(t)}dt \nonumber \\ 
+    & = 2\pi\int_0^\pi3a^2\sin^3t\sqrt{\sin^2t\cos^2t}dt \nonumber \\ 
+    & = 6\pi a^2\int_0^\pi\sin^4t|\cos t|dt = 6\pi a^2\int_{-\frac{\pi}{2}}^\frac{\pi}{2}\sin^4t\cos tdt \nonumber \\ 
+    & = \dfrac{12}{5}\pi a^2 \nonumber
+\end{flalign}
+
+\subparagraph{隐函数求法}
+给出星形线得隐函数\(x^\frac{2}{3} + y^\frac{2}{3} = a^\frac{2}{3}\)
+
+则\(\dfrac{2}{3}x^{-\frac{1}{3}} + \dfrac{2}{3}y^{-\frac{1}{3}}y' = 0,\ \therefore\ y' = -\dfrac{y^{\frac{1}{3}}}{x^{\frac{1}{3}}}\)
+
+\(\therefore\ \sqrt{1 + y'^2} = \sqrt{\dfrac{x^\frac{2}{3} + y^\frac{2}{3}}{x^\frac{2}{3}}} = \dfrac{a^\frac{1}{3}}{x^\frac{1}{3}}\)
+
+\begin{flalign}
+    \therefore S & = 2 * 2\pi\int_0^ay\sqrt{1 + y'^2}dx = 4\pi\int_0^a(a^\frac{2}{3} - x^\frac{2}{3})^\frac{3}{2}\dfrac{a^\frac{1}{3}}{x^{\frac{1}{3}}}dx \nonumber \\ 
+    & = 4\pi * \dfrac{3}{2}\int_0^a(a^\frac{2}{3} - x^\frac{2}{3})^\frac{3}{2}a^\frac{1}{3}dx^\frac{2}{3} = 6\pi a^\frac{1}{3}(-\dfrac{2}{5})(a^\frac{2}{3} - x^\frac{2}{3})^\frac{5}{2}\bigg|_0^a = \dfrac{12}{5}\pi a^2 \nonumber
+\end{flalign}
+\begin{flalign}
+    A & = 4\int_0^a(a^\frac{2}{3} - x^\frac{2}{3})^\frac{3}{2}dx \xrightarrow{x^\frac{1}{3} = a^\frac{1}{3}\cos t} 4\int_0^\frac{\pi}{2}a\sin^3t * 3a * \cos^2t\sin tdt \nonumber \\ 
+    & = 12a^2\int_0^\frac{\pi}{2}(\sin^4t - \sin^6t)dt \nonumber
+\end{flalign}
+
+
+\subsubsection{对水作功}
+一容器是由\(y = x^2,\ (0 <= x <= 2)\)绕y轴旋转而成，若容器内水量是容量的1/4，水密度为\(\rho\)，则将容器中水全部抽出需作的功为？
+\subparagraph{解}
+\(V_{\text{容}} = \pi\displaystyle\int_0^4(\sqrt{y})^2dy = 8\pi\)，容器内水面水量\(V(h) = \pi\displaystyle\int_0^hydy = \dfrac{\pi h}{2} = \dfrac{1}{4} * 8\pi\)，故水面高度\(h = 2\)。
+在高度y处取一层水厚度为dy，该层水体积\(dV = \pi r^2dy = \pi ydy\)，质量\(dm = \rho dV = \rho\pi ydy\)，该层水到出口高度为\(4 - y\)，功的微元为\(dW = dm * g * (4 - y)\)，故总功为\[W = \rho\pi g\int_0^2y(4 - y)dy = \dfrac{16}{3}\pi\rho g\]
+
+
+
+
+\section{二重积分}
+
+
+
+
+
+
