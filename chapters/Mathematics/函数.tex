@@ -1,0 +1,142 @@
+
+\chapter{函数}
+
+f(-x)与f(x)图像关于y轴对称；-f(-x)与f(x)图像关于原点对称；
+
+\subsubsection{反函数}
+设\(y = f(x)\)定义域D值域R，若对每一个\(y \in R\)必有唯一\(x \in D\)使得\(y = f(x)\)成立，则定义一个新函数\(x = \varphi(y)\)称为反函数，记作\(x = f^{-1}(y)\)，原函数称为直接函数；
+
+严格单调函数必有反函数；
+
+反函数与原函数关于y=x对称；
+
+\paragraph{\(y = ln(x + \sqrt{x^2 + 1})\)}
+反双曲正弦函数，
+求反函数过程
+\[e^{-y} = \frac{\sqrt{x^2 + 1} - x}{(\sqrt{x^2 + 1} + x)(\sqrt{x^2 + 1} - x)} = \sqrt{x^2 + 1} - x\]
+\[e^y = \sqrt{x^2 + 1} + x\]
+\[x = \frac{e^y - e^{-y}}{2}\]
+\(y = \frac{e^x - e^{-x}}{2}\)双曲正弦函数
+
+结论
+\[ln(x + \sqrt{x^2 + 1})\text{奇函数}\]
+\[ln(x + \sqrt{x^2 + 1}) \sim x\]
+\[[ln(x + \sqrt{x^2 + 1})]' = \frac{1}{\sqrt{x^2 + 1}}\]
+\[\int \frac{1}{\sqrt{x^2 + 1}}\,dx = ln(x + \sqrt{x^2 + 1}) + C\]
+\[\int_{-t}^{t} [ln(x + \sqrt{x^2 + 1})] \,dx = 0\]
+
+
+\subsubsection{复合函数}
+
+
+\subsubsection{隐函数}
+设\(F(x, y) = 0\)，若当x取某区间内任一值时，总有满足该方程的唯一的值y存在则称\(F(x, y) = 0\)在上述区间内确定一个隐函数\(y = y(x)\)
+
+设\(lny - \frac{x}{y} + x = 0\)，当\(x = 2\)时，\(y = 1\)
+
+设\(lny + e^{y - 1} = \frac{x}{2}\)，当\(x = 2\)时，\(y = 1\)
+
+
+\subsubsection{特性}
+
+\paragraph{有界性}
+
+设f(x)定义域为D，数集\(I \subset D\)，若存在整数M，使得\(\forall x \in I, |f(x)| <= M\)，则称f(x)在I上有界，若M不存在，泽无界。
+
+几何上，若给定区间中，y = f(x)的图像可以被直线y = -M和y = M“完全包起来”，则有界；
+
+解析上，若找到某个正数M使|f(x)| <= M，则有界；
+
+若区间上或端点存在点\(x_0\)，使得\(\lim_{x \to x_0} f(x)\)值为无穷，则无界
+
+
+\paragraph{单调性}
+
+对任意\(x_1, x_2 \in D, x_1 \neq x_2\)，有
+\[f(x)\text{单调增} \Leftrightarrow (x_1 - x_2)[f(x_1) - f(x_2)] > 0\]
+\[f(x)\text{单调减} \Leftrightarrow (x_1 - x_2)[f(x_1) - f(x_2)] < 0\]
+\[f(x)\text{单调不减} \Leftrightarrow (x_1 - x_2)[f(x_1) - f(x_2)] >= 0\]
+\[f(x)\text{单调不增} \Leftrightarrow (x_1 - x_2)[f(x_1) - f(x_2)] <= 0\]
+
+
+\paragraph{奇偶性}
+\(f(x) + f(-x)\)必偶函数；\(f(x) - f(-x)\)必奇函数；
+
+对任意函数f(x)，令\(u(x) = \frac{1}{2}[f(x) + f(-x)], v(x) = \frac{1}{2}[f(x) - f(-x)]\)，则u(x)偶函数，v(x)奇函数，由\[f(x) = \frac{1}{2}[f(x) + f(-x)] + \frac{1}{2}[f(x) - f(-x)] = u(x) + v(x)\]可知任意函数可以写成一个奇函数与偶函数之和的形式。
+
+\(f(g(x))\)
+\(
+\begin{cases}
+\text{奇[偶]}\Rightarrow \text{偶，如}sin\,x^2 \\ 
+\text{偶[奇]}\Rightarrow \text{偶，如}cos(sinx),|sin\ x| \\ 
+\text{奇[奇]}\Rightarrow \text{奇，如}sin\frac{1}{x}, \sqrt[3]{tan\ x} \\ 
+\text{偶[偶]}\Rightarrow \text{偶，如}cos|x|, |cos\ x| \\ 
+\text{非奇非偶[偶]}\Rightarrow \text{偶，如}e^{x^2}, ln|x|
+\end{cases}
+\)
+
+\[f(x)\text{奇(偶)} \Rightarrow f'(x)\text{偶(奇)} \Rightarrow f''(x)\text{奇(偶)} ...\]
+\[f(x)\text{奇(偶)} \Rightarrow \int_0^x f(t)dt\text{偶(奇)}\]
+设对任意x，y都有f(x + y) = f(x) + f(y)，则f(x)奇函数
+
+
+\paragraph{周期性}
+若f(x)以T为周期，则f(ax + b)以\(\frac{T}{|a|}\)为周期；
+
+若g(x)周期函数，则f(g(x))周期函数，如\(e^{sin\ x}, cos^2x\)；
+
+若f(x)周期T可导函数，则\(f'(x)\)周期T；
+
+若f(x)周期T连续函数，则只有\(\displaystyle \int_0^Tf(x)fx = 0\)时，\(\displaystyle \int_0^xf(t)dt\)周期T；
+
+
+\subsubsection{基本初等函数}
+基本初等函数：常数函数，幂函数，指数函数，对数函数，三角函数，反三角函数；
+\paragraph{幂函数}
+\(y = x^u\)
+
+对于\(\sqrt{u},\sqrt[3]{u}\)，可用u研究最值；
+
+对于\(|u|\)，由\(|u| = \sqrt{u^2}\)，可用\(u^2\)研究最值；
+
+对于\(u_1u_2u_3\)，可用\(ln(u_1u_2u_3) = lnu_1 + lnu_2 + lnu_3\)研究最值；
+
+
+\subsubsection{初等函数}
+由基本初等函数经过有限次四则运算及有限次复合步骤构成的可以由一个式子表示的函数为初等函数
+
+
+\subsubsection{分段函数}
+
+\paragraph{取整函数}
+\(y = [x]\)
+
+[x]表示不超过x的最大整数
+
+
+\section{连续}
+
+\section{间断}
+可去间断点，跳跃间断点为第一类间断点；
+
+无穷间断点，振荡间断点为第二类间断点。
+
+\subsection{可去间断点}
+\(\displaystyle \lim_{x \to x_0}f(x) \neq f(x_0)\)或\(x = x_0\)处无定义
+
+\subsection{跳跃间断点}
+\(\displaystyle \lim_{x \to x_0^+}f(x)\)与\(\displaystyle \lim_{x \to x_0^-}f(x)\)存在，且\(\displaystyle \lim_{x \to x_0^+}f(x) \neq \displaystyle \lim_{x \to x_0^-}f(x)\)
+
+\subsection{无穷间断点}
+\(\displaystyle \lim_{x \to x_0}f(x) = \infty\)或\(\displaystyle \lim_{x \to x_0^-}f(x) = \infty\)或\(\displaystyle \lim_{x \to x_0^+}f(x) = \infty\)
+
+\subsection{振荡间断点}
+\(\displaystyle \lim_{x \to x_0}f(x)\)不存在
+
+
+
+
+
+
+
+
