@@ -296,37 +296,26 @@ a_3 & b_3 & c_3
 
 \subsection{余子式线性组合}
 
-由\(a_{i1}A_{i1} + ... + a_{in}A_{in} = 
+由\(a_{i1}A_{i1} + ... + a_{in}A_{in} = \begin{vmatrix}
+     & * & \\ 
+    a_{i1} & ... & a_{in} \\ 
+     & * & 
+\end{vmatrix}\)，则\(k_{1}A_{i1} + ... + k_{n}A_{in} = 
 \begin{vmatrix}
- & * & \\ 
-a_{i1} & ... & a_{in} \\ 
- & * & 
-\end{vmatrix}
-\)，
+     & * & \\ 
+    k_{1} & ... & k_{n} \\ 
+     & * & 
+\end{vmatrix}\)，其中“*”表示其中元素不变。
 
-则\(k_{1}A_{i1} + ... + k_{n}A_{in} = 
-\begin{vmatrix}
- & * & \\ 
-k_{1} & ... & k_{n} \\ 
- & * & 
-\end{vmatrix}
-\)，
-
-其中“*”表示其中元素不变。
-
-即设\(|A| = 
-\begin{vmatrix}
-a_1 & b_1 & c_1 \\ 
-a_2 & b_2 & c_2 \\ 
-a_3 & b_3 & c_3
-\end{vmatrix}
-\)，则\(xA_{21} + yA_{22} + zA_{23} = 
-\begin{vmatrix}
-a_1 & b_1 & c_1 \\ 
-x & y & z \\ 
-a_3 & b_3 & c_3
-\end{vmatrix}
-\)
+即设\(|A| = \begin{vmatrix}
+    a_1 & b_1 & c_1 \\ 
+    a_2 & b_2 & c_2 \\ 
+    a_3 & b_3 & c_3
+\end{vmatrix}\)，则\[xA_{21} + yA_{22} + zA_{23} = \begin{vmatrix}
+    a_1 & b_1 & c_1 \\ 
+    x & y & z \\ 
+    a_3 & b_3 & c_3
+\end{vmatrix}\]
 
 
 \subsection{克拉默法则}
