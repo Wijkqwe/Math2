@@ -1,0 +1,219 @@
+
+\chapter{向量}
+
+
+\subsection{概念}
+
+\section{运算}
+
+\paragraph{相等}
+设\(\alpha,\beta\)为n维向量，当且仅当\(a_i = b_i(i = 1,2,...,n)\)时，\(\alpha = \beta\)
+
+
+\paragraph{加}
+\(\alpha + \beta = [a_1 + b_1, ..., a_n + b_n]\)
+
+
+\paragraph{乘}
+\(k\alpha = [ka_1, ..., ka_n]\)
+
+
+\paragraph{内积}
+设\(\alpha = [a_1, ..., a_n]^T, \beta = [b_1, ..., b_n]^T\)，则称\[\alpha^T\beta = \sum_{i = 1}^{n} a_ib_i = a_1b_1 + ... + a_nb_n\]为\(\alpha, \beta\)的内积，记作\((\alpha, \beta) = \alpha^T\beta\)
+
+
+\subsubsection{正交}
+当\(\alpha^T\beta = 0\)时，\(\alpha, \beta\)是正交向量。
+
+\paragraph{施密特正交化公式}
+设向量\(\alpha_1, \alpha_2, \alpha_3\)，令
+\[\beta_1 = \alpha_1,\ \beta_2 = \alpha_2 - \dfrac{(\beta_1, \alpha_2)}{(\beta_1, \beta_1)}\beta_1,\ \beta_3 = \alpha_3 - \dfrac{(\beta_1, \alpha_3)}{(\beta_1, \beta_1)}\beta_1 - \dfrac{(\beta_2, \alpha_3)}{(\beta_2, \beta_2)}\beta_2\]
+则\(\beta_1, \beta_2, \beta_3\)相互正交
+
+
+\subsubsection{模}
+\(||\alpha|| = \displaystyle \sqrt{\sum_{i = 1}^{n}a_i^2}\)称为\(\alpha\)的模（长度）
+
+当\(||\alpha|| = 1\)时，\(\alpha\)为单位向量
+
+
+\subsubsection{标准正交向量组}
+若列向量组\(\alpha_1, ..., \alpha_n\)满足\[\alpha_i^T\alpha_j = 
+\begin{cases}
+0, i \neq j \\ 
+1, i = j
+\end{cases}
+\]则称为标准或单位正交向量组，也叫规范正交基。
+
+
+\section{正交矩阵}
+设A为n阶方阵，满足\(A^TA = E\)，则A为正交矩阵。
+\[A\text{为正交矩阵} \Leftrightarrow A^TA = E \Leftrightarrow A^T = A^{-1} \Leftrightarrow A\text{行(列)向量组是规范正交基}\]
+
+
+\section{线性相关}
+
+\subsection{线性组合}
+设n维向量组\(\alpha_1, ..., \alpha_m\)及m个数\(k_1, ..., k_m\)，则向量\[k_1\alpha_1 + ... + k_m\alpha_m\]
+称为向量组的线性组合。
+
+
+\subsection{线性表示}
+若\(\beta\)能表示成向量组\(\alpha_1, ..., \alpha_m\)的线性组合，即存在m个数\(k_1, ..., k_m\)使得\[\beta = k_1\alpha_1 + k_2\alpha_2 + ... + k_m\alpha_m\]则称向量\(\beta\)能被向量组线性表示。
+
+
+\subsection{线性相关}
+对于m个n维向量\(\alpha_1, ..., \alpha_m\)，若存在一组不全为0的数\(k_1, ..., k_m\)使得\[k_1\alpha_1 + ... + k_m\alpha_m = 0\]则称向量组线性相关；
+
+含零向量或存在成比例的向量的向量组必线性相关。
+
+
+\subsection{线性无关}
+若不存在不全为0的数\(k_1, ..., k_m\)使得\(k_1\alpha_1 + ... + k_m\alpha_m = 0\)成立，则向量组\(\alpha_1, ..., \alpha_m\)线性无关；只有当\(k_1 = ... =k_m = 0\)时，才有\(k_1\alpha_1 + ... + k_m\alpha_m = 0\)成立，则称向量组线性无关。
+
+单个非零向量或两个不成比例的向量均线性无关；
+
+
+\subsection{线性相关七大定理}
+\begin{enumerate}
+    \item 向量组线性相关充要条件是向量组中至少一个向量可由其余n - 1个向量线性表示；
+
+    向量组线性无关充要条件是向量组中任一个向量都不可由其余n - 1个向量线性表示；
+    
+    \item 若向量组\(a_1, ..., a_n\)线性无关，而\(\beta, a_1, ..., a_n\)线性相关，则\(\beta\)可由\(a_1, ..., a_n\)线性表示且表示法唯一；
+    
+    \item 若向量组\(b_1, ..., b_m\)可由向量组\(a_1, ..., a_n\)线性表示，且\(m > n\)，则\(b_1, ..., b_m\)线性相关；（以少表多，多的相关）
+
+    若向量组\(b_1, ..., b_m\)可由向量组\(a_1, ..., a_n\)线性表示，且\(b_1, ..., b_m\)线性无关，则\(m <= n\)；
+    
+    \item 设m个n维向量\(a_1, ..., a_n\)，其中\(a_1 = [a_{11}, ..., a_{n1}]^T, ..., a_m = [a_{1m}, ..., a_{nm}]\)，那么\begin{flalign}
+        & \text{向量组}a_1, ..., a_m\text{线性相关} \nonumber \\ 
+        \Leftrightarrow & r(a_1, ..., a_m) < m \nonumber \\ 
+        \Leftrightarrow & \text{齐次线性方程组}[a_1, ..., a_m]\begin{bmatrix}
+            x_1 \\ 
+            ... \\
+            x_m
+        \end{bmatrix} = x_1a_1 + x_2a_2 + ... + x_ma_m = 0 \text{有非零解} \nonumber
+    \end{flalign}
+    \mymatrix
+    向量组线性无关的充要条件是齐次线性方程组只有零解；
+
+    若n < m，即方程个数小于未知数个数，则齐次线性方程组求解时必有自由未知量，即必有非零解，因此任意n + 1个n维向量都是线性相关的，即向量个数超过向量维数时，向量组必线性相关；
+    \begin{flalign}
+        & \text{n个n维向量线性相关} \nonumber \\ 
+        \Leftrightarrow & |a_1, ... a_n| = 0 \nonumber \\ 
+        \Leftrightarrow & [a_1, ... a_n]\text{不可逆} \nonumber \\ 
+        \Leftrightarrow & r([a_1, ... a_n]) < n \nonumber \\ 
+        \Leftrightarrow & [a_1, ... a_n]x = 0\text{有非零解} \nonumber
+    \end{flalign}
+    
+    \item 向量\(\beta\)可由向量组\(a_1, ..., a_n\)线性表示
+    \begin{flalign}
+        & \Leftrightarrow \text{非齐次线性方程组}
+        \begin{bmatrix}
+            a_1, ..., a_n
+        \end{bmatrix}
+        \begin{bmatrix}
+            x_1 \\ 
+            ... \\ 
+            x_n
+        \end{bmatrix} = x_1a_1 + ... + x_na_n = \beta\text{有解} \nonumber \\ 
+        & \Leftrightarrow r([a_1, ..., a_n]) = r([a_1, ..., a_n, \beta]) \nonumber
+    \end{flalign}
+    
+    \item 若向量组中一部分线性相关，则向量组线性相关；
+
+    若向量组线性无关，则其任一部分向量组线性无关；
+    
+    \item 若一组n维向量线性无关，则这些向量各任意添加m个分量得到的n + m维向量组线性无关；
+
+    \item 设n个向量\(a_1, ..., a_n\)线性无关，若n阶方阵B可逆
+    \footnote[1]{\(A \text{可逆} \Leftrightarrow |A| \neq 0 \Leftrightarrow r(A_{n * n}) = n \Leftrightarrow (A)x = 0\text{无非零解} \Leftrightarrow A\text{向量线性无关}\)}，则\([a_1, ..., a_n]B\)线性无关；
+
+    \item n个n维向量线性无关\begin{flalign}
+        & \text{n个n维向量线性无关} \nonumber \\ 
+        \Leftrightarrow & |a_1, ... a_n| \neq 0 \nonumber \\ 
+        \Leftrightarrow & [a_1, ... a_n]\text{可逆} \nonumber \\ 
+        \Leftrightarrow & r([a_1, ... a_n]) = n \nonumber \\ 
+        \Leftrightarrow & [a_1, ... a_n]x = 0\text{无非零解} \nonumber \\ 
+        \Leftrightarrow & \text{可以表示任一n维向量} \nonumber \\ 
+        \Leftrightarrow & \text{与单位向量}\varepsilon_1 = (1, 0, ...)^T, ..., \varepsilon_n = (0, ..., 1)^T\text{等价} \nonumber
+    \end{flalign}
+\end{enumerate}
+
+
+\subsection{极大线性无关组}
+
+在向量组中，若存在部分组\(a_{i_1},..., a_{i_r}\)满足：\begin{enumerate}
+    \item \(a_{i_1},..., a_{i_r}\)线性无关；
+    \item 向量组中任一向量均可由部分组\(a_{i_1},..., a_{i_r}\)线性表示；
+\end{enumerate}
+则称部分组\(a_{i_1},..., a_{i_r}\)是原向量组的极大线性无关组。
+\begin{itemize}
+    \item 在一个向量组中，能代表该组所有成员的一组向量称为原向量组的极大线性无关组；
+
+    \item 一个线性无关向量组的极大线性无关组是该向量组本身；
+
+    \item 向量组的极大线性无关组一般不唯一；
+
+    \item 只由一个零向量构成的向量组不存在极大线性无关组；
+\end{itemize}
+
+
+\section{等价向量组}
+
+设向量组\((1)a_1, ..., a_s, (2)b_1, ..., b_t\)若(1)中每个向量均可由(2)中向量线性表示，则称(1)可由(2)线性表示；若(1)(2)可相互线性表示，则(1)(2)等价向量组，记作\((1) \cong (2)\)
+
+\paragraph{反身性}
+\((1) \cong (1)\)
+
+\paragraph{对称性}
+若\((1) \cong (2)\)，则\((2) \cong (1)\)
+
+\paragraph{传递性}
+若\((1) \cong (2), (2) \cong (3)\)，则\((1) \cong (3)\)
+
+向量组与其极大线性无关组是等价向量组；
+
+
+\section{向量组的秩}
+向量组的极大线性无关组所含向量的个数r为向量组的秩；
+
+等价向量组的秩相等；
+
+\paragraph{(1)三秩相等}
+\(r(A)\)(矩阵的秩) = A的行秩(行向量的秩) = A的列秩(列向量的秩)
+
+\paragraph{(2)}
+若\(A \xrightarrow{\text{初等行变换}} B\)
+
+则A的行向量与B的列向量是等价向量组
+
+A与B的任何相应的部分列向量具有相同的线性相关性
+
+\paragraph{(3)}
+设向量组(I)，(II)，若任一(II)中向量可由(I)线性表示，则
+\[r(II) <= r(I)\]
+
+
+\section{等价矩阵等价向量组}
+
+\subsection{定义}
+矩阵等价要同型，行数列数相等；向量等价要同维，但向量个数可以不等。
+
+\subsection{矩阵}
+A，B同型时\(A \cong B \Leftrightarrow r(A) = r(B) \Leftrightarrow PAQ = B\)
+
+\subsection{向量}
+\(a_i, b_i\)同维，则
+\begin{flalign}
+& \{a_i\} \cong \{b_i\} \nonumber \\ 
+\Leftrightarrow & \{a_i\}, \{b_i\}\text{可以相互表示} \nonumber \\ 
+\Leftrightarrow & r(\{a_i\}) = r(\{b_i\}) = r(\{a_i, b_i\}) \nonumber \\ 
+\Leftrightarrow & r(\{a_i\}) = r(\{b_i\}), \text{且可单方向线性表示} \nonumber
+\end{flalign}
+
+
+\section{向量空间(数一)}
+
+
