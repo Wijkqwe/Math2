@@ -362,5 +362,23 @@ x = 0, y = 0代入得z = 0
 代入得
 
 
+\subsubsection{二元最值}
+二元函数\(f(x, y) = x^2(2 + y^2) + y\ln y\)的极小值为?
+\subparagraph{解}
+\(f_x' = 2x(2 + y^2),\ f_y' = 2x^2y + \ln y + 1\)
+令\(\begin{cases}
+    f_x' = 0 \\ 
+    f_y' = 0
+\end{cases}\)，解得驻点\((0, \dfrac{1}{e})\)
+\begin{flalign}
+    A & = f_{xx}''(x_0, y_0) \nonumber \\ 
+    B & = f_{xy}''(x_0, y_0) \nonumber \\ 
+    C & = f_{yy}''(x_0, y_0) \nonumber
+\end{flalign}
+故\(AC - B^2 > 0,\ A > 0\)，\(\therefore f(0, \dfrac{1}{e})\)是极小值为\(-\dfrac{1}{e}\)
+
+
+
+
 
 
