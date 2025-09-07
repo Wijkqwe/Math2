@@ -1024,7 +1024,39 @@ V = \int_{a}^{b} A(x) \,dx
 
 \section{二重积分}
 
+\subsection{概念}
+\[\iint_Df(x, y)d\sigma = \lim_{\lambda \to 0}\sum_{i = 1}^nf(\xi_i, \eta_i)\Delta\sigma_i\]
+\(f(x, y)\)被积函数，\(f(x, y)d\sigma\)被积表达式，\(d\sigma( > 0)\)面积元素，D积分区域，\(\displaystyle\sum_{i = 1}^nf(\xi_i, \eta_i)\Delta\sigma_i\)积分和。
 
+若\(f(x, y)\)在有界闭区间D上连续，则二重积分\(\displaystyle\iint_Df(x, y)d\sigma\)一定存在。
+
+
+\subsection{性质}
+
+\paragraph{求区域面积}
+\(\displaystyle\iint_D1d\sigma = \iint_Dd\sigma = A\)，A为D的面积；
+
+\paragraph{可积函数必有界}
+当\(f(x, y)\)在有界闭区间D上可积时，\(f(x, y)\)在D上必有界；
+
+\paragraph{积分的线性性质}
+设\(k_1, k_2\)常数，则\[\iint_D[k_1f(x, y) \pm k_2g(x, y)]d\sigma = k_1\iint_Dfd\sigma \pm k_2\iint_Dgd\sigma\]
+
+\paragraph{积分的可加性}
+设\(f(x, y)\)在有界闭区间D上可积，且\(D_1\cup D_2 = D,\ D_1 \cap D_2 = \emptyset\)，则
+\[\iint_Dfd\sigma = \iint_{D_1}fd\sigma + \iint_{D_2}fd\sigma\]
+
+\paragraph{积分的保号性}
+当\(f, g\)在有界闭区间D上可积时，若D上有\(f(x, y) <= g(x, y)\)，则有\[\iint_Dfd\sigma <= \iint_Dgd\sigma\]
+\[|\iint_Df(x, y)d\sigma| <= \iint_D|f(x, y)|d\sigma\]
+
+\paragraph{二重积分估值定理}
+设\(M, m\)分别是\(f\)在有界闭区间D上的最大值和最小值，A为D的面积，则有
+\[mA <= \iint_Dfd\sigma <= MA\]
+
+\paragraph{二重积分中值定理}
+设\(f(x, y)\)在有界闭区间D上连续，A为D的面积，则D上至少存在一点\((\xi, \eta)\)，使得
+\[\iint_Df(x, y)d\sigma = f(\xi, \eta)A\]
 
 
 
