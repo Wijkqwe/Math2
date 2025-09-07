@@ -1059,5 +1059,48 @@ V = \int_{a}^{b} A(x) \,dx
 \[\iint_Df(x, y)d\sigma = f(\xi, \eta)A\]
 
 
+\subsection{普通对称性}
+\begin{itemize}
+    \item 若D关于y轴对称，则\[\iint_Df(x, y)d\sigma = \begin{cases}
+        2\iint_{D_1}f(x, y)d\sigma,\ f(x, y) = f(-x, y) \\
+        0,\ \ f(x, y) = -f(-x, y)
+    \end{cases}\]
+
+    \item 若D关于\(x = a\)对称，则\[\iint_Df(x, y)d\sigma = \begin{cases}
+        2\iint_{D_1}f(x, y)d\sigma,\ f(x, y) = f(2a - x, y) \\ 
+        0,\ \ f(x, y) = -f(2a - x, y)
+    \end{cases}\]
+
+    \item 若D关于x轴对称，则\[\iint_Df(x, y)d\sigma = \begin{cases}
+        2\iint_{D_1}f(x, y)d\sigma,\ f(x, y) = f(x, -y) \\ 
+        0,\ \ f(x, y) = -f(x, -y)
+    \end{cases}\]
+
+    \item 若D关于\(y = a\)对称，则\[\iint_Df(x, y)d\sigma = \begin{cases}
+        2\iint_{D_1}f(x, y)d\sigma,\ f(x, y) = f(x, 2a - y) \\ 
+        0,\ \ f(x, y) = -f(x, 2a - y)
+    \end{cases}\]
+
+    \item 若D关于原点对称，则\[\iint_Df(x, y)d\sigma = \begin{cases}
+        2\iint_{D_1}f(x, y)d\sigma,\ f(x, y) = f(-x, -y) \\ 
+        0,\ \ f(x, y) = -f(-x, -y)
+    \end{cases}\]
+
+    \item 若D关于\(y = x\)对称，则\[\iint_Df(x, y)d\sigma = \begin{cases}
+        2\iint_{D_1}f(x, y)d\sigma,\ f(x, y) = f(y, x) \\ 
+        0,\ \ f(x, y) = -f(y, x)
+    \end{cases}\]
+\end{itemize}
+
+
+\subsection{轮换对称性}
+在直角坐标系下，把x与y对调后，区域D不变（或关于\(y = x\)对称），则
+\[\iint_Df(x, y)d\sigma = \iint_Df(y, x)d\sigma\]
+
+在直角坐标系下，若\(f(x, y) + f(y, x) =(>)\ a\)，则
+\[I = \dfrac{1}{2}\iint_D[f(x, y) + f(y, x)]dxdy =(>)\ \dfrac{1}{2}\iint_Dadxdy = \dfrac{a}{2}S_D\]
+
+
+\subsection{计算}
 
 
