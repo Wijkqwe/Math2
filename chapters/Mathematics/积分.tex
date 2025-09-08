@@ -547,8 +547,8 @@ null & \(arccot x\) & \(\dfrac{-1}{1 + x^{2}}\) \\
     \item \(f(x)\)为可积偶函数\(\Rightarrow \begin{cases}
         \int_0^xf(t)dt\text{为奇函数} \\ 
         \int_a^xf(t)dt\ (a \neq 0) \begin{cases}
-            \text{若}\int_a^xf(t)dt = \int_0^xf(t)dt\text{，为奇函数} \\ 
-            \text{若}\int_a^xf(t)dt \neq \int_0^xf(t)dt\text{，为非奇非偶函数}
+            \text{若}\int_a^xf(t)dt = \int_0^xf(t)dt\text{，奇函数} \\ 
+            \text{若}\int_a^xf(t)dt \neq \int_0^xf(t)dt\text{，非奇非偶函数}
         \end{cases}
     \end{cases}\)
     \item \(f(x)\)可积且以T为周期，则\(\int_0^xf(t)dt\)是以T为周期的周期函数\(\Leftrightarrow \int_0^Tf(x)dx = 0\)
@@ -1111,9 +1111,9 @@ V = \int_{a}^{b} A(x) \,dx
 \subparagraph{解}
 \((x - 1)^2 + (y - 1)^2 = 2\)，令\(x = 1 + \rho\cos\theta, y = 1 + \rho\sin\theta\)，则
 \begin{flalign}
-    \iint_Dxydxdy & = \int_0^{2\pi}d\theta\int_0^\sqrt{2} (1 + \rho\cos\theta)(1 + \rho\sin\theta)\rho d\rho \nonumber \\ 
-    & = \int_0^{2\pi}d\theta\int_0^\sqrt{2} (1 + \rho\cos\theta + \rho\sin\theta + \rho^2\sin\theta\cos\theta)\rho d\rho \nonumber \\ 
-    & = \int_0^{2\pi}d\theta\int_0^\sqrt{2}\rho d\rho = 2\pi \nonumber
+    \iint_Dxydxdy & = \int_0^{2\pi}d\theta\int_0^{\sqrt{2}}(1 + \rho\cos\theta)(1 + \rho\sin\theta)\rho d\rho \nonumber \\ 
+    & = \int_0^{2\pi}d\theta\int_0^{\sqrt{2}}(1 + \rho\cos\theta + \rho\sin\theta + \rho^2\sin\theta\cos\theta)\rho d\rho \nonumber \\ 
+    & = \int_0^{2\pi}d\theta\int_0^{\sqrt{2}}\rho d\rho = 2\pi \nonumber
 \end{flalign}
 
 
@@ -1122,13 +1122,13 @@ V = \int_{a}^{b} A(x) \,dx
 \subparagraph{解}
 由题设知积分区域\(D=\{(x,y)\mid1\leqslant x\leqslant2,\ 0\leqslant y\leqslant\ln x\}\)，从而
 
-\begin{aligned}
+\(\begin{aligned}
     \iint_{D}\frac{e^{xy}}{x^{x} - 1}\mathrm{d}\sigma & = \int_{1}^{2}\mathrm{d}x\int_{0}^{\ln x}\frac{\mathrm{e}^{xy}}{x^{x} - 1}\mathrm{d}y \\
     & = \int_{1}^{2}\frac{\mathrm{d}x}{x^{x} - 1}\int_{0}^{\ln x}\mathrm{e}^{xy}\mathrm{d}y \\
     & = \int_{1}^{2}\frac{\mathrm{d}x}{x(x^{x} - 1)}\int_{0}^{\ln x}\mathrm{e}^{xy}\mathrm{d}\left(xy\right) \\
     & = \int_{1}^{2}\frac{\mathrm{e}^{xy}}{x(x^{x} - 1)}\bigg|_{y=0}^{y=\ln x}\mathrm{d}x \\ 
     & = \int_{1}^{2}\frac{e^{x\ln x} - 1}{x(x^{x} - 1)}dx=\int_{1}^{2}\frac{dx}{x}=\ln2
-\end{aligned}
+\end{aligned}\)
 
 
 
