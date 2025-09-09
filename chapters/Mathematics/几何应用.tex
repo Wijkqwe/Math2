@@ -24,106 +24,111 @@
 
 间断点可以是极值点
 
-\paragraph{必要条件}
+\subsection{必要条件}
 一阶可导点
 
 设\(f(x)\)在\(x = x_0\)处可导，且在点\(x_0\)处取得极值，则必有\(f'(x_0) = 0\)
 
-\paragraph{第一充分条件}
-设\(f(x)\)在\(x = x_0\)处连续，且在\(x_0\)的某去心邻域\(U(x_0, \delta)\)内可导，
+\subsection{第一充分条件}
+设\(f(x)\)在\(x = x_0\)处连续，且在\(x_0\)的某去心邻域\(U(x_0, \delta)\)内可导，\begin{itemize}
+    \item 若\(x \in (x_0 - \delta, x_0)\)时，\(f'(x) < 0\)，而\(x \in (x_0, x_0 + \delta)\)时，\(f'(x) > 0\)，则\(f(x)\)在\(x = x_0\)处取得极小值；
+    \item 若\(x \in (x_0 - \delta, x_0)\)时，\(f'(x) > 0\)，而\(x \in (x_0, x_0 + \delta)\)时，\(f'(x) < 0\)，则\(f(x)\)在\(x = x_0\)处取得极大值；
+\end{itemize}
 
-()若\(x \in (x_0 - \delta, x_0)\)时，\(f'(x) < 0\)，而\(x \in (x_0, x_0 + \delta)\)时，\(f'(x) > 0\)，则\(f(x)\)在\(x = x_0\)处取得极小值；
 
-()若\(x \in (x_0 - \delta, x_0)\)时，\(f'(x) > 0\)，而\(x \in (x_0, x_0 + \delta)\)时，\(f'(x) < 0\)，则\(f(x)\)在\(x = x_0\)处取得极大值；
+\subsection{第二充分条件}
+设\(f(x)\)在\(x = x_0\)处二阶可导，且\(f'(x_0) = 0, f''(x_0) \neq 0\)\begin{itemize}
+    \item 若\(f''(x_0) < 0\)，则\(f(x)\)在\(x_0\)处取得极大值；
+    \item 若\(f''(x_0) > 0\)，则\(f(x)\)在\(x_0\)处取得极小值；
+\end{itemize}
 
-()
 
-\paragraph{第二充分条件}
-设\(f(x)\)在\(x = x_0\)处二阶可导，且\(f'(x_0) = 0, f''(x_0) \neq 0\)
-
-()若\(f''(x_0) < 0\)，则\(f(x)\)在\(x_0\)处取得极大值；
-
-()若\(f''(x_0) > 0\)，则\(f(x)\)在\(x_0\)处取得极小值；
-
-\paragraph{第三充分条件}
-设\(f(x)\)在\(x = x_0\)处n阶可导，且\(f^{(m)}(x_0) = 0, (m = n - 1), f^{(n)}(x_0) \neq 0, (n >= 2)\)则
-
-()当n为偶数且\(f^{(n)}(x_0) < 0\)时，\(f(x)\)在\(x_0\)处取极大值；
-
-()当n为偶数且\(f^{(n)}(x_0) > 0\)时，\(f(x)\)在\(x_0\)处取极小值；
+\subsection{第三充分条件}
+设\(f(x)\)在\(x = x_0\)处n阶可导，且\(f^{(m)}(x_0) = 0, (m = n - 1), f^{(n)}(x_0) \neq 0, (n >= 2)\)则\begin{itemize}
+    \item 当n为偶数且\(f^{(n)}(x_0) < 0\)时，\(f(x)\)在\(x_0\)处取极大值；
+    \item 当n为偶数且\(f^{(n)}(x_0) > 0\)时，\(f(x)\)在\(x_0\)处取极小值；
+\end{itemize}
 
 
 \section{单调性}
+
 
 \section{驻点}
 一阶导数为零的点；
 
 
 \section{凹凸性}
-\paragraph{定义}
+
+\subsection{定义}
 设\(f(x)\)在区间\(I\)上连续，若任意\(x_1, x_2 \in I\)，恒有\[f(\dfrac{x_1 + x_2}{2}) < \dfrac{f(x_1) + f(x_2)}{2}\]则称\(f(x)\)在区间\(I\)上的图形是凹的；若恒有
 \[f(\dfrac{x_1 + x_2}{2}) > \dfrac{f(x_1) + f(x_2)}{2}\]
 则称\(f(x)\)在区间\(I\)上的图形是凸的。
 
-\paragraph{定义2}
+
+\subsection{定义2}
 设\(f(x)\)在\([a, b]\)上连续，在\((a, b)\)内可导，若任意\(x, x_0 \in (a, b), x \neq x_0\)恒有\[f(x_0) + f'(x_0)(x - x_0) <(>) f(x)\]则称\(f(x)\)在\([a, b]\)上的图形是凹（凸）的；
 
-\paragraph{几何意义}
+
+\subsection{几何意义}
 \(y = f(x_0) + f'(x_0)(x - x_0)\)是\(f(x)\)在点\((x_0, f(x_0)\)处的切线方程
 
-\paragraph{判别}
-设\(f(x)\)在区间\(I\)上二阶可导
 
-()若在\(I\)上\(f''(x) > 0\)，则f(x)在\(I\)上图形是凹的；
-
-()若在\(I\)上\(f''(x) < 0\)，则f(x)在\(I\)上图形是凸的；
+\subsection{判别}
+设\(f(x)\)在区间\(I\)上二阶可导\begin{itemize}
+    \item 若在\(I\)上\(f''(x) > 0\)，则f(x)在\(I\)上图形是凹的；
+    \item 若在\(I\)上\(f''(x) < 0\)，则f(x)在\(I\)上图形是凸的；
+\end{itemize}
 
 
 \section{拐点}
-\paragraph{定义}
+\subsection{定义}
 连续曲线的凹弧与凸弧的分界点为拐点；
 
-\paragraph{必要条件}
+\subsection{必要条件}
 设\(f''(x_0)\)存在，且点\((x_0, f(x_0))\)为曲线的拐点，则\(f''(x_0) = 0\)
 
-\paragraph{第一充分条件}
+
+\subsection{第一充分条件}
 设\(f(x)\)在点\(x = x_0\)连续，在点\(x = x_0\)的某去心邻域\(U(x_0, \delta)\)内二阶导数存在，且该点的左右邻域内\(f''(x)\)变号，则点\(x = x_0\)为曲线的拐点。
 
-\paragraph{第二充分条件}
+
+\subsection{第二充分条件}
 设\(f(x)\)在点\(x = x_0\)的某邻域内三阶可导，且\(f''(x_0) = 0, f'''(x_0) \neq 0\)，则点\((x_0, f(x_0))\)为曲线的拐点；
 
-\paragraph{第三充分条件}
+
+\subsection{第三充分条件}
 设\(f(x)\)在\(x_0\)处n阶可导且\(f^{(m)}(x_0) = 0, (m = 2, ... n - 1), f^{(n)}(x_0) \neq 0(n >= 3)\)，则当n为奇数时，点\((x_0, f(x_0))\)为曲线的拐点；
 
-\subsubsection{极值点与拐点重要结论}
 
-()曲线的可导点不可同时为极值点和拐点；不可导点可同时为极值点和拐点；
+\subsection{极值点与拐点重要结论}
+\begin{itemize}
+    \item 曲线的可导点不可同时为极值点和拐点；不可导点可同时为极值点和拐点；
+    \item 设多项式函数\(f(x) = (x - a)^ng(x), (n > 1), g(a) \neq 0\)，当n为偶数时，x = a是\(f(x)\)的极值点；当n为奇数时，点\((a, 0)\)是曲线\(f(x)\)的拐点；
+    \item 设多项式函数\(f(x) = (x - a_1)^{n_1}(x - a_2)^{n_2}...(x - a_k)^{n_k}\)，其中\(n_i\)正整数，\(a_i\)实数且两两不等；记\(k_1\)为\(n_i = 1\)的个数，\(k_2\)为\(n_i > 1, n_i\)为偶数的个数，\(k_3\)为\(n_i > 1, n_i\)为奇数的个数，则\(f(x)\)的极值点个数为\(k_1 + 2k_2 + k_3 - 1\)，拐点数为\(k_1 + 2k_2 + 3k_3 - 2\)；
+\end{itemize}
 
-()设多项式函数\(f(x) = (x - a)^ng(x), (n > 1), g(a) \neq 0\)，当n为偶数时，x = a是\(f(x)\)的极值点；当n为奇数时，点\((a, 0)\)是曲线\(f(x)\)的拐点；
-
-()设多项式函数\(f(x) = (x - a_1)^{n_1}(x - a_2)^{n_2}...(x - a_k)^{n_k}\)，其中\(n_i\)正整数，\(a_i\)实数且两两不等；记\(k_1\)为\(n_i = 1\)的个数，\(k_2\)为\(n_i > 1, n_i\)为偶数的个数，\(k_3\)为\(n_i > 1, n_i\)为奇数的个数，则\(f(x)\)的极值点个数为\(k_1 + 2k_2 + k_3 - 1\)，拐点数为\(k_1 + 2k_2 + 3k_3 - 2\)；
 
 \section{渐近线}
 
-\paragraph{铅直渐近线}
+\subsection{铅直渐近线}
 若\(\displaystyle\lim_{x \to x_0^+}f(x) = \infty(\lim_{x \to x_0^-}f(x) = \infty)\)，则\(x = x_0\)为铅直渐近线；
 
-\paragraph{水平渐近线}
+\subsection{水平渐近线}
 若\(\displaystyle\lim_{x \to +\infty}f(x) = y_1\)，则\(y = y_1\)为一条水平渐近线；若\(\displaystyle\lim_{x \to -\infty}f(x) = y_2\)，则\(y = y_2\)为一条水平渐近线;
 
 若\(\displaystyle\lim_{x \to +\infty}f(x) = \lim_{x \to -\infty}f(x) = y_0\)，则\(y = y_0\)为一条水平渐近线；
 
-\paragraph{斜渐近线}
+\subsection{斜渐近线}
 若\(\displaystyle\lim_{x \to +(-)\infty}\dfrac{f(x)}{x} = a_1, \lim_{x \to +(-)\infty}[f(x) - a_1x] = b_1\)，则\(y = a_1x + b_1\)是曲线\(y = f(x)\)的一条斜渐近线；
 
 若\(\displaystyle\lim_{x \to +\infty}\dfrac{f(x)}{x} = \lim_{x \to -\infty}\dfrac{f(x)}{x} = a, \lim_{x \to +\infty}[f(x) - a_1x] = \lim_{x \to -\infty}[f(x) - a_1x] = b\)，则\(y = ax + b\)是一条斜渐近线；
 
-\paragraph{顺序}
-铅直，水平，斜
-
-找函数无定义点，区间端点，函数分段点；
-
-判断\(\displaystyle\lim_{x \to x_0^+}f(x) = \infty, \text{判断}\lim_{x \to \infty}f(x)\)是否常数，若\(\infty\)，判断\(\displaystyle\lim_{x \to \infty}\dfrac{f(x)}{x}\)是否为非零常数;
+\subsection{顺序}
+\begin{enumerate}
+    \item 铅直，水平，斜
+    \item 找函数无定义点，区间端点，函数分段点；
+    \item 判断\(\displaystyle\lim_{x \to x_0^+}f(x) = \infty, \text{判断}\lim_{x \to \infty}f(x)\)是否常数，若\(\infty\)，判断\(\displaystyle\lim_{x \to \infty}\dfrac{f(x)}{x}\)是否为非零常数;
+\end{enumerate}
 
 
 \section{最值}
@@ -138,8 +143,29 @@
 
 \section{函数图像}
 
+\subsection{斜率}
+f(x)在点\(x_0\)处的导数值\(f'(x_0)\)是曲线\(y = f(x)\)在点\((x_0, y_0)\)处切线的斜率k，即\(k = f'(x_0)\)，切线方程为\(y - y_0 = f'(x_0)(x - x_0)\)，法线方程为\(y - y_0 = -\dfrac{1}{f'(x_0)}(x - x_0), (f'(x_0) \neq 0)\)
+
+\subsection{倾角}
+设\(y(x)\)具有二阶导数，记\(\alpha\)为\(y(x)\)在点(x, y)处切线的倾角，则\[y' = tan\,\alpha\]
+
 
 \section{曲率}
 设\(y(x)\)二阶可导，则曲线\(y = y(x)\)在点\((x, y(x))\)处曲率为\(k = \dfrac{|y''|}{[1 + (y')^2]^{\frac{3}{2}}}\)，曲率半径的计算公式为\(R = \dfrac{1}{k} = \dfrac{[1 + (y')^2]^{\frac{3}{2}}}{|y''|}\)
+
+
+\subsection{曲率}
+y(x)在任意点的曲率\(K = \dfrac{|y''(x)|}{(1 + y'^2(x))^{\frac{3}{2}}}\)
+
+\subsection{曲率半径}
+\[\rho = \dfrac{1}{K}\]
+
+\subsection{曲率中心坐标}
+\[\alpha = x - \dfrac{y'(1 + y'^2)}{y''}\]
+\[\beta = y + \dfrac{1 + y'^2}{y''}\]
+
+\subsection{曲率圆方程}
+\[(x - \alpha)^2 + (y - \beta)^2 = \rho^2\]
+
 
 
