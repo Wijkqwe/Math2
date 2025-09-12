@@ -108,6 +108,17 @@
     \item 若\(y = C_1y_1(x) + C_2y_2(x)\)是\(y'' + py' + qy = 0\)的通解，\(y^*\)是\(y'' + py' + qy = f(x)\)的一个特解，则\(y + y^*\)是\(y'' + py' + qy = f(x)\)的特解；
 \end{itemize}
 
+\paragraph{当\(f(x) = P_n(x)\)时}
+特解为\[y^* = Q_n(x)x^k\]其中
+\[\begin{cases}
+    Q_n(x)\text{ 多项式，通常代入计算得到} \\
+    k = \begin{cases}
+        0, 0 \neq r_1,\ \ 0 \neq r_2 \\ 
+        1, 0 = r_1\ \text{ or }\ 0 = r_2 \\ 
+        2, 0 = r_1 = r_2
+    \end{cases}
+\end{cases}\]
+
 \paragraph{当\(f(x) = P_n(x)e^{\alpha x}\)时}
 特解设为
 \[y^* = Q_n(x)x^ke^{\alpha x}\]其中
