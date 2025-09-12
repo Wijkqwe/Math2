@@ -1,30 +1,6 @@
 
 \chapter{微分}
 
-\section{一元函数微分学}
-
-\subsection{定义}
-
-函数\(y = f(x)\)在点\(x_0\)的某个邻域内有定义，且\(x_0 + \Delta x\)在该邻域内，对于函数增量\(\Delta y = f(x_0 + \Delta x) - f(x_0)\)，若存在与\(\Delta x\)无关的常数A使得\(\Delta y = A\Delta x + o(\Delta x)\)，则\(f(x)\)在点\(x_0\)处可微，\(y' = A\)，记\(dy|_{x = x_0} = A\Delta x\)或\(dy|_{x = x_0} = f'(x_0)dx\)
-
-函数的微分是函数增量的线性主部，\(dy = y'dx = y'\Delta x\)
-
-
-\subsection{判别}
-\begin{enumerate}
-    \item 写增量\(\Delta y = f(x_0 + \Delta x) - f(x_0)\)
-    \item 写线性增量\(A\Delta x = f'(x_0)\Delta x\)
-    \item 作极限\(\displaystyle \lim_{\Delta x \to 0}\dfrac{\Delta y - A\Delta x}{\Delta x}\)
-    \item 若极限等于0，则可微，否则不可
-\end{enumerate}
-\[\text{可微} \Leftrightarrow \text{可导} \Rightarrow \text{连续}\]
-
-
-\subsection{几何意义}
-
-若\(f(x)\)在点\(x_0\)处可微，则在点\((x_0, y_0)\)附近可用切线段近似代替曲线段
-
-
 
 \section{一阶微分方程}
 
@@ -111,7 +87,7 @@
 \subsection{二阶常系数齐次线性微分方程}
 \[y'' + py' + qy = 0\]
 
-若\(y_1(x),y_2(x)\)是两个解，且\(\dfrac{y_1}{y_2} != C\)（C常数），则是线性无关解，通解为\[y(x) = C_1y_1(x) + C_2y_2(x)\]
+若\(y_1(x),y_2(x)\)是两个解，且\(\dfrac{y_1}{y_2} \neq C\)（C常数），则是线性无关解，通解为\[y(x) = C_1y_1(x) + C_2y_2(x)\]
 
 \subsubsection{特征方程}
 \(r^2 + pr + q = 0\)
@@ -214,6 +190,30 @@
 特征方程为\[r^3 - r = 0\]即\(r(r^2 - 1) = 0\)，得\(r_1 = 0, r_2 = 1, r_3 = -1\)，故通解为\(y = C_1 + C_2e^x + C_3e^{-x}\)，条件代入得\(y = 2 + e^{-x}\)
 
 
+\section{一元函数微分学}
+
+\subsection{定义}
+
+函数\(y = f(x)\)在点\(x_0\)的某个邻域内有定义，且\(x_0 + \Delta x\)在该邻域内，对于函数增量\(\Delta y = f(x_0 + \Delta x) - f(x_0)\)，若存在与\(\Delta x\)无关的常数A使得\(\Delta y = A\Delta x + o(\Delta x)\)，则\(f(x)\)在点\(x_0\)处可微，\(y' = A\)，记\(dy|_{x = x_0} = A\Delta x\)或\(dy|_{x = x_0} = f'(x_0)dx\)
+
+函数的微分是函数增量的线性主部，\(dy = y'dx = y'\Delta x\)
+
+
+\subsection{判别}
+\begin{enumerate}
+    \item 写增量\(\Delta y = f(x_0 + \Delta x) - f(x_0)\)
+    \item 写线性增量\(A\Delta x = f'(x_0)\Delta x\)
+    \item 作极限\(\displaystyle \lim_{\Delta x \to 0}\dfrac{\Delta y - A\Delta x}{\Delta x}\)
+    \item 若极限等于0，则可微，否则不可
+\end{enumerate}
+\[\text{可微} \Leftrightarrow \text{可导} \Rightarrow \text{连续}\]
+
+
+\subsection{几何意义}
+
+若\(f(x)\)在点\(x_0\)处可微，则在点\((x_0, y_0)\)附近可用切线段近似代替曲线段
+
+
 \section{多元函数微分学}
 
 \subsection{邻域的几何意义}
@@ -254,6 +254,11 @@
 A，B仅与点\((x, y)\)有关，与\(\Delta x,\Delta y\)无关；\(\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}\)，\(\Delta x \to 0,\Delta y \to 0\)时，\(o(\rho)\)是\(\rho\)的高阶无穷小；
 
 全微分\[dz = A\Delta x + B\Delta y\]
+
+
+\subsection{线性近似微分}
+设\(f(x, y)\)在点\((a, b)\)上可微，则存在线性近似\[f(x, y) - f(a, b) = f_x'(x - a) + f_y'(y - b) + o(\rho)\]
+其中\(\rho = \sqrt{(x - a)^2 + (y - b)^2}\)，即\[\lim_{\rho \to 0}\dfrac{f(x, y) - f(a, b) - [f_x'(x - a) + f_y'(y - b)]}{\rho} = 0\]
 
 
 \subsection{必要条件}
@@ -377,6 +382,27 @@ x = 0, y = 0代入得z = 0
 \end{flalign}
 故\(AC - B^2 > 0,\ A > 0\)，\(\therefore f(0, \dfrac{1}{e})\)是极小值为\(-\dfrac{1}{e}\)
 
+
+\subsubsection{导数定义求偏导}
+设\(z = (y^x + \dfrac{\sin x}{\sqrt{x^2 + 2y^2}})^{\sqrt{x^2 + y^2}}\)，则\(\dfrac{\vartheta z}{\vartheta x}\bigg|_{(0, 1)} = \)?
+\subparagraph{解}
+\(y = 1\)代入得\(z(x, 1) = (1 + \dfrac{\sin x}{\sqrt{x^2 + 2}})^{\sqrt{x^2 + 1}}\)，设\(z(x, 1) = \varphi(x)\)，故\[\dfrac{\vartheta z}{\vartheta x}\bigg|_{(0, 1)} = \varphi'(0) = \lim_{x \to 0}\dfrac{\varphi(x) - \varphi(0)}{x}\]
+
+
+\subsubsection{隐函数全微分}
+设z是方程\(x + y + z = \displaystyle\int_0^{xyz}e^{-t^2}dt\)确定的隐函数，则\(dz = \)?
+\subparagraph{解}
+两端一阶全微分得\[dx + dy + dz = e^{-x^2y^2z^2}d(xyz) = e^{-x^2y^2z^2}(yzdx + xzdy + xydz)\]
+
+
+\subsubsection{极限、线性近似微分}
+设连续函数\(z = f(x, y)\)满足\(\displaystyle\lim_{x \to 0, y \to 1}\dfrac{f(x, y) - 2x + y - 2}{\sqrt{x^2 + (y - 1)^2}} = 0\)，则\(dz\bigg|_{(0, 1)} = \)?
+\subparagraph{解}
+由题可知\[\displaystyle\lim_{x \to 0, y \to 1}[f(x, y) - 2x + y - 2] = 0\]
+由\(f(x, y)\)连续，则\[f(0, 1) = 1\]
+从而有\(\displaystyle\lim_{x \to 0, y \to 1}\dfrac{f(x, y) - f(0, 1) - 2x + (y - 1)}{\sqrt{x^2 + (y - 1)^2}} = 0\)
+，即\[f(x, y) - f(0, 1) = 2x - (y - 1) + o(\rho)\]
+故\[f_x'(0, 1) = 2,\ f_y'(0, 1) = -1\]
 
 
 
