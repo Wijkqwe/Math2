@@ -7,10 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
 
-- 数据链路层
-- Changelog file.
 
 
 ## [0.0.1] 2025-00-00
