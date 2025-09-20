@@ -427,6 +427,13 @@ null & \(arccot x\) & \(\dfrac{-1}{1 + x^{2}}\) \\
 \frac{1}{2}(x\sqrt{a^{2} - x^{2}} + a^{2}\arcsin\frac{x}{a}) + C \nonumber 
 \end{flalign}
 
+被积函数中含有形如\(\sqrt[n]{\dfrac{ax + b}{cx + d}}\)的根式的积分\begin{enumerate}
+    \item 令\(t = \sqrt[n]{\dfrac{ax + b}{cx + d}}\)
+    \item \(x = \dfrac{b - t^nd}{t^nc - a}\)
+    \item \(dx = \dfrac{n(ad - bc)t^{n - 1}}{(t^nc - a)^2}dt\)
+\end{enumerate}
+
+
 
 \subsection{凑积分}
 \[\int f[g(x)]g'(x)dx = \int f[g(x)]d[g(x)] = \int f(u)du\]
@@ -861,6 +868,33 @@ null & \(arccot x\) & \(\dfrac{-1}{1 + x^{2}}\) \\
 令\(\tan\dfrac{x}{2} = t\)，则\(x = 2\arctan t,\ dx = \dfrac{2dt}{1 + t^2},\ \sin x = \dfrac{2t}{1 + t^2}, \cos x = \dfrac{1 - t^2}{1 + t^2}\)，代入得
 \[ = \int\dfrac{2dt}{1 + 2t - t^2} = \int\dfrac{2dt}{2 - (1 - t)^2}\]
 
+
+\subsubsection{\(e^{tx - t^2}\)变限积分换元}
+\(F(x) = \displaystyle\int_0^xe^{tx - t^2}dt\)，求\(F'(x)\)
+\subparagraph{解}
+\begin{flalign}
+    F(x) & = \int_0^xe^{\frac{x^2}{4} - (\frac{x}{2} - t)^2}dt = e^{\frac{x^2}{4}}\int_0^xe^{- (\frac{x}{2} - t)^2}dt \nonumber \\ 
+    & \xrightarrow{u = \frac{x}{2} - t} -e^{\frac{x^2}{4}}\int_{\frac{x}{2}}^{-\frac{x}{2}}e^{-u^2}du = 2e^{\frac{x^2}{4}}\int_{0}^{\frac{x}{2}}e^{-u^2}du
+\end{flalign}
+
+
+\subsubsection{三角函数，原函数}
+\(\displaystyle f(x) = \dfrac{1}{1 + \sin^2x}, x\in[0, \pi]\)，则\(f(x)\)在\([0, \pi]\)上全体原函数为
+\subparagraph{解}
+\begin{flalign}
+    \int\dfrac{dx}{1 + \sin^2x} & = \int\dfrac{\dfrac{1}{\cos^2x}dx}{\dfrac{1}{\cos^2x} + \tan^2x} \nonumber \\ 
+    & = \int\dfrac{d\tan x}{1 + 2\tan^2x} \nonumber \\ 
+    & = \dfrac{1}{\sqrt{2}}\arctan(\sqrt{2}\tan x) + C \nonumber
+\end{flalign}
+
+\(\because\)在\(x = \dfrac{\pi}{2}\)上无定义，
+
+\(\therefore\)左右分别求极限，得\(F(x) + C\)，其中
+\[F(x) = \begin{cases}
+    \dfrac{1}{\sqrt{2}}\arctan(\sqrt{2}\tan x) - \dfrac{\pi}{2\sqrt{2}}, 0 <= x < \dfrac{\pi}{2} \\ 
+    0,\ \ x = \dfrac{\pi}{2} \\ 
+    \dfrac{1}{\sqrt{2}}\arctan(\sqrt{2}\tan x) + \dfrac{\pi}{2\sqrt{2}}, \dfrac{\pi}{2} < x <= \pi
+\end{cases}\]
 
 
 \section{几何应用}
