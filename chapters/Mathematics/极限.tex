@@ -173,12 +173,17 @@ ln(1 + x) & = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - ... + (-1)^{n - 1}\dfrac{x^n
 
 
 \subsection{夹逼准则}
+\paragraph{1}
 \[\lim_{n \to \infty}\sqrt[n]{a^n + b^n + c^n} = \max\{a, b, c\},\ (a, b, c > 0)\]
 
+\paragraph{2}
 \[\lim_{n \to \infty}\dfrac{(2n - 1)!!}{(2n)!!} = 0\]
 \subparagraph{证明}
 \(4n^2 > 4n^2 - 1 = (2n + 1)(2n - 1) \Rightarrow 2n > \sqrt{(2n + 1)(2n - 1)}\)，故
 \[\dfrac{(2n - 1)!!}{(2n)!!} < \dfrac{(2n - 1)!!}{(1 * \sqrt{3})(\sqrt{3} * \sqrt{5})...(\sqrt{(2n - 1)(2n + 1)}} = \dfrac{1}{\sqrt{2n + 1}}\]
+
+\paragraph{3}
+\[\lim_{n \to \infty}\sqrt{n}\dfrac{(2n - 1)!!}{(2n)!!} = \dfrac{1}{\sqrt{\pi}}\]
 
 
 \subsection{七种极限}
@@ -230,7 +235,7 @@ tan\ x - sin\ x = tan\ x(1 - cos\ x) \sim \dfrac{1}{2}x^3
     & = \dfrac{1}{k}\lim_{x \to \infty}x^{99 - k + 1} \nonumber
 \end{flalign}
 \[(x \to 0^+)x^x = e^{x\ln x} = e^0 = 1\]
-
+\[\text{Wallis乘积}\lim_{n \to \infty}\dfrac{(2n)!!^2}{(2n - 1)!!(2n + 1)!!} = \dfrac{\pi}{2}\]
 
 \subsubsection{三角函数}
 \[\lim_{x \to 0}\sin\dfrac{1}{x}\text{有界振荡}(\in[-1, 1])\text{极限不存在}\]
