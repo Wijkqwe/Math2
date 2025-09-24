@@ -175,6 +175,11 @@ ln(1 + x) & = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - ... + (-1)^{n - 1}\dfrac{x^n
 \subsection{夹逼准则}
 \[\lim_{n \to \infty}\sqrt[n]{a^n + b^n + c^n} = \max\{a, b, c\},\ (a, b, c > 0)\]
 
+\[\lim_{n \to \infty}\dfrac{(2n - 1)!!}{(2n)!!} = 0\]
+\subparagraph{证明}
+\(4n^2 > 4n^2 - 1 = (2n + 1)(2n - 1) \Rightarrow 2n > \sqrt{(2n + 1)(2n - 1)}\)，故
+\[\dfrac{(2n - 1)!!}{(2n)!!} < \dfrac{(2n - 1)!!}{(1 * \sqrt{3})(\sqrt{3} * \sqrt{5})...(\sqrt{(2n - 1)(2n + 1)}} = \dfrac{1}{\sqrt{2n + 1}}\]
+
 
 \subsection{七种极限}
 \(\dfrac{0}{0}, \dfrac{\infty}{\infty}, 0 * \infty, \infty - \infty， \infty^0, 0^{\infty}, 1^{\infty}\)

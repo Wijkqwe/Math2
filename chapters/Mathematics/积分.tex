@@ -414,11 +414,9 @@ null & \(arccot x\) & \(\dfrac{-1}{1 + x^{2}}\) \\
     \int_{}^{} \dfrac{1}{\sqrt{a^{2} - x^{2}}} \,dx & =
 \arcsin\dfrac{x}{a} + C \nonumber \\ 
     \int_{}^{} \dfrac{1}{\sqrt{x^{2} + a^{2}}} \,dx & = 
-\ln(\sqrt{x^{2} + a^{2}} + x) + C =
-\arcsin h\frac{x}{a} + C + \ln a \nonumber \\ 
+\ln(\sqrt{x^{2} + a^{2}} + x) + C \nonumber \\ 
     \int_{}^{} \dfrac{1}{\sqrt{x^{2} - a^{2}}} \,dx & = 
-\ln|\sqrt{x^{2} - a^{2}} + x| + C =
-\arccos h\frac{x}{a} + C + \ln a \nonumber \\ 
+\ln|\sqrt{x^{2} - a^{2}} + x| + C \nonumber \\ 
     \int_{}^{} \sqrt{x^{2} + a^{2}} \,dx & =
 \frac{1}{2}(x\sqrt{x^{2} + a^{2}} + a^{2}\arcsin h\frac{x}{a}) + C \nonumber \\ 
     \int_{}^{} \sqrt{x^{2} - a^{2}} \,dx & =
@@ -519,6 +517,11 @@ null & \(arccot x\) & \(\dfrac{-1}{1 + x^{2}}\) \\
     \item 设\(f(x)\)连续奇函数，则\[\int_{-a}^af(x)dx = 0\]
     \item 设\(f(x)\)为以T为周期的连续函数，则对任意实数\(a\)有\[\int_a^{a + T}f(x)dx = \int_0^Tf(x)dx\]
     \item 设\(f(x)\)连续函数，则\[\int_a^bf(x)dx = \int_a^bf(a + b - x)dx\]
+\end{itemize}
+
+
+\subsubsection{Wallis公式}
+\begin{itemize}
     \item \(\displaystyle\int_0^{\frac{\pi}{2}}\sin^nxdx = \int_0^{\frac{\pi}{2}}\cos^nxdx = \begin{cases}
         \dfrac{n - 1}{n} * \dfrac{n - 3}{n - 2} * ... * \dfrac{2}{3} * 1,\ \ n\text{为大于1的奇数} \\ 
         \dfrac{n - 1}{n} * \dfrac{n - 3}{n - 2} * ... * \dfrac{1}{2} * \dfrac{\pi}{2},\ \ n\text{为正偶数}
@@ -534,6 +537,10 @@ null & \(arccot x\) & \(\dfrac{-1}{1 + x^{2}}\) \\
     \item \(\displaystyle\int_0^{2\pi}\cos^nxdx = \int_0^{2\pi}\sin^nxdx = \begin{cases}
         0,\ \  n\text{为正奇数} \\ 
         4 * \dfrac{n - 1}{n} * \dfrac{n - 3}{n - 2} * ... * \dfrac{1}{2} * \dfrac{\pi}{2},\ \ n\text{为正偶数}
+    \end{cases}\)
+    \item \(\displaystyle\int_0^{\frac{\pi}{2}}\sin^mx\cos^nxdx = \begin{cases}
+        \dfrac{(m - 1)!!(n - 1)!!}{(m + n)!!} * \dfrac{\pi}{2},\ \ \ \text{m,n都是偶数} \\ 
+        \dfrac{(m - 1)!!(n - 1)!!}{(m + n)!!},\ \ \ \ \ \text{else}
     \end{cases}\)
 \end{itemize}
 
