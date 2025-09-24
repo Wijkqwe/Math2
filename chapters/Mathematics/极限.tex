@@ -6,19 +6,24 @@
 \section{定义}
 
 设f(x)在点\(x_0\)的某一去心邻域内有定义，若存在常数A，对于任意给定的\(\epsilon > 0\)，总存在正数\(\delta\)，使得当\(0 < |x - x_0| < \delta\)时，对应f(x)都满足不等式\(|f(x) - A| < \epsilon\)，则A称为f(x)当\(x \to x_0\)时的极限，记作\(\lim_{x \to x_0}f(x) = A\)或\(f(x) \to A(x \to x_0)\)，即
-\[\lim_{x \to x_0}f(x) = A \Leftrightarrow \forall \epsilon > 0, \exists \delta > 0\text{当}0 < |x - x_0| < \delta\text{时，有}|f(x) - A| < \epsilon\]
+\begin{flalign}
+    \lim_{x \to x_0}f(x) = A & \Leftrightarrow \forall \epsilon > 0, \exists \delta > 0\text{当}0 < |x - x_0| < \delta\text{时，有}|f(x) - A| < \epsilon \nonumber \\ 
+    & \Leftrightarrow \text{在}x = x_0\text{的某去心邻域内}f(x)\text{存在} \nonumber
+\end{flalign}
+\[\]
 
 
 \section{性质}
 
 \subsection{唯一性}
 若极限存在那么极限唯一
+\begin{itemize}
+    \item 对于\(x \to \infty\)，意味着\(x \to +\infty\)且\(x \to -\infty\)
+    \item 对于\(x \to x_0\)， 意味着\(x \to x_0^+\)且\(x \to x_0^-\)
+\end{itemize}
 
-对于\(x \to \infty\)，意味着\(x \to +\infty\)且\(x \to -\infty\)
 
-对于\(x \to x_0\)， 意味着\(x \to x_0^+\)且\(x \to x_0^-\)
-
-极限存在充要条件
+极限存在\textbf{充要条件}：
 \[\lim_{x \to x_0}f(x) = A \Leftrightarrow \lim_{x \to x_0^+}f(x) = A \text{且} \lim_{x \to x_0^-}f(x) = A\]
 \[\lim_{x \to x_0}f(x) = A \Leftrightarrow f(x) = A + \alpha(x), \lim_{x \to x_0}\alpha(x) = 0\]
 
@@ -30,9 +35,9 @@
 
 若f(x)在(a, b)上连续函数，且\(\displaystyle \lim_{x \to a^+}f(x)\lim_{x \to b^-}f(x)\)存在 ，则f(X)在(a, b)上有界；
 
-极限存在是函数局部有界的充分条件；
+极限存在是函数局部有界的\textbf{充分条件}；
 
-有界函数与有界函数的和、差、积仍为有界函数
+有界函数与有界函数的和、差、积仍为\textbf{有界函数}
 
 
 \subsection{局部保号性}
