@@ -110,46 +110,47 @@
 
 
 \section{非齐次线性方程组}
-\[
-\begin{cases}
-a_{11}x_1 + ... + a_{1n}x_n = b_1 \\ 
-... \\ 
-a_{m1}x_1 + ... + a_{mn}x_n = b_m
-\end{cases}
-\]为m个方程，n个未知数的非齐次线性方程组；
+\[\begin{cases}
+    a_{11}x_1 + ... + a_{1n}x_n = b_1 \\ 
+    ... \\ 
+    a_{m1}x_1 + ... + a_{mn}x_n = b_m
+\end{cases}\]
+为m个方程，n个未知数的非齐次线性方程组；
 
-\paragraph{向量形式}为\(x_1\alpha_1 + ... + x_n\alpha_n = \beta\)，其中\(\alpha_i = \begin{bmatrix}
-a_{1i} \\ 
-... \\ 
-a_{mi}
+\paragraph{向量形式}
+为\(x_1\alpha_1 + ... + x_n\alpha_n = \beta\)，其中\(\alpha_i = \begin{bmatrix}
+    a_{1i} \\ 
+    ... \\ 
+    a_{mi}
 \end{bmatrix}, \beta = \begin{bmatrix}
-b_1 \\ 
-... \\ 
-b_m
+    b_1 \\ 
+    ... \\ 
+    b_m
 \end{bmatrix}\)；
 
-\paragraph{矩阵形式}为\(Ax = \beta\)，其中\(A = \begin{bmatrix}
-a_{11} & ... & a_{1n} \\ 
-... \\ 
-a_{m1} & ... & a_{mn}
+\paragraph{矩阵形式}
+为\(Ax = \beta\)，其中\(A = \begin{bmatrix}
+    a_{11} & ... & a_{1n} \\ 
+    ... \\ 
+    a_{m1} & ... & a_{mn}
 \end{bmatrix}\)，A的伴随矩阵为\(\begin{bmatrix}
-a_{11} & ... & a_{1n} & b_1 \\ 
-... & & & ... \\ 
-a_{m1} & ... & a_{mn} & b_m
+    a_{11} & ... & a_{1n} & b_1 \\ 
+    ... & & & ... \\ 
+    a_{m1} & ... & a_{mn} & b_m
 \end{bmatrix}\)记作\([A : \beta]\)
 
 \subsection{有解条件}
-若\(r(A) \neq r([A, \beta])\)（\(\beta\)不能由\(\alpha_1, ..., \alpha_n\)线性表示），则无解；
+\begin{itemize}
+    \item 若\(r(A) \neq r([A, \beta])\)（\(\beta\)不能由\(\alpha_1, ..., \alpha_n\)线性表示），则\textbf{无解}；
+    \item 若\(r(A) = r([A, \beta]) = n\)（即\(\alpha_1, ..., \alpha_n\)线性无关，\(\alpha_1, ..., \alpha_n, \beta\)线性相关），则\textbf{有唯一解}；
+    \item 若\(r(A) = r([A, \beta]) = r < n\)，则\textbf{有无穷多解}；
+    \item 若\(r(A) = m\)，则\(r([A, \beta]) = m = r(A)\)，\textbf{有解}；
+\end{itemize}
 
-若\(r(A) = r([A, \beta]) = n\)（即\(\alpha_1, ..., \alpha_n\)线性无关，\(\alpha_1, ..., \alpha_n, \beta\)线性相关，则有唯一解；
-
-若\(r(A) = r([A, \beta]) = r < n\)，则有无穷多解；
-
-若\(r(A) = m\)，则\(r([A, \beta] = m = r(A)\)，有解；
-
-对于\(A^TAx = A^T\beta\)，因为\([A^TA : A^T\beta] = A^T[A : \beta]\),故\(r([A^TA, A^T\beta] <= r(A^T) = r(A)\)，又\(r(A) = r(A^TA) <= r([A^TA, A^T\beta]\)，故\(r(A^TA) = r([A^TA, A^T\beta]\)，因此有解；
+对于\(A^TAx = A^T\beta\)，因为\([A^TA : A^T\beta] = A^T[A : \beta]\),故\(r([A^TA, A^T\beta]) <= r(A^T) = r(A)\)，又\(r(A) = r(A^TA) <= r([A^TA, A^T\beta])\)，故\(r(A^TA) = r([A^TA, A^T\beta]\)，因此有解；
 
 对于方阵\(A_{n * n}\)，若有多解，则\(|A| = 0/r(A) < n/A\text{不可逆}\)
+\mymatrix
 
 \subsection{解性质}
 设\(\eta_1, \eta_2\)，\(\eta\)是非齐次线性方程组\(Ax = \beta\)的解，\(\zeta\)是对应齐次线性方程组\(Ax = 0\)的解，则\begin{itemize}
@@ -158,8 +159,8 @@ a_{m1} & ... & a_{mn} & b_m
 \end{itemize}
 
 由\(r(A) = r([A, \beta])\)得\(r(A^T) = r(\begin{bmatrix}
-A^T \\ 
-\beta^T
+    A^T \\ 
+    \beta^T
 \end{bmatrix})\)
 
 \subsection{解结构}
