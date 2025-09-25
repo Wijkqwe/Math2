@@ -244,13 +244,13 @@ A_{1n} & A_{2n} & ... & A_{nn}
 
 
 \section{初等矩阵}
-由单位矩阵经过一次初等变换得到的矩阵称为初等矩阵；
+由单位矩阵经过一次初等变换得到的矩阵称为初等矩阵。
+\begin{itemize}
+    \item \(E_i(k)\)表示单位矩阵E的第i行(或第i列)乘常数k得到的初等矩阵；
+    \item \(E_{ij}\)表示E交换第i行和第j行(或第i列和第j列)得到的初等矩阵；
+    \item \(E_{ij}(k)\)表示E的第j行(或第i列)的k倍加到第i行(或第j列)得到的初等矩阵；
+\end{itemize}
 
-\(E_i(k)\)表示单位矩阵E的第i行(或第i列)乘常数k得到的初等矩阵；
-
-\(E_{ij}\)表示E交换第i行和第j行(或第i列和第j列)得到的初等矩阵；
-
-\(E_{ij}(k)\)表示E的第j行(或第i列)的k倍加到第i行(或第j列)得到的初等矩阵；
 
 \subsection{性质}
 
@@ -266,7 +266,7 @@ A_{1n} & A_{2n} & ... & A_{nn}
 
 若A可逆，则A可表示成有限个初等矩阵的乘积；
 
-对n阶矩阵A进行初等行变换，等价于在A左边乘相应的初等矩阵；对A进行初等列变换，等价于在A右边乘相应的初等矩阵；
+对n阶矩阵A进行初等行变换，等价于在A\textbf{左边乘}相应的初等矩阵；对A进行初等列变换，等价于在A\textbf{右边乘}相应的初等矩阵；
 
 
 \subsection{初等变换求逆矩阵}
@@ -371,6 +371,7 @@ O & O
     \item \(A^* \sim B^*\)
     \item \(A^T \sim B^T\)
     \item \(A + kE \sim B + kE\)
+    \item 若\(B\alpha = \lambda\alpha\)，则\(A(P\alpha) = \lambda(P\alpha)\)
 \end{itemize}
 
 若\(A \sim C, B \sim D\)，则\(\begin{bmatrix}
@@ -527,7 +528,7 @@ O & O
 由题得\[[A\xi_1, A\xi_2, A\xi_3] = A[\xi_1, \xi_2, \xi_3] = [\xi_1, 2\xi_2, 3\xi_3]\]
 \[\therefore\, A = [\xi_1, 2\xi_2, 3\xi_3][\xi_1, \xi_2, \xi_3]^{-1}\]
 
-\paragraph{求特征向量}
+\subsubsection{求特征向量}
 已知\(P^{-1}AP = \begin{bmatrix}
     1 \\ 
      & 1 \\ 
@@ -536,7 +537,22 @@ O & O
 \subparagraph{解}
 当\(P^{-1}AP = \Lambda\)时，P的每一列都是A的相应的特征向量，故\(\lambda = 1\)的特征向量为\(k_1\alpha + k_2\alpha,\ \ k_1, k_2\)不全为0。
 
-\paragraph{相似对角求矩阵}
+
+\subsubsection{求特征向量}
+已知\(P^{-1}AP = B,\ B =  \begin{bmatrix}
+    1 & -1 & 2 \\ 
+    2 & -2 & 4 \\ 
+    1 & -1 & 2
+\end{bmatrix},\ P = (\alpha_1, \alpha_2, \alpha_3)\)，则矩阵A关于特征值\(\lambda = 0\)的特征向量为?
+\subparagraph{解}
+\(0E - B = \begin{bmatrix}
+    1 & -1 & 2 \\ 
+    0 & 0 & 0 \\ 
+    0 & 0 & 0
+\end{bmatrix}\)得基础解系\[\beta_1 = (1, 1, 0)^T,\ \beta_2 = (-2, 0, 1)^T\]故特征向量为\(k_1P\beta_1 + k_2P\beta_2\)
+
+
+\subsubsection{相似对角求矩阵}
 已知矩阵\(A = \begin{bmatrix}
     3 & 1 & 2 \\ 
     0 & 2 & a \\ 
