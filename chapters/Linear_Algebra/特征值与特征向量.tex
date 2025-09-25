@@ -4,7 +4,7 @@
 \section{概述}
 
 \subsection{定义}
-设n阶矩阵A，\(\lambda\)是一个数，若存在n维非零列向量\(\xi\)，使得\(A\xi = \lambda\xi\)，则称\(\lambda\)是A的特征值，\(\xi\)是A的对应特征值\(\lambda\)的特征向量；
+设n阶矩阵A，\(\lambda\)是一个数，若存在n维非零列向量\(\xi\)，使得\(A\xi = \lambda\xi\)，则称\(\lambda\)是A的\textbf{特征值}，\(\xi\)是A的对应特征值\(\lambda\)的\textbf{特征向量}；
 
 \subsection{求法}
 \((\lambda E - A)\xi = 0\)，因\(\xi \neq 0\)，故齐次方程组\((\lambda E - A)x = 0\)有非零解\footnote[1]{\mymatrix}，故特征方程\[|\lambda E - A| = \begin{vmatrix}
@@ -19,13 +19,11 @@
 \subsubsection{技巧}
 \begin{enumerate}
     \item 对于特征根单根，若A是n阶实对称矩阵，则必可相似对角化，故\(r(\lambda E - A) = n - 1\)，则必有一个方程是多余方程，若\(\lambda E - A\)中n行不成比例，则任一方程均是另外n - 1个方程的线性组合，故可去除任一方程，剩下的仍是同解方程组；
-    \item 设k次多项式方程\(f(\lambda) = a_k\lambda^k + ... + a_1\lambda + a_0 = 0\)
-
-    若\(a_0 = 0\)则\(f(0) = 0\)，则0是\(f(\lambda) = 0\)的根；
-
-    若\(a_k + ... + a_1 + a_0 = 0\)，则\(f(1) = 0\)；
-
-    若\(f(\lambda)\)偶次项系数包括\(a_0\)之和等于奇次项系数之和，则\(f(-1) = 0\)
+    \item 设k次多项式方程\(f(\lambda) = a_k\lambda^k + ... + a_1\lambda + a_0 = 0\)\begin{itemize}
+        \item 若\(a_0 = 0\)则\(f(0) = 0\)，则0是\(f(\lambda) = 0\)的根；
+        \item 若\(a_k + ... + a_1 + a_0 = 0\)，则\(f(1) = 0\)；
+        \item 若\(f(\lambda)\)偶次项系数包括\(a_0\)之和等于奇次项系数之和，则\(f(-1) = 0\)
+    \end{itemize}
     \item 多项式带余除法
     \item 设\(f(x) = 1 * x^k + a_{k - 1}x^{k - 1} + ... + a_1x + a_0\)是\(a_i\)均为整数的多项式，则\(f(x) = 0\)的有理根均为整数，且均是\(a_0\)的因子；
 \end{enumerate}
@@ -145,7 +143,7 @@ a_{31} & a_{32} & a_{33}
 
 \section{例}
 
-\paragraph{0}
+\subsubsection{行元素之和求代数余子式和}
 设\(A = (a_{ij})\)为3阶矩阵，\(A_{ij}\)为\(a_{ij}\)的代数余子式，若A每行元素之和均为2，且\(|A| = 3\)，则\(A_{11} + A_{21} + A_{31} = ?\)
 
 \subparagraph{解}
@@ -179,7 +177,7 @@ a_{31} & a_{32} & a_{33}
     1
 \end{bmatrix}\)，即\(A_{11} + A_{21} + A_{31} = \dfrac{3}{2}\)
 
-\paragraph{0}
+\subsubsection{特征向量求特征值}
 已知\(\alpha = [1, k, 1]^T\)是\(A^{-1}\)的特征向量，其中\(A = \begin{bmatrix}
     2 & 1 & 1 \\ 
     1 & 2 & 1 \\ 
@@ -204,7 +202,7 @@ a_{31} & a_{32} & a_{33}
     3 + k = \mu
 \end{cases}\)，得\(k = 1, -2\)，\(\lambda = \dfrac{1}{\mu} = \dfrac{1}{3 + k}\)
 
-\paragraph{0}
+\subsubsection{n阶矩阵}
 设\(A = \begin{bmatrix}
     1 & -2 & 0 & 0 \\ 
     -1 & 0 & 0 & 0 \\ 
@@ -249,7 +247,7 @@ a_{31} & a_{32} & a_{33}
     0 & 2^n
 \end{bmatrix}\)
 
-\paragraph{0}
+\subsubsection{特征值和特征向量求矩阵}
 已知1，1，-1是实对称矩阵A的特征值，向量\(\xi_1 = [1, 1, 1]^T,\ \xi_2 = [2, 2, 1]^T\)是对应于\(\lambda_1 = \lambda_2 = 1\)的特征向量，求A
 \subparagraph{解}
 设\(\lambda_3 = -1\)对应特征向量\(\xi_3 = [x_1, x_2, x_3]^T,\ \because A\)为实对称矩阵，有\[\begin{cases}
@@ -258,10 +256,10 @@ a_{31} & a_{32} & a_{33}
 \end{cases}\]
 取\(\xi_3 = [-1, 1, 0]^T\)，得\(P = [\xi_1, \xi_2, \xi_3],\ \therefore A = P\Lambda P^{-1}\)
 
-\subsection{特征值和一个特征向量求矩阵}
+\subsubsection{特征值和一个特征向量求矩阵}
 已知二次型\(f = x^TAx\)在正交变换\(x = Qy\)下标准形为\(y_1^2 + y_2^2\)且Q第3列为\([\dfrac{1}{\sqrt{2}}, 0, \dfrac{1}{\sqrt{2}}]^T\)(1)求矩阵A(2)证明\(A + E\)为正定矩阵
 
-\paragraph{解1}
+\subparagraph{解1}
 由题可知特征值1,1,0，设\([x_1, x_2, x_3]^T\)是对应特征值1的特征向量，由不同特征值的特征向量正交得\([\dfrac{1}{\sqrt{2}}, 0, \dfrac{1}{\sqrt{2}}]\begin{bmatrix}
     x_1 \\ 
     x_2 \\ 
@@ -272,6 +270,16 @@ a_{31} & a_{32} & a_{33}
     & & 0
 \end{bmatrix}Q^T\)
 
-\paragraph{证明2}
+\subparagraph{证明2}
+
+
+\subsubsection{实对称矩阵求特征向量}
+已知A三阶实对称矩阵，特征值为1，3，-2，其中\(\alpha_1 = (1, 2, -2)^T, \alpha_2 = (4, -1, a)^T\)分别属于\(\lambda = 1, \lambda = 3\)的特征向量，则属于\(\lambda = 2\)的特征向量为?
+\subparagraph{解}
+\(\because\)实对称矩阵，因此特征向量正交，\(\alpha_1^T\alpha_2 = 0\)得\(a = 1\)，由\(\begin{cases}
+    x_1 + 2x_2 - 2x_3 = 0 \\ 
+    4x_1 - x_2 + x_3 = 0
+\end{cases}\)得基础解系\((0, 1, 1)^T,\ \therefore\ \alpha_3 = (0, k, k)^T\)
+
 
 
