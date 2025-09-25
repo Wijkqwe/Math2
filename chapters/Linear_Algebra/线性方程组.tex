@@ -5,47 +5,33 @@
 
 \section{线性方程组与向量组}
 
-非齐次线性方程组
-\[
-\begin{cases}
-a_{11}x_1 + ... + a_{1n}x_n = b_1 \\ 
-... \\ 
-a_{m1}x_1 + ... + a_{mn}x_n = b_m
-\end{cases}
-\]
-的系数矩阵
-\[
-A = 
-\begin{bmatrix}
-a_{11} & ... & a_{1n} \\ 
-... \\ 
-a_{m1} & ... & a_{mn}
-\end{bmatrix}
-\]
-，其增广矩阵
-\[
-\begin{bmatrix}
-a_{11} & ... & a_{1n} & b_1 \\ 
-... \\ 
-a_{m1} & ... & a_{mn} & b_m
-\end{bmatrix}
-\]
+非齐次线性方程组\[\begin{cases}
+    a_{11}x_1 + ... + a_{1n}x_n = b_1 \\ 
+    ... \\ 
+    a_{m1}x_1 + ... + a_{mn}x_n = b_m
+\end{cases}\]
+系数矩阵\[A = \begin{bmatrix}
+    a_{11} & ... & a_{1n} \\ 
+    ... \\ 
+    a_{m1} & ... & a_{mn}
+\end{bmatrix}\]
+其增广矩阵\[\begin{bmatrix}
+    a_{11} & ... & a_{1n} & b_1 \\ 
+    ... \\ 
+    a_{m1} & ... & a_{mn} & b_m
+\end{bmatrix}\]
 向量组形式
 \[\alpha_1x_1 + ... + \alpha_nx_n = \beta\]
-其中
-\[\alpha_i = 
-\begin{bmatrix}
-a_{1i} \\ 
-a_{2i} \\
-... \\ 
-a_{mi}
-\end{bmatrix}, \beta = 
-\begin{bmatrix}
-b_1 \\ 
-... \\ 
-b_m
-\end{bmatrix}
-\]
+其中\[\alpha_i = \begin{bmatrix}
+    a_{1i} \\ 
+    a_{2i} \\
+    ... \\ 
+    a_{mi}
+\end{bmatrix}, \beta = \begin{bmatrix}
+    b_1 \\ 
+    ... \\ 
+    b_m
+\end{bmatrix}\]
 方程组中未知数是向量组中成员系数，方程组问题是向量组问题，方程组和向量组是同一问题两种表现形式；
 
 求线性方程组即对增广矩阵作初等行变换，化为行阶梯性矩阵后求解；
