@@ -136,21 +136,22 @@ y = \psi(t)
 
 \subsection{例}
 
-\paragraph{1}
+\subsubsection{极值二阶导}
 设\(f(x)\)在\(x = x_0\)处二阶可导，且\(f'(x_0) = 0, f''(x_0) \neq 0\)证明：
-
-1）\(f''(x_0) < 0\)时，f(x)在\(x_0\)处取极大值；
-
-2）\(f''(x_0) > 0\)时，f(x)在\(x_0\)处取极小值；
-
+\begin{enumerate}
+    \item \(f''(x_0) < 0\)时，f(x)在\(x_0\)处取极大值；
+    \item \(f''(x_0) > 0\)时，f(x)在\(x_0\)处取极小值；
+\end{enumerate}
+\subparagraph{证明}
 1)：\(f''(x_0) = \displaystyle \lim_{x \to x_0}\dfrac{f'(x) - f'(x_0)}{x - x_0} < 0\)，根据函数极限的局部保号性，存在\(x_0\)的去心邻域\(U(x_0, \delta)\)，当\(x \in U(x_0, \delta)\)，有\(\dfrac{f'(x) - f'(x_0)}{x - x_0} < 0\)，因为\(f'(x_0) = 0\)，\(f'(x)\)与\(x - x_0\)符号相反，根据判别极值第一充分条件，\(f(x)\)在点\(x_0\)处极大值。
 
-\paragraph{2}
+
+\subsubsection{导函数连续}
 已知\(g(x)\)在\(x = 0\)处二阶可导，且\(g(0) = g'(0) = 0\)，设\(f(x) = \begin{cases}
 \dfrac{g(x)}{x}, x\neq 0, \\ 
 0, x = 0,
 \end{cases}\)，证明：\(f(x)\)导函数在x = 0处连续
-
+\subparagraph{证明}
 \(f'(0) = \displaystyle \lim_{x \to 0}\dfrac{\dfrac{g(x)}{x} - 0}{x - 0} = \lim_{x \to 0}\dfrac{g(x)}{x^2} = \lim_{x \to 0}\dfrac{g'(x)}{2x} = \dfrac{1}{2}\lim_{x \to 0}\dfrac{g'(x) - g'(0)}{x - 0} = \dfrac{1}{2}g''(0)\)
 
 当\(x \neq 0\)时，\(f'(x) = \dfrac{xg'(x) - g(x)}{x^2}\)，则\(\displaystyle\lim_{x \to 0}f'(x) = \lim_{x \to 0}\dfrac{xg'(x) - g(x)}{x^2} = \lim_{x \to 0}\dfrac{g'(x)}{x} - \lim_{x \to 0}\dfrac{g(x)}{x^2} = g''(0) - \dfrac{1}{2}g''(0) = f'(0)\)，因此连续。
