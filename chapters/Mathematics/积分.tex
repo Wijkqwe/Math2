@@ -880,8 +880,8 @@ null & \(arccot x\) & \(\dfrac{-1}{1 + x^{2}}\) \\
 \(F(x) = \displaystyle\int_0^xe^{tx - t^2}dt\)，求\(F'(x)\)
 \subparagraph{解}
 \begin{flalign}
-    F(x) & = \int_0^xe^{\frac{x^2}{4} - (\frac{x}{2} - t)^2}dt = e^{\frac{x^2}{4}}\int_0^xe^{- (\frac{x}{2} - t)^2}dt \nonumber \\ 
-    & \xrightarrow{u = \frac{x}{2} - t} -e^{\frac{x^2}{4}}\int_{\frac{x}{2}}^{-\frac{x}{2}}e^{-u^2}du = 2e^{\frac{x^2}{4}}\int_{0}^{\frac{x}{2}}e^{-u^2}du
+    F(x) & = \int_0^xe^{\frac{x^2}{4} - (\frac{x}{2} - t)^2}dt = e^{\frac{x^2}{4}}\int_0^xe^{- (\frac{x}{2} - t)^2}d(t - \dfrac{x}{2}) \nonumber \\ 
+    & \xrightarrow{u = \frac{x}{2} - t} -e^{\frac{x^2}{4}}\int_{\frac{x}{2}}^{-\frac{x}{2}}e^{-u^2}du = 2e^{\frac{x^2}{4}}\int_{0}^{\frac{x}{2}}e^{-u^2}du \nonumber
 \end{flalign}
 
 
