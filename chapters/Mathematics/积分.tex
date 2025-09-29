@@ -940,21 +940,22 @@ V = \frac{\pi}{(A^2 + B^2)^{\frac{3}{2}}}
 设\(x \in [a, b]\),函数\(y = f(x)\)在[a,b]上平均值为\(\overline{y} = \frac{1}{b- a} \int_{a}^{b} f(x) \,dx\)
 
 
-\subsection{平面上的曲边梯形的形心坐标公式}
+\subsection{平面形心坐标公式}
 
-设平面区域\(D = \{ (x, y) | 0 \leq y \leq f(x), a \leq x \leq b \}, y = f(x)\)在[a, b]上连续,则D的形心坐标\((\overline{x}, \overline{y})\)公式为
+设平面区域\(D = \{ (x, y) | 0 \leq y \leq f(x), a \leq x \leq b \}, y = f(x)\)在[a, b]上连续，\(S_D\)为D的面积，则D的形心坐标\((\overline{x}, \overline{y})\)公式为
 
 \begin{displaymath}
-\overline{x} = \frac{\iint_{D} x \,d\sigma}{\iint_{D} \,d\sigma} = 
-\frac{\int_{a}^{b} \,dx \int_{0}^{f(x)} x \,dy}{\int_{a}^{b} \,dx \int_{0}^{f(x)} \,dy} =
-\frac{\int_{a}^{b} xf(x) \,dx}{\int_{a}^{b} f(x) \,dx}
+\overline{x} = \frac{\iint_{D} x \,d\sigma}{S_D} = 
+\frac{\int_{a}^{b} \,dx \int_{0}^{f(x)} x \,dy}{S_D} =
+\frac{\int_{a}^{b} xf(x) \,dx}{S_D}
 \end{displaymath}
 
 \begin{displaymath}
-\overline{y} = \frac{\iint_{D} y \,d\sigma}{\iint_{D} \,d\sigma} = 
-\frac{\int_{a}^{b} \,dx \int_{0}^{f(x)} y \,dy}{\int_{a}^{b} \,dx \int_{0}^{f(x)} \,dy} =
-\frac{\frac{1}{2}\int_{a}^{b} f^2(x) \,dx}{\int_{a}^{b} f(x) \,dx}
+\overline{y} = \frac{\iint_{D} y \,d\sigma}{S_D} = 
+\frac{\int_{a}^{b} \,dx \int_{0}^{f(x)} y \,dy}{S_D} =
+\frac{\frac{1}{2}\int_{a}^{b} f^2(x) \,dx}{S_D}
 \end{displaymath}
+\[S_D = \iint_{D}d\sigma = \int_{a}^{b}dx \int_{0}^{f(x)}dy = \int_{a}^{b} f(x)\,dx\]
 
 
 \subsection{平面曲线弧长}
