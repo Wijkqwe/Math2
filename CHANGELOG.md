@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
 
+- 函数
+	- 例题
+
+### Changed
+
+- 数列
 
 
 ## 0.0.1 2025-00-00

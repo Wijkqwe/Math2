@@ -1,9 +1,9 @@
 
 \chapter{数列}
 
-\subsubsection{定义}
+\section{定义}
 
-\subsubsection{前n项和}
+\section{前n项和}
 
 \begin{flalign}
 \sum_{k = 1}^nk & = \dfrac{n(n + 1)}{2} \nonumber \\ 
@@ -12,15 +12,15 @@
 \end{flalign}
 
 
-\subsubsection{重要数列}
+\subsection{重要数列}
 
 \paragraph{\((1 + \dfrac{1}{n})^n\)}
 单调递增，\(\displaystyle\lim_{x \to \infty}(1 + \dfrac{1}{n})^n = e\)
 
 
-\subsubsection{数列极限}
+\section{数列极限}
 
-\paragraph{定义}
+\subsection{定义}
 设数列\(\{x_n\}\)，若存在常数a，对于\(\forall \epsilon > 0, \exists N \in Z_+\)，使得当n > N时，\(|x_n - a| < \epsilon\)恒成立，则称常数a是数列的极限，或数列收敛于a，记为\(\displaystyle\lim_{n \to \infty}x_n = a\);
 
 若不存在a，则数列是发散的。
@@ -30,27 +30,23 @@
 \(\displaystyle \lim_{n \to \infty}x_n = \infty\)，称\(x_n\)为\(n \to \infty\)时的无穷大量；
 
 
-\paragraph{定理}
-若数列\(\{a_n\}\)收敛，则其任意子列\(\{a_{n_k}\}\)也收敛，且\(\displaystyle \lim_{k \to \infty}a_{n_k} = \lim_{n \to \infty}a_n\)。反之，若存在发散子列，则原数列发散；若至少两个收敛子列收敛到不同极限，则原数列发散。
-
-\paragraph{定理}
-对数列\(\{x_n\}\)若\(\displaystyle \lim_{n \to \infty}x_n = a\)存在，则a唯一；
-
-\paragraph{定理}
-对数列\(\{x_n\}\)若极限存在，则数列有界；
-
-\paragraph{定理}
-设\(\displaystyle \lim_{n \to \infty}x_n = a >(<) b\)，则存在\(N > 0\)，当n > N时，有\(x_n >(<) b\)；若从某项起有\(x_n >=(<=) b\)，且\(\lim_{n \to \infty}x_n = a\)，则\(a >=(<=) b\)，其中b为任意实数，如b = 0。
+\subsection{定理}
+\begin{itemize}
+    \item 若数列\(\{a_n\}\)收敛，则其任意子列\(\{a_{n_k}\}\)也收敛，且\(\displaystyle \lim_{k \to \infty}a_{n_k} = \lim_{n \to \infty}a_n\)。反之，若存在发散子列，则原数列发散；若至少两个收敛子列收敛到不同极限，则原数列发散。
+    \item 对数列\(\{x_n\}\)若\(\displaystyle \lim_{n \to \infty}x_n = a\)存在，则a唯一；
+    \item 对数列\(\{x_n\}\)若极限存在，则数列有界；
+    \item 设\(\displaystyle \lim_{n \to \infty}x_n = a >(<) b\)，则存在\(N > 0\)，当n > N时，有\(x_n >(<) b\)；若从某项起有\(x_n >=(<=) b\)，且\(\lim_{n \to \infty}x_n = a\)，则\(a >=(<=) b\)，其中b为任意实数，如b = 0。
+\end{itemize}
 
 
-\paragraph{四则运算}
+\subsection{四则运算}
 设\(\displaystyle \lim_{n \to \infty}x_n = a, \lim_{n \to \infty}y_n = b\)，则
 \[\lim_{n \to \infty}(x_n \pm y_n) = a \pm b\]
 \[\lim_{n \to \infty}x_ny_n = ab\]
 \[\lim_{n \to \infty}\dfrac{x_n}{y_n} = \dfrac{a}{b},b \neq 0\]
 
 
-\paragraph{海涅定理/归结原则}
+\subsection{海涅定理/归结原则}
 设\(f(x)\)在\(U(x_0, \delta)\)内有定义，则
 \[\displaystyle \lim_{x \to x_0}f(x) = A\text{存在} \Leftrightarrow \text{对任意}U(x_0, \delta)\text{内以}x_0\text{为极限的数列，极限}\lim_{x \to \infty}f(x_n) = A\text{存在}\]
 
@@ -62,7 +58,7 @@
 
 当\(x \to a\)，且\(x_n \neq a\)时，若\(\displaystyle \lim_{x \to a}f(x) = A\)，则\(\displaystyle \lim_{n \to \infty}f(x_n) = A\)
 
-\subsubsection{夹逼准则}
+\section{夹逼准则}
 
 设数列{\(x_n\)}，{\(y_n\)}，{\(z_n\)}满足以下条件：
 
