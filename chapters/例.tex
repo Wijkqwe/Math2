@@ -19,3 +19,62 @@
     \item 若\(\displaystyle\lim_{x \to x_0^{\pm}}f(x) = \infty\)，则在\(x_0\)处不存在，矛盾
     \item 故振荡间断点。
 \end{itemize}
+
+
+\section{极限}
+
+\subsubsection{洛必达条件}
+设f(x)在\(x = a\)处二阶导数存在，则\[I = \lim_{h \to 0}\dfrac{\dfrac{f(a + h) - f(a)}{h} - f'(a)}{h} = ?\]
+
+\subparagraph{方法1}
+\begin{flalign}
+    I & = \lim_{h \to 0}\dfrac{f(a + h) - f(a) + hf'(a)}{h^2} \nonumber \tag{1} \\ 
+    & = \lim_{h \to 0}\dfrac{f'(a + h) - f'(a)}{2h} \nonumber \tag{2} \\ 
+    & = \dfrac{1}{2}f''(a) \nonumber \tag{3}
+\end{flalign}
+（1）到（2）使用洛必达，（2）到（3）使用导数定义。\(\exists f''(a) \Rightarrow f'(x)\)在\(x = a\)某邻域有定义，故（1）可用洛必达；没有明确\(f''(x)\)在\(x = a\)某邻域内存在及\(f''(x)\)在\(x = a\)是连续的，故（2）到（3）不能用洛必达。
+
+\subparagraph{方法2}
+泰勒公式
+\[f(a + h) = f(a) + f'(a)h + \dfrac{1}{2}f''(a)h^2 + o(h^2)\]
+\begin{flalign}
+    I & = \lim_{h \to 0}\dfrac{\dfrac{f'(a)h + \dfrac{1}{2}f''(a)h^2 + o(h^2)}{h} - f'(a)}{h} \nonumber \\ 
+    & = \lim_{h \to 0}(\dfrac{1}{2}f''(a) + \dfrac{o(h^2)}{h^2}) = \dfrac{1}{2}f''(a) \nonumber
+\end{flalign}
+
+
+\subsubsection{夹逼准则}
+若\(x >= 0\)，则\(\displaystyle\lim_{n \to \infty}\sqrt[n]{1 + x^n + (\dfrac{x^2}{2})^n} = \)?
+\subparagraph{解}
+\begin{itemize}
+    \item 当\(0 <= x < 1\)时，\(\max\{1, x^n, (\dfrac{x^2}{2})^n\} = 1\)
+    \item 当\(1 <= x < 2\)时，\(\max\{1, x^n, (\dfrac{x^2}{2})^n\} = x^n\)
+    \item 当\(x >= 2\)时，\(\max\{1, x^n, (\dfrac{x^2}{2})^n\} = (\dfrac{x^2}{2})^n\)
+\end{itemize}
+
+
+\section{导数}
+
+\subsubsection{极值二阶导}
+设\(f(x)\)在\(x = x_0\)处二阶可导，且\(f'(x_0) = 0, f''(x_0) \neq 0\)证明：
+\begin{enumerate}
+    \item \(f''(x_0) < 0\)时，f(x)在\(x_0\)处取极大值；
+    \item \(f''(x_0) > 0\)时，f(x)在\(x_0\)处取极小值；
+\end{enumerate}
+\subparagraph{证明}
+1)：\(f''(x_0) = \displaystyle \lim_{x \to x_0}\dfrac{f'(x) - f'(x_0)}{x - x_0} < 0\)，根据函数极限的局部保号性，存在\(x_0\)的去心邻域\(U(x_0, \delta)\)，当\(x \in U(x_0, \delta)\)，有\(\dfrac{f'(x) - f'(x_0)}{x - x_0} < 0\)，因为\(f'(x_0) = 0\)，\(f'(x)\)与\(x - x_0\)符号相反，根据判别极值第一充分条件，\(f(x)\)在点\(x_0\)处极大值。
+
+
+\subsubsection{导函数连续}
+已知\(g(x)\)在\(x = 0\)处二阶可导，且\(g(0) = g'(0) = 0\)，设\(f(x) = \begin{cases}
+\dfrac{g(x)}{x}, x\neq 0, \\ 
+0, x = 0,
+\end{cases}\)，证明：\(f(x)\)导函数在x = 0处连续
+\subparagraph{证明}
+\(f'(0) = \displaystyle \lim_{x \to 0}\dfrac{\dfrac{g(x)}{x} - 0}{x - 0} = \lim_{x \to 0}\dfrac{g(x)}{x^2} = \lim_{x \to 0}\dfrac{g'(x)}{2x} = \dfrac{1}{2}\lim_{x \to 0}\dfrac{g'(x) - g'(0)}{x - 0} = \dfrac{1}{2}g''(0)\)
+
+当\(x \neq 0\)时，\(f'(x) = \dfrac{xg'(x) - g(x)}{x^2}\)，则\(\displaystyle\lim_{x \to 0}f'(x) = \lim_{x \to 0}\dfrac{xg'(x) - g(x)}{x^2} = \lim_{x \to 0}\dfrac{g'(x)}{x} - \lim_{x \to 0}\dfrac{g(x)}{x^2} = g''(0) - \dfrac{1}{2}g''(0) = f'(0)\)，因此连续。
+
+
+
+
