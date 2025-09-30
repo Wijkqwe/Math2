@@ -93,20 +93,7 @@
 \end{enumerate}
 
 
-\subsection{例}
 
-\subsubsection{通解}
-设\(A = \begin{bmatrix}
-    1 & -2 & 0 \\ 
-    2 & 1 & 5 \\ 
-    0 & 1 & 1
-\end{bmatrix}\)，B是三阶矩阵，则满足AB = O的所有B=?
-\subparagraph{解}
-\(B = \begin{bmatrix}
-    2k & 2l & 2\lambda \\ 
-    k & l & \lambda \\ 
-    -k & -l & -\lambda
-\end{bmatrix}\)
 
 
 \section{非齐次线性方程组}
@@ -183,48 +170,6 @@
 \end{enumerate}
 
 
-\subsection{例}
-
-\subsubsection{例1}
-设\(r(A_{4 * 4}) = 2, \eta_1, \eta_2, \eta_3\)是\(Ax = b\)的3个解向量，其中\(\begin{cases}
-\eta_1 - \eta_2 = \alpha_1 \\ 
-\eta_1 + \eta_2 = \alpha_2 \\ 
-\eta_3 + 2\eta_2 = \alpha_3
-\end{cases}\)，求\(Ax = b\)通解
-
-\subparagraph{解}
-\(Ax = \beta\)通解结构为\[k_1\xi_1 + k_2\xi_2 + \eta\]，因为\(A(\eta_1 - \eta_2) = b - b = 0, A[3(\eta_1 + \eta_2) - 2(\eta_3 + 2\eta_2)] = 6b - 6b = 0\)，故\(\eta_1 - \eta_2, 3(\eta_1 + \eta_2) - 2(\eta_3 + 2\eta_2)\)是\(Ax = 0\)的解向量，又\(A[\dfrac{1}{2}(\eta_1 + \eta_2)] = \dfrac{1}{2}(b + b) = b\)，因此\(\dfrac{1}{2}(\eta_1 + \eta_2)\)是\(Ax = b\)的一个特解，因此\(Ax = b\)通解为\[k_1\alpha_1 + k_2(3\alpha_2 - 2\alpha_3) + \dfrac{1}{2}\alpha_2\]
-
-\subsubsection{例2}
-由\([\eta_1 - \eta_2, \eta_1 + \eta_2, \eta_3 + 2\eta_2] = [\eta_1, \eta_2, \eta_3]\begin{bmatrix}
-1 & 1 & 0 \\ 
--1 & 1 & 2 \\ 
-0 & 0 & 1
-\end{bmatrix}\)，故\[[\eta_1, \eta_2, \eta_3] = [\eta_1 - \eta_2, \eta_1 + \eta_2, \eta_3 + 2\eta_2]\begin{bmatrix}
-1 & 1 & 0 \\ 
--1 & 1 & 2 \\ 
-0 & 0 & 1
-\end{bmatrix}^{-1}\]，求出\(\eta_1, \eta_2, \eta_3\)，的通解\[k_1(\eta_1 - \eta_2) + k_2(\eta_2 - \eta_3) + \eta_3\]
-
-
-\subsubsection{解性质}
-设\(A_{3 * 3}x = b\)，即\(\begin{cases}
-    a_{11}x_1 + ... = b_1 \\ 
-    ... \\ 
-    ... \\ 
-\end{cases}\)有唯一解\(\xi = [1, 2, 3]^T\)。
-
-方程组\(B_{3 * 4}x = b\)，即\(\begin{cases}
-    a_{11}x_1 + ... + a_{14}x_4 = b_1 \\ 
-    ... \\ 
-    ... \\ 
-\end{cases}\)有特解\(\eta = [-2, 1, 4, 2]^T\)，则\(B_{3 * 4}x = b\)的通解为?
-
-\subparagraph{解}
-\(r(A) = r(A, b) = 3,\ \therefore\ r(B) = r(B, b) = 3, \eta_1 = [1, 2, 3, 0]^T\)是\(B_{3 * 4}x = b\)的另一特解。故Bx = 0基础解系仅一个向量，为\(\eta - \eta_1\)，故通解为\(k(\eta - \eta_1) + \eta\)
-
-
-
 \section{两个方程组的公共解}
 
 齐次线性方程组\(A_{m * n}x = 0, B_{m * n}x = 0\)的公共解是满足方程组\(\begin{bmatrix}
@@ -235,7 +180,6 @@ B
     \item 若给出\(A_{m * n}x = 0\)的基础解系\(\xi_1, ..., \xi_s\)和B的具体表达式，则先写出\(Ax = 0\)的通解\(k_1\xi_1 + ... + k_s\xi_s\)代入\(Bx = 0\)，求出\(k_i\)之间的关系，代回\(Ax = 0\)得通解，即得公共解；
     \item 若给出\(A_{m * n}x = 0\)的基础解系\(\xi_1, ..., \xi_s\)和B的基础解系\(\eta_1, ..., \eta_t\)，则公共解\(\gamma = k_1\xi_1 + ... + k_s\xi_s = l_1\eta_1 + ... + l_t\eta_t\)，即\(k_1\xi_1 + ... + k_s\xi_s - l_1\eta_1 - ... - l_t\eta_t = 0\)解此式求出\(k_i/l_j\)之间关系，代入即可求出\(\gamma\)
 \end{itemize}
-
 
 
 \section{同解方程组}

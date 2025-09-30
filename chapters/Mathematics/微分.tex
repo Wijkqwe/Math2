@@ -172,38 +172,6 @@
 当\(x < 0\)时，令\(x = -e^t\)，同理
 
 
-\section{例}
-
-\subsubsection{根据特解求方程}
-已知\(y_1 = xe^x + e^{2x}, y_2 = xe^x + e^{-x}, y_3 = xe^x + e^{2x} - e^{-x}\)是某二阶线性非齐次微分方程的三个解，则此微分方程为：?
-\paragraph{解}
-\(y_1 - y_3 = e^{-x},\ y_1 - y_2 = e^{2x} - e^{-x}\)是对应齐次方程的解，\((y_1 - y_3) + (y_1 - y_2) = e^{2x}\)是对应齐次方程的解，\(e^{-x}, e^{2x}\)是对应齐次方程两个线性无关的特解，\(y_2 - e^{-x} = xe^x\)是非齐次方程的解。
-
-\subparagraph{方法1}
-由“\(e^{-x}, e^{2x}\)是对应齐次方程两个线性无关的特解”得\(\lambda_1 = -1, \lambda_2 = 2\)是特征方程的两个根，故特征方程\((\lambda + 1)(\lambda - 2) = 0\)，对应齐次微分方程为\[y'' - y' - 2y = 0\]
-设非齐次方程为\(y'' - y' - 2y = f(x)\)，非齐次解\(xe^x\)代入得\(f(x) = (1 - 2x)e^x\)
-
-\subparagraph{方法2}
-由非齐次特解\(xe^x\)及对应齐次方程两个线性无关解得非齐次方程通解为\[y = C_1e^{-x} + C_2e^{2x} + xe^x\]
-求得\[y' = -C_1e^{-x} + 2C_2e^{2x} + (x + 1)e^x\]
-\[y'' = C_1e^{-x} + 4C_2e^{2x} + (x + 2)e^x\]
-消去\(C_1, C_2\)\[y'' - y' = 2(C_1e^{-x} + C_2e^{2x} + xe^x) - 2xe^x + e^x = 2y + (1 - 2x)e^x\]
-故方程为\(y'' - y' - 2y = (1 - 2x)e^x\)
-
-
-\subsubsection{根据特解求方程}
-已知\(y_1 = \cos2x - \dfrac{1}{4}x\cos2x,\ y_2 = \sin2x - \dfrac{1}{4}x\cos2x\)是某二阶线性常系数非齐次微分方程得两个解，\(y_3 = \cos2x\)是它对应得齐次方程得一个解，则该微分方程是?
-
-\paragraph{解}
-\(y_1 - y_2 = \cos2x - \sin2x\)是对应齐次方程的一个解，故\(\cos2x - (\cos2x - \sin2x) = \sin2x\)也是对应齐次方程的解。根据两个线性无关解，的特征根为\(\pm2i\)，特征方程为\(\lambda^2 + 4 = 0\)，原方程为\(y'' + 4y = f(x)\)。由叠加原理得非齐次解\(-\dfrac{x}{4}\cos2x\)，代入得\(f(x) = y'' + 4y = \sin2x\)
-
-
-\subsubsection{高阶求特解}
-方程\(y''' - y' = 0\)满足条件\(y\bigg|_{x = 0} = 3, y'\bigg|_{x = 0} = -1, y''\bigg|_{x = 0} = 1\)的特解为?
-\paragraph{解}
-特征方程为\[r^3 - r = 0\]即\(r(r^2 - 1) = 0\)，得\(r_1 = 0, r_2 = 1, r_3 = -1\)，故通解为\(y = C_1 + C_2e^x + C_3e^{-x}\)，条件代入得\(y = 2 + e^{-x}\)
-
-
 \section{一元函数微分学}
 
 \subsection{定义}
@@ -364,65 +332,6 @@ A，B仅与点\((x, y)\)有关，与\(\Delta x,\Delta y\)无关；\(\rho = \sqrt
 若\(\Gamma\)是光滑闭曲线，点Q是\(\Gamma\)外一个点，点\(P_1, P_2\)分别是\(\Gamma\)上与点Q的最远点，最近点，则直线\(P_1Q, P_2Q\)分别在点\(P_1\)处，\(P_2\)处与\(\Gamma\)垂直，即\(P_1Q, P_2Q\)分别与点\(P_1, P_2\)的切线垂直。
 
 若光滑闭曲线\(\Gamma_1, \Gamma_2\)不相交，点\(P_1, P_2\)分别是它们之间的最远（近）点，则直线\(P_1P_2\)是\(\Gamma_1, \Gamma_2\)的公垂线，即\(P_1P_2\)同时垂直于\(\Gamma_1, \Gamma_2\)在这两点的切线。
-
-
-
-\section{例}
-
-\subsubsection{隐函数求偏导数全微分}
-若函数\(z = z(x, y)\)由方程\(e^{x + 2y + 3z} + xyz = 1\)确定，则\(dz\bigg|_{(0, 0)} = \)?
-\paragraph{解}
-x = 0, y = 0代入得z = 0
-\subparagraph{方法1}
-原式两端微分得\[e^{x + 2y + 3z}(dx + 2dy + 3dz) + yzdx + xzdy + zydz = 0\]
-代入得\(dx + 2dy + 3dz = 0\)
-\subparagraph{方法2}
-隐函数求导公式得\[\dfrac{\vartheta z}{\vartheta x} = -\dfrac{e^{x + 2y + 3z} + yz}{3e^{x + 2y + 3z} + xy}\]
-\[\dfrac{\vartheta z}{\vartheta y} = -\dfrac{2e^{x + 2y + 3z} + xz}{3e^{x + 2y + 3z} + xy}\]
-代入得
-\subparagraph{方法3}
-将\(y = 0\)代入原式得\(e^{x + 3z} = 1\)，两端对x求导得\[e^{x + 3z}(1 + 3z_x') = 0\]
-代入得
-
-
-\subsubsection{二元最值}
-二元函数\(f(x, y) = x^2(2 + y^2) + y\ln y\)的极小值为?
-\subparagraph{解}
-\(f_x' = 2x(2 + y^2),\ f_y' = 2x^2y + \ln y + 1\)
-令\(\begin{cases}
-    f_x' = 0 \\ 
-    f_y' = 0
-\end{cases}\)，解得驻点\((0, \dfrac{1}{e})\)
-\begin{flalign}
-    A & = f_{xx}''(x_0, y_0) \nonumber \\ 
-    B & = f_{xy}''(x_0, y_0) \nonumber \\ 
-    C & = f_{yy}''(x_0, y_0) \nonumber
-\end{flalign}
-故\(AC - B^2 > 0,\ A > 0\)，\(\therefore f(0, \dfrac{1}{e})\)是极小值为\(-\dfrac{1}{e}\)
-
-
-\subsubsection{导数定义求偏导}
-设\(z = (y^x + \dfrac{\sin x}{\sqrt{x^2 + 2y^2}})^{\sqrt{x^2 + y^2}}\)，则\(\dfrac{\vartheta z}{\vartheta x}\bigg|_{(0, 1)} = \)?
-\subparagraph{解}
-\(y = 1\)代入得\(z(x, 1) = (1 + \dfrac{\sin x}{\sqrt{x^2 + 2}})^{\sqrt{x^2 + 1}}\)，设\(z(x, 1) = \varphi(x)\)，故\[\dfrac{\vartheta z}{\vartheta x}\bigg|_{(0, 1)} = \varphi'(0) = \lim_{x \to 0}\dfrac{\varphi(x) - \varphi(0)}{x}\]
-
-
-\subsubsection{隐函数全微分}
-设z是方程\(x + y + z = \displaystyle\int_0^{xyz}e^{-t^2}dt\)确定的隐函数，则\(dz = \)?
-\subparagraph{解}
-两端一阶全微分得\[dx + dy + dz = e^{-x^2y^2z^2}d(xyz) = e^{-x^2y^2z^2}(yzdx + xzdy + xydz)\]
-
-
-\subsubsection{极限、线性近似微分}
-设连续函数\(z = f(x, y)\)满足\(\displaystyle\lim_{x \to 0, y \to 1}\dfrac{f(x, y) - 2x + y - 2}{\sqrt{x^2 + (y - 1)^2}} = 0\)，则\(dz\bigg|_{(0, 1)} = \)?
-\subparagraph{解}
-由题可知\[\displaystyle\lim_{x \to 0, y \to 1}[f(x, y) - 2x + y - 2] = 0\]
-由\(f(x, y)\)连续，则\[f(0, 1) = 1\]
-从而有\(\displaystyle\lim_{x \to 0, y \to 1}\dfrac{f(x, y) - f(0, 1) - 2x + (y - 1)}{\sqrt{x^2 + (y - 1)^2}} = 0\)
-，即\[f(x, y) - f(0, 1) = 2x - (y - 1) + o(\rho)\]
-故\[f_x'(0, 1) = 2,\ f_y'(0, 1) = -1\]
-
-
 
 
 
