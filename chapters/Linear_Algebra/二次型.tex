@@ -43,8 +43,7 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
 
 \subsection{线性变换}
 
-\subsubsection{定义}
-
+\paragraph{定义}
 对n元二次型\(f(x_1, ..., x_n)\)，若令
 \[\begin{cases}
     x_1 = c_{11}y_1 + c_{12}y_2 + ... + c_{1n}y_n \\ 
@@ -65,16 +64,16 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
     ... \\ 
     y_n
 \end{bmatrix}\)，则(*)式（线性变换）可写为\[x = Cy\]
-(*)称为\textbf{线性变换}；若线性变换的系数矩阵C可逆\footnote{\mymatrix}，则称为\textbf{可逆线性变换}，则\[f(x) = (Cy)^TA(Cy) = y^T(C^TAC)y\]
+(*)称为\textbf{线性变换}；若线性变换的\textbf{系数矩阵}C可逆\footnote{\mymatrix}，则称为\textbf{可逆线性变换}，则\[f(x) = (Cy)^TA(Cy) = y^T(C^TAC)y\]
 记\(B = C^TAC\)，则\[f(x) = y^TBy = g(y)\]
 即二次型f(x)通过线性变换得到二次型g(y)
 
 
 \subsection{矩阵合同}
 
-\subsubsection{定义}
+\paragraph{定义}
 设A，B为n阶矩阵，若存在可逆矩阵C，使得\[C^TAC = B\]
-则称A与B合同，记作\(A \simeq B\)，对应二次型\(f(x), g(y)\)为合同二次型。
+则称A与B\textbf{合同}，记作\(A \simeq B\)，对应二次型\(f(x), g(y)\)为\textbf{合同二次型}。
 
 在二次型背景下，A为f(x)的“形态”，B为g(y)的“形态”，而f(x)=g(y)，故A，B分别代表同一事物在不同参照系\(x, y\)下的不同“形态”。
 
@@ -92,7 +91,7 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
 
 
 \subsubsection{充要条件}
-两个二次型合同的充要条件是有相同的正负惯性指数，或有相同的秩及正（或负）惯性指数，或有相同的正负特征值数。
+两个二次型合同的充要条件是有相同的\textbf{正负惯性指数}，或有相同的秩及正（或负）惯性指数，或有相同的正负特征值数。
 
 
 \subsection{标准形与规范形}
@@ -104,7 +103,7 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
 
 \subsubsection{定理}
 \begin{itemize}
-    \item 任何二次型均可通过配方法（作可逆线性变换\(x = Cy\)）化成标准形及规范形；用矩阵描述即：任何实对称矩阵A，必存在可逆矩阵C（不唯一），使得\(C^TAC = \Lambda\)其中\[\Lambda = \text{标准形}\begin{bmatrix}
+    \item 任何二次型均可通过\textbf{配方法}（作可逆线性变换\(x = Cy\)）化成\textbf{标准形及规范形}；用矩阵描述即：任何实对称矩阵A，必存在可逆矩阵C（不唯一），使得\(C^TAC = \Lambda\)其中\[\Lambda = \text{标准形}\begin{bmatrix}
         d_1 \\ 
         & d_2 \\ 
         & & ... \\ 
@@ -117,7 +116,8 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
         & & & & 0
     \end{bmatrix}\]
     此时C的列向量一般不为A的特征向量，\(d_i\)一般不为A特征值；
-    \item 任何二次型可通过正交变换\(x = Qy\)化为标准形；用矩阵描述即：任何实对称矩阵A，一定存在正交矩阵Q（不唯一），使得\(Q^{-1}AQ = Q^TAQ = \Lambda\)，其中\[\Lambda = \begin{bmatrix}
+    
+    \item 任何二次型可通过\textbf{正交变换}\(x = Qy\)化为\textbf{标准形}；用矩阵描述即：任何实对称矩阵A，一定存在正交矩阵Q（不唯一），使得\(Q^{-1}AQ = Q^TAQ = \Lambda\)，其中\[\Lambda = \begin{bmatrix}
         \lambda_1 \\ 
         & ... \\ 
         & & \lambda_n
@@ -127,11 +127,9 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
 
 
 \section{惯性定理}
-无论选取怎样的可逆线性变换，将二次型化成标准形或规范形，其中正项个数p，负项个数q都是不变的，p为正惯性指数，q为负惯性指数；
+无论选取怎样的可逆线性变换，将二次型化成标准形或规范形，其中正项个数p，负项个数q都是不变的，p为\textbf{正惯性指数}，q为\textbf{负惯性指数}；
 
 若二次型的秩为r，则\(r = p + q\)
-
-
 
 
 \section{计算}
@@ -146,19 +144,23 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
     \item 将线性变换表示成矩阵形式，即\(x = Cy\)
 \end{enumerate}
 
-将某个变量的平方项及其有关的混合项一次配完，配成一个完全平方，减少一个未配完全平方的变量，使得总的平方项的项数小于等于变量个数。目的是保证所用变换是可逆的；
-
-当总的完全平方项的项数小于变量个数时，如三元二次型，完全平方项个数是2，应视作\(f(x_1, x_2, x_3) = (...)^2 + a(...)^2 + 0x_3^2\)，变换为\(\begin{cases}
-    y_1 = ... \\ 
-    y_2 = ... \\ 
-    y_3 = x_3
-\end{cases}\)
-
-若有平方项，应将平方项及其混合项配成完全平方；若没有平方项，作可逆线性变换\(\begin{cases}
-    x_1 = y_1 + y_2 \\ 
-    x_2 = y_1 - y_2 \\ 
-    x_3 = y_3
-\end{cases}\)，使其出现完全平方项，然后再配平方；
+\subparagraph{技巧}
+\begin{itemize}
+    \item 将某个变量的平方项及其有关的混合项一次配完，配成一个完全平方，减少一个未配完全平方的变量，使得总的平方项的项数小于等于变量个数。目的是保证所用变换是可逆的；
+    \item 当总的完全平方项的项数小于变量个数时，如三元二次型，完全平方项个数是2，应视作\(f(x_1, x_2, x_3) = (...)^2 + a(...)^2 + 0x_3^2\)，变换为\(\begin{cases}
+        y_1 = ... \\ 
+        y_2 = ... \\ 
+        y_3 = x_3
+    \end{cases}\)
+    \item \begin{itemize}
+        \item 若有平方项，应将平方项及其混合项配成完全平方；
+        \item 若没有平方项，作可逆线性变换\(\begin{cases}
+            x_1 = y_1 + y_2 \\ 
+            x_2 = y_1 - y_2 \\ 
+            x_3 = y_3
+        \end{cases}\)，使其出现完全平方项，然后再配平方；
+    \end{itemize}
+\end{itemize}
 
 配方法提供了\begin{itemize}
     \item 所作的可逆线性变换
@@ -173,19 +175,19 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
 
 \subsubsection{化为标准形}
 求正交矩阵Q，Q不唯一
-\begin{itemize}
+\begin{enumerate}
     \item 求A的特征值\(\lambda_1, ..., \lambda_n\)
     \item 求特征值对应的特征向量\(\xi_1, ..., \xi_n\)
-    \item 将特征向量正交化，单位化为\(\eta_1, ..., \eta_n\)
+    \item 将特征向量\textbf{正交化，单位化}为\(\eta_1, ..., \eta_n\)
     \item 令\(Q = [\eta_1, ..., \eta_n]\)，则Q为正交矩阵，且\(Q^{-1}AQ = Q^TAQ = \Lambda\)
-\end{itemize}
+\end{enumerate}
 
 \subsubsection{化为二次型}
-\begin{itemize}
+\begin{enumerate}
     \item 分别求出使两个二次型化为对角矩阵的正交矩阵\(Q_1, Q_2\)
     \item 则\(Q_1^TAQ_1 = Q_2^TBQ_2\)，故\((Q_1Q_2^T)^TA(Q_1Q_2^T) = B\)
     \item 故\(Q = Q_1Q_2^T\)为所求矩阵
-\end{itemize}
+\end{enumerate}
 
 
 \subsubsection{性质}
@@ -249,7 +251,7 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
 \section{正定二次型}
 
 \subsection{定义}
-n元二次型\(f(...) = x^TAx\)，若对任意的\(x = [x_1,..., x_n]^T \neq 0\)均有\(x^TAx > 0\)，则称f为正定二次型，对应矩阵A为正定矩阵。
+n元二次型\(f(...) = x^TAx\)，若对任意的\(x = [x_1,..., x_n]^T \neq 0\)均有\(x^TAx > 0\)，则称f为正定二次型，对应矩阵A为\textbf{正定矩阵}。
 
 
 \subsection{充要条件}
