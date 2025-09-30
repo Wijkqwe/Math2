@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+
+## 0.0.2 2025-09-30
+
 ### Added
 
 - 函数
@@ -20,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 积分
 	- 几何应用
 		- 形心坐标
+- 几何应用
+- 物理应用
 
 
 ## 0.0.1 2025-00-00

@@ -8,14 +8,15 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
 \[f(x_1,..., x_n) = a_{11}x_1^2 + 2a_{12}x_1x_2 + ... + 2a_{1n}x_1x_n + a_{22}x_2^2 + ... + 2a_{2n}x_2x_n + ... + a_{nn}x_n^2\]
 称为\textbf{n元二次型}，简称\textbf{二次型}。
 
-只考虑系数\(a_{ij} \in R\)的情况，又称实二次型。
+只考虑系数\(a_{ij} \in R\)的情况，又称\textbf{实二次型}。
 \begin{flalign}
     f(x_1, ..., x_n) = & a_{11}x_1^2 + a_{12}x_1x_2 + ... + a_{1n}x_1x_n \nonumber \\ 
     & + a_{21}x_2x_1 + a_{22}x_2^2 + ... + a_{2n}x_2x_n + ... \nonumber \\ 
-    & + a_{n1}x_nx_1 + ... + a_{nn}x_n^2 \\ 
-    = & \sum_{i = 1}^n\sum_{j = 1}^na_{ij}x_ix_j
+    & + a_{n1}x_nx_1 + ... + a_{nn}x_n^2 \tag{1}\\ 
+    = & \sum_{i = 1}^n\sum_{j = 1}^na_{ij}x_ix_j \tag{2}
 \end{flalign}
 其中（1）为完全展开式，（2）为和式。
+
 
 \subsection{矩阵表示}
 令\[A = \begin{bmatrix}
@@ -31,6 +32,7 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
 \end{bmatrix}\]
 则二次型可表示为（\textbf{矩阵表达式}）\[f(x) = x^TAx\]
 实对称矩阵A称为二次型f(x)的矩阵；二次型有不同的写法，使用对称矩阵表示的二次型写法唯一。
+
 
 \section{性质}
 
@@ -196,8 +198,6 @@ n元变量\(x_1, ..., x_n\)的二次齐次多项式
     \item 正交变换不唯一，化成的标准形唯一（不考虑特征值顺序），为\(\lambda_1y_1^2 + ... + \lambda_ny_n^2\)
     \item 对多重根，在解方程组时同时考虑正交化
 \end{itemize}
-
-
 
 
 \section{正定二次型}
