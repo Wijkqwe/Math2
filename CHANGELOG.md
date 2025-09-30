@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 函数
 	- 例
+- 矩阵
+	- 三角矩阵
 
 ### Changed
 
