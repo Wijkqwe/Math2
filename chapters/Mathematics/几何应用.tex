@@ -169,3 +169,126 @@ y(x)在任意点的曲率\(K = \dfrac{|y''(x)|}{(1 + y'^2(x))^{\frac{3}{2}}}\)
 
 
 
+\section{积分}
+
+\subsection{定积分表示计算旋转体体积}
+
+曲线\(y=f(x)\)与\(x=a,x=b(a < b)\)及x轴所围成的曲边梯形绕x轴旋转一周所得到的旋转体的体积
+\begin{displaymath}
+V_{x} = \pi \int_{a}^{b} f^{2}(x) \,dx
+\end{displaymath}
+
+曲线\(y = f(x)\)与直线\(y = h\)围成的区域绕直线\(y = h\)旋转一周所得旋转体的体积为\[V = \pi\int_a^b[f(x) - h]^2dx\]
+\[V = 2\pi\int_q^p(y - h)x(y)dy\]
+
+曲线\(y=f(x)\)与\(x=a,x=b(0 \leq a \leq b)\)及x轴所围成的曲边梯形绕y轴旋转一周所得到的旋转体的体积
+\begin{displaymath}
+V_{y} = 2\pi \int_{a}^{b} x \lvert f(x) \rvert \,dx
+\end{displaymath}
+
+曲线\(y = f(x)\)绕直线\(x = h\)旋转一周所得旋转体的体积为\[V = 2\pi\int_a^b|x - h||f(x)|dx\]
+
+设平面曲线\(L_1 : y = f(x), a \leq x \leq b, f(x)\)可导, \\
+定直线\(L : Ax + By + C = 0\),且过\(L\)的任一条垂线与\(L_1\)至多有一个交点,则\(L_1\)绕L旋转一周所得旋转体体积为
+\begin{displaymath}
+V = \frac{\pi}{(A^2 + B^2)^{\frac{3}{2}}}
+\int_{a}^{b} (Ax + Bf(x) + C)^2 \lvert Af'(x) - B \rvert \,dx
+\end{displaymath}
+其中a,b为过\(L\)的垂线与\(L_1\)的端点的交点的横坐标.
+
+\paragraph{极坐标}
+平面图形\(D = \{(\rho, \theta) | 0 <= \rho <= \rho(\theta), \theta \in [a, b] \subset [0, \pi]\}\)绕极轴一周所得旋转体体积为\[V = \dfrac{2\pi}{3}\int_a^b\rho^3(\theta)\sin\theta d\theta\]
+
+
+\subsection{定积分表示计算函数平均值}
+
+设\(x \in [a, b]\),函数\(y = f(x)\)在[a,b]上平均值为\(\overline{y} = \frac{1}{b- a} \int_{a}^{b} f(x) \,dx\)
+
+
+\subsection{平面形心坐标公式}
+
+设平面区域\(D = \{ (x, y) | 0 \leq y \leq f(x), a \leq x \leq b \}, y = f(x)\)在[a, b]上连续，\(S_D\)为D的面积，则D的形心坐标\((\overline{x}, \overline{y})\)公式为
+
+\begin{displaymath}
+\overline{x} = \frac{\iint_{D} x \,d\sigma}{S_D} = 
+\frac{\int_{a}^{b} \,dx \int_{0}^{f(x)} x \,dy}{S_D} =
+\frac{\int_{a}^{b} xf(x) \,dx}{S_D}
+\end{displaymath}
+
+\begin{displaymath}
+\overline{y} = \frac{\iint_{D} y \,d\sigma}{S_D} = 
+\frac{\int_{a}^{b} \,dx \int_{0}^{f(x)} y \,dy}{S_D} =
+\frac{\frac{1}{2}\int_{a}^{b} f^2(x) \,dx}{S_D}
+\end{displaymath}
+\[S_D = \iint_{D}d\sigma = \int_{a}^{b}dx \int_{0}^{f(x)}dy = \int_{a}^{b} f(x)\,dx\]
+
+
+\subsection{平面曲线弧长}
+
+\begin{displaymath}
+由直角坐标方程y = f(x)(a \leq x \leq b)给出,
+则s = \int_{a}^{b} \sqrt{1 + (f'(x))^2} \,dx
+\end{displaymath}
+
+\begin{displaymath}
+由参数方程
+\begin{cases}
+x = x(t) \\
+y = y(t)
+\end{cases}
+(\alpha \leq t \leq \beta)给出,
+则s = \int_{\alpha}^{\beta} \sqrt{[x'(t)]^2 + [y'(t)]^2} \,dt
+\end{displaymath}
+
+\begin{displaymath}
+由极坐标方程\rho = \rho(\theta)(\alpha \leq \theta \leq \beta)给出,
+则s = \int_{\alpha}^{\beta} \sqrt{[\rho(\theta)]^2 + [\rho'(\theta)]^2} \,d\theta
+\end{displaymath}
+
+
+\subsection{旋转曲面侧面积}
+
+曲线\(L : y = f(x), a \leq x \leq b\)绕x轴一周所得旋转曲面面积
+\begin{displaymath}
+S = 2\pi \int_{a}^{b}|y|\sqrt{1 + (y_x')^2} \,dx
+\end{displaymath}
+
+曲线
+\(
+L : 
+\begin{cases}
+x = x(t) \\
+y = y(t)
+\end{cases},
+\alpha \leq t \leq \beta, x'(t) \neq 0
+\),
+绕x轴一周所得旋转曲面面积
+\begin{displaymath}
+S = 2\pi \int_{\alpha}^{\beta}|y(t)|\sqrt{(x_t')^2 + (y_t')^2} \,dt
+\end{displaymath}
+
+曲线\(L : \rho = \rho(\theta), \alpha \leq \theta \leq \beta\)绕x轴一周所得旋转曲面面积
+\begin{displaymath}
+S = 2\pi \int_{\alpha}^{\beta}|\rho(\theta)sin\theta|
+\sqrt{[\rho(\theta)]^2 + [\rho'(\theta])^2} \,d\theta
+\end{displaymath}
+
+
+\subsection{平面截面面积为已知的立体体积}
+
+在区间[a, b]上, 垂直于x轴的平面截立体\(\Omega\)所得到的截面面积为x的连续函数A(x), 则\(\Omega\)的体积为
+\begin{displaymath}
+V = \int_{a}^{b} A(x) \,dx
+\end{displaymath}
+
+
+\subsection{平面图形面积}
+
+极坐标下\(r(\theta), (a <= \theta <= b)\)所围成的面积为\[\dfrac{1}{2}\int_a^br^2d\theta\]
+
+
+
+
+
+
+

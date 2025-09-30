@@ -566,6 +566,79 @@
 \end{aligned}\)
 
 
+\section{几何应用}
+
+\subsubsection{参数方程/微分/旋转体体积}
+摆线\(x = a(t - \sin t), y = a(1 - \cos t),\ (0 <= t <= 2\pi)\)与x轴围成图形绕\(y = 2a\)旋转体体积V = ?
+
+\subparagraph{解}
+摆线\(y = y(x),\ (0 <= x <= 2\pi a)\)。
+
+设摆线与直线\(y = 2a, x = 0, x = 2\pi a\)围成图形绕\(y = 2a\)旋转一周所成的旋转体的体积\(V_1\)。任取\([x, x + dx] \subset [0, 2\pi a]\)，对应部分相应体积微元为\(dV_1 = \pi[2a - y(x)]^2dx\)，则\begin{flalign}
+    V_1 & = \pi\int_0^{2\pi a}(2a - y)^2dx \xrightarrow{x = a(t - \sin t)} \pi\int_0^{2\pi}[2a - a(1 - \cos t)]^2a(1 - \cos t)dt \nonumber \\ 
+    & = \pi a^3\int_0^{2\pi}(1 + \cos t)^2(1 - \cos t)dt = \pi a^3\int_0^{2\pi}(1 + \cos t - \cos^2 t - \cos^3t)dt \nonumber \\ 
+    & = \pi^2a^3 \nonumber
+\end{flalign}
+故\(V = \pi(2a)^{2\pi a} - V_1 = 7\pi^2a^3\)
+
+
+\subsubsection{参数方程/面积/弧长/旋转体体积/侧面积}
+设星形线方程\(\begin{cases}
+    x = a\cos^3t \\ 
+    y = a\sin^3t
+\end{cases}\)，则围成的面积A为?弧长L为?绕x轴旋转得旋转体体积V为?旋转体侧面积S为?
+
+\subparagraph{解}
+\begin{flalign}
+    A & = 4\int_0^aydx = 4\int_{\frac{\pi}{2}}^0a\sin^3t * 3a\cos^2t(-\sin t)dt \nonumber \\ 
+    & = 12\int_0^\frac{\pi}{2}a^2(\sin^4t - \sin^6t)dt \nonumber \\ 
+    & = 12a^2 * (\dfrac{1 * 3}{2 * 4} - \dfrac{1 * 3 * 5}{2 * 4 * 6})\dfrac{\pi}{2} = \dfrac{3}{8}\pi a^2 \nonumber
+\end{flalign}
+\begin{flalign}
+    L & = 4\int_0^\frac{\pi}{2}\sqrt{(x')^2 + (y')^2}dt = 4\int_0^\frac{\pi}{2}\sqrt{3^2a^2(\cos^4t\sin^2t + \sin^4t\cos^2t)}dt \nonumber \\ 
+    & = 4\int_0^\frac{\pi}{2}3a\cos t\sin tdt = 6a(\sin t)^2\bigg|_0^\frac{\pi}{2} = 6a \nonumber
+\end{flalign}
+\begin{flalign}
+    V & = 2\int_0^a\pi y^2dx = 2\int_\frac{\pi}{2}^0\pi a^2\sin^6t * 3a\cos^2t(-\sin t)dt \nonumber \\ 
+    & = 6\pi a^3\int_0^\frac{\pi}{2}\sin^7t(1 - \sin^2t)dt \nonumber \\ 
+    & = 6\pi a^3[\dfrac{6 * 4 * 2}{7 * 5 * 3}(1 - \dfrac{8}{9})] = \dfrac{32}{105}\pi a^3 \nonumber
+\end{flalign}
+\begin{flalign}
+    S & = 2\pi\int_0^\pi a\sin^3t\sqrt{x'^2(t) + y'^2(t)}dt \nonumber \\ 
+    & = 2\pi\int_0^\pi3a^2\sin^3t\sqrt{\sin^2t\cos^2t}dt \nonumber \\ 
+    & = 6\pi a^2\int_0^\pi\sin^4t|\cos t|dt = 6\pi a^2\int_{-\frac{\pi}{2}}^\frac{\pi}{2}\sin^4t\cos tdt \nonumber \\ 
+    & = \dfrac{12}{5}\pi a^2 \nonumber
+\end{flalign}
+
+\subparagraph{隐函数求法}
+给出星形线得隐函数\(x^\frac{2}{3} + y^\frac{2}{3} = a^\frac{2}{3}\)
+
+则\(\dfrac{2}{3}x^{-\frac{1}{3}} + \dfrac{2}{3}y^{-\frac{1}{3}}y' = 0,\ \therefore\ y' = -\dfrac{y^{\frac{1}{3}}}{x^{\frac{1}{3}}}\)
+
+\(\therefore\ \sqrt{1 + y'^2} = \sqrt{\dfrac{x^\frac{2}{3} + y^\frac{2}{3}}{x^\frac{2}{3}}} = \dfrac{a^\frac{1}{3}}{x^\frac{1}{3}}\)
+
+\begin{flalign}
+    \therefore S & = 2 * 2\pi\int_0^ay\sqrt{1 + y'^2}dx = 4\pi\int_0^a(a^\frac{2}{3} - x^\frac{2}{3})^\frac{3}{2}\dfrac{a^\frac{1}{3}}{x^{\frac{1}{3}}}dx \nonumber \\ 
+    & = 4\pi * \dfrac{3}{2}\int_0^a(a^\frac{2}{3} - x^\frac{2}{3})^\frac{3}{2}a^\frac{1}{3}dx^\frac{2}{3} = 6\pi a^\frac{1}{3}(-\dfrac{2}{5})(a^\frac{2}{3} - x^\frac{2}{3})^\frac{5}{2}\bigg|_0^a = \dfrac{12}{5}\pi a^2 \nonumber
+\end{flalign}
+\begin{flalign}
+    A & = 4\int_0^a(a^\frac{2}{3} - x^\frac{2}{3})^\frac{3}{2}dx \xrightarrow{x^\frac{1}{3} = a^\frac{1}{3}\cos t} 4\int_0^\frac{\pi}{2}a\sin^3t * 3a * \cos^2t\sin tdt \nonumber \\ 
+    & = 12a^2\int_0^\frac{\pi}{2}(\sin^4t - \sin^6t)dt \nonumber
+\end{flalign}
+
+
+
+\section{物理应用}
+
+
+\subsubsection{对水作功}
+一容器是由\(y = x^2,\ (0 <= x <= 2)\)绕y轴旋转而成，若容器内水量是容量的1/4，水密度为\(\rho\)，则将容器中水全部抽出需作的功为？
+\subparagraph{解}
+\(V_{\text{容}} = \pi\displaystyle\int_0^4(\sqrt{y})^2dy = 8\pi\)，容器内水面水量\(V(h) = \pi\displaystyle\int_0^hydy = \dfrac{\pi h}{2} = \dfrac{1}{4} * 8\pi\)，故水面高度\(h = 2\)。
+在高度y处取一层水厚度为dy，该层水体积\(dV = \pi r^2dy = \pi ydy\)，质量\(dm = \rho dV = \rho\pi ydy\)，该层水到出口高度为\(4 - y\)，功的微元为\(dW = dm * g * (4 - y)\)，故总功为\[W = \rho\pi g\int_0^2y(4 - y)dy = \dfrac{16}{3}\pi\rho g\]
+
+
+
 \section{微分方程}
 
 \subsubsection{根据特解求方程}
