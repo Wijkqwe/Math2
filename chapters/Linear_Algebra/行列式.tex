@@ -2,21 +2,17 @@
 \chapter{行列式}
 
 \subsection{性质}
-
-若某行(列)元素全零，则行列式为零；
-
-两行(列)互换，行列式变号；
-
-两行(列)元素相等或成比例，则行列式为零；
-
-某行(列)的k倍加到另一行(列)，行列式不变；
-
-行列互换值不变\(|A| = |A^T|\)
-
+\begin{itemize}
+    \item 若某行(列)元素全零，则行列式为零；
+    \item 两行(列)互换，行列式变号；
+    \item 两行(列)元素相等或成比例，则行列式为零；
+    \item 某行(列)的k倍加到另一行(列)，行列式不变；
+    \item 行列互换值不变\(|A| = |A^T|\)
+    \item 若|A|!=0，则矩阵A可逆；
+\end{itemize}
 \[|AB| = |A||B|\]
 \[|kA| = k^n|A|\]
 \[|A^{-1}| = \dfrac{1}{|A|}\]
-
 \[\begin{vmatrix}
 a_{11} & ... & a_{1n} \\
 ... & ... & ... \\
@@ -31,7 +27,6 @@ a_{i1} & ... & a_{in} \\
 ... & ... & ... \\
 a_{n1} & ... & a_{nn}
 \end{vmatrix}\]
-
 \[\begin{vmatrix}
 a_{11} & ... & a_{1n} \\
 ... & ... & ... \\
@@ -54,32 +49,32 @@ b_{i1} & ... & b_{in} \\
 a_{n1} & ... & a_{nn}
 \end{vmatrix}\]
 
-若|A|!=0，则矩阵A可逆；
 
 \section{定义}
 
 \subsection{逆序}
 
-排列：1,2,...,n组成的有序数组成为n级排列；
+\paragraph{排列}
+1,2,...,n组成的有序数组成为n级排列；
 
-逆序：n级排列中，\(i_a > i_b\)且\(a < b\)，则这两数构成一个逆序；
+\paragraph{逆序}
+n级排列中，\(i_a > i_b\)且\(a < b\)，则这两数构成一个逆序；
 
-逆序数：一个排列中，逆序的总数，记作\(r(i_1...i_n)\);
+\paragraph{逆序数}
+一个排列中，逆序的总数，记作\(r(i_1...i_n)\);
 
-奇偶排列：逆序数为奇则奇排列，逆序数为偶则偶排列；
+\paragraph{奇偶排列}
+逆序数为奇则奇排列，逆序数为偶则偶排列；
 
 
 \subsection{n阶定义}
-
-n >= 2
-\[
-\begin{vmatrix}
+n >= 2时
+\[\begin{vmatrix}
 a_{11} & ... & a_{1n} \\
 ... & ... & ... \\
 a_{n1} & ... & a_{nn}
 \end{vmatrix} = 
-\sum_{j_1...j_n} (-1)^{r(j1...jn)}a_{1j_1}...a_{nj_n}
-\]
+\sum_{j_1...j_n} (-1)^{r(j1...jn)}a_{1j_1}...a_{nj_n}\]
 \(\displaystyle \sum_{j_1...j_n}^{}\)表示对所有n个列下标排列求和，即n!项之和。
 
 
@@ -87,7 +82,7 @@ a_{n1} & ... & a_{nn}
 
 \subsection{余子式}
 
-n阶行列式中，去除元素\(a_{ij}\)所在第i行第j列元素，剩下的n-1阶行列式称为元素\(a_{ij}\)的余子式，记作\(M_{ij}\)，即
+n阶行列式中，去除元素\(a_{ij}\)所在第i行第j列元素，剩下的n-1阶行列式称为元素\(a_{ij}\)的\textbf{余子式}，记作\(M_{ij}\)，即
 \[M_{ij} = 
 \begin{vmatrix}
 a_{11} & ... & a_{1,j-1} & a_{1, j+1} & ... & a_{1n} \\
@@ -96,13 +91,13 @@ a_{i-1,1} & ... & a_{i-1,j-1} & a_{i-1, j+1} & ... & a_{i-1,n} \\
 a_{i+1,1} & ... & a_{i+1,j-1} & a_{i+1, j+1} & ... & a_{i+1,n} \\
 ... & ... & ... & ... & ... & ... \\
 a_{n1} & ... & a_{n,j-1} & a_{n, j+1} & ... & a_{nn}
-\end{vmatrix}
-\]
+\end{vmatrix}\]
 
 
 \subsection{代数余子式}
 
-余子式\(M_{ij}\)乘\((-1)^{i + j}\)后称为\(a_{ij}\)的代数余子式，记作\(A_{ij}\)，即\[A_{ij} = (-1)^{i+j}M_{ij}\]
+余子式\(M_{ij}\)乘\((-1)^{i + j}\)后称为\(a_{ij}\)的\textbf{代数余子式}，记作\(A_{ij}\)，即
+\[A_{ij} = (-1)^{i+j}M_{ij}\]
 
 
 \subsection{展开公式}
@@ -112,18 +107,16 @@ a_{n1} & ... & a_{n,j-1} & a_{n, j+1} & ... & a_{nn}
 \begin{cases}
 a_{i1}A_{i1} +...+ a_{in}A_{in} = \displaystyle \sum_{j=1}^{n} a_{ij}A_{ij} \\ 
 a_{1j}A_{1j} +...+ a_{nj}A_{nj} = \displaystyle \sum_{i=1}^{n} a_{ij}A_{ij}
-\end{cases}
-\]
+\end{cases}\]
 
-某行(列)元素分别乘另一行(列)元素的代数余子式后求和结果为零
+某行(列)元素分别乘另一行(列)元素的代数余子式后\textbf{求和结果为零}。
 
 
 \section{重要行列式}
 
 \subsection{主对角线(上下三角)}
 
-\[
-\begin{vmatrix}
+\[\begin{vmatrix}
 a_{11} & ... & 0 \\
 ... & ... & ... \\
 a_{n1} & ... & a_{nn}
@@ -132,14 +125,12 @@ a_{n1} & ... & a_{nn}
 a_{11} & ... & a_{1n} \\
 ... & ... & ... \\
 0 & ... & a_{nn}
-\end{vmatrix} = \prod_{i = 1}^{n}a_{ii}
-\]
+\end{vmatrix} = \prod_{i = 1}^{n}a_{ii}\]
 
 
 \subsection{副对角线}
 
-\[
-\begin{vmatrix}
+\[\begin{vmatrix}
 a_{11} & ... & a_{1n} \\
 ... & ... & ... \\
 a_{n1} & ... & 0
@@ -148,62 +139,50 @@ a_{n1} & ... & 0
 0 & ... & a_{1n} \\
 ... & ... & ... \\
 a_{n1} & ... & a_{nn}
-\end{vmatrix} = (-1)^{\frac{n(n - 1)}{2}}a_{1n}...a_{n1}
-\]
+\end{vmatrix} = (-1)^{\frac{n(n - 1)}{2}}a_{1n}...a_{n1}\]
 
 
 \subsection{拉普拉斯展开式}
 
 设A为m阶矩阵，B为n阶矩阵，则
-\[
-\begin{vmatrix}
+\[\begin{vmatrix}
 A & 0 \\
 0 & B
-\end{vmatrix} = 
-\begin{vmatrix}
+\end{vmatrix} = \begin{vmatrix}
 A & C \\
 0 & B
-\end{vmatrix} = 
-\begin{vmatrix}
+\end{vmatrix} = \begin{vmatrix}
 A & 0 \\
 C & B
-\end{vmatrix} = |A||B|
-\]
-\[
-\begin{vmatrix}
+\end{vmatrix} = |A||B|\]
+\[\begin{vmatrix}
 0 & A \\
 B & 0
-\end{vmatrix} = 
-\begin{vmatrix}
+\end{vmatrix} = \begin{vmatrix}
 C & A \\
 B & 0
-\end{vmatrix} = 
-\begin{vmatrix}
+\end{vmatrix} = \begin{vmatrix}
 0 & A \\
 B & C
-\end{vmatrix} = (-1)^{mn}|A||B|
-\]
+\end{vmatrix} = (-1)^{mn}|A||B|\]
 
 
 \subsection{范德蒙德行列式}
 
-\[
-\begin{vmatrix}
+\[\begin{vmatrix}
 1 & ... & 1 \\
 x_1 & ... & x_n \\ 
 x_1^2 & ... & x_n^2 \\ 
 ... & ... & ... \\ 
 x_1^{n-1} & ... & x_n^{n-1}
-\end{vmatrix} = \prod_{1<=i<j<=n}(x_j-x_i)
-\]
+\end{vmatrix} = \prod_{1<=i<j<=n}(x_j-x_i)\]
 
 
 \section{计算}
 
-\subsection{1}
+\subsection{对角a其它b}
 
-\[
-\begin{vmatrix}
+\[\begin{vmatrix}
 a & b & b & ... & b \\
 b & a & b & ... & b \\ 
 b & b & a & ... & b \\ 
@@ -223,8 +202,7 @@ a + (n-1)b & b & b & ... & a
 1 & b & a & ... & b \\ 
 ... & ... & ... & ... & ... \\ 
 1 & b & b & ... & a
-\end{vmatrix}
-\]
+\end{vmatrix}\]
 \[= (a+(n-1)b)
 \begin{vmatrix}
 1 & b & b & ... & b \\
@@ -232,42 +210,34 @@ a + (n-1)b & b & b & ... & a
 0 & 0 & a-b & ... & 0 \\ 
 ... & ... & ... & ... & ... \\ 
 0 & 0 & 0 & ... & a-b
-\end{vmatrix} = (a+(n-1)b)(a-b)^{n-1}
-\]
+\end{vmatrix} = (a+(n-1)b)(a-b)^{n-1}\]
 
-当a = 0,b = 1时，
-\[
-\begin{vmatrix}
+当a = 0,b = 1时
+\[\begin{vmatrix}
 0 & 1 & 1 & ... & 1 \\
 1 & 0 & 1 & ... & 1 \\ 
 1 & 1 & 0 & ... & 1 \\ 
 ... & ... & ... & ... & ... \\ 
 1 & 1 & 1 & ... & 0
-\end{vmatrix} = (-1)^{n-1}(n - 1)
-\]
+\end{vmatrix} = (-1)^{n-1}(n - 1)\]
 
-当a = 2,b = 1时，
-\[
-\begin{vmatrix}
+当a = 2,b = 1时
+\[\begin{vmatrix}
 a & b & b & ... & b \\
 b & a & b & ... & b \\ 
 b & b & a & ... & b \\ 
 ... & ... & ... & ... & ... \\ 
 b & b & b & ... & a
-\end{vmatrix} = n + 1
-\]
+\end{vmatrix} = n + 1\]
 
-当a副对角线上时，
-\[
-G_n = (-1)^{\frac{n(n - 1)}{2}}(a + (n - 1)b)(a - b)^{n - 1}
-\]
+当a副对角线上时
+\[G_n = (-1)^{\frac{n(n - 1)}{2}}(a + (n - 1)b)(a - b)^{n - 1}\]
 
 
-\subsection{2}
+\subsection{向量}
 
 设\(x_n\)三维向量，
-\[
-\begin{vmatrix}
+\[\begin{vmatrix}
 a x_1 + b x_2 + c x_3
 \end{vmatrix} = 
 \begin{vmatrix}
@@ -277,10 +247,8 @@ x_1, x_2, x_3
 a \\ 
 b \\ 
 c
-\end{vmatrix}
-\]
-\[
-\begin{vmatrix}
+\end{vmatrix}\]
+\[\begin{vmatrix}
 a_1 x_1 + a_2 x_2 + a_3 x_3, b_1 x_1 + b_2 x_2 + b_3 x_3, c_1 x_1 + c_2 x_2 + c_3 x_3
 \end{vmatrix} = 
 \begin{vmatrix}
@@ -290,8 +258,7 @@ x_1, x_2, x_3
 a_1 & b_1 & c_1 \\ 
 a_2 & b_2 & c_2 \\ 
 a_3 & b_3 & c_3
-\end{vmatrix}
-\]
+\end{vmatrix}\]
 
 
 \subsection{余子式线性组合}
@@ -321,13 +288,11 @@ a_3 & b_3 & c_3
 \subsection{克拉默法则}
 
 对n个方程n个未知数的非齐次线性方程组
-\[
-\begin{cases}
+\[\begin{cases}
 a_{11}x_{1} +...+ a_{1n}x_{n} = b_1 \\ 
 ... \\ 
 a_{n1}x_{1} +...+ a_{nn}x_{n} = b_n
-\end{cases}
-\]
+\end{cases}\]
 若系数行列式\(D = 
 \begin{vmatrix}
 a_{11} & ... & a_{1n} \\ 
@@ -337,13 +302,11 @@ a_{n1} & ... & a_{nn}
 \)，则方程组有唯一解，解为\(x_i = \frac{D_i}{D}\)，其中\(D_i\)是常数项\(b_1, ..., b_n\)替换D中第i列元素得到的行列式；若D==0，则无解或无穷多解；
 
 对n个方程n个未知数的齐次线性方程组
-\[
-\begin{cases}
+\[\begin{cases}
 a_{11}x_{1} +...+ a_{1n}x_{n} = 0 \\ 
 ... \\ 
 a_{n1}x_{1} +...+ a_{nn}x_{n} = 0
-\end{cases}
-\]
+\end{cases}\]
 若D!=0，则只有零解；若D==0，则有非零解；
 
 

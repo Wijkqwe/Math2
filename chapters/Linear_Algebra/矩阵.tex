@@ -71,107 +71,6 @@ m*n矩阵A行列交换得到n*m矩阵\(A^T\)
 \[|A^{-1}| = \dfrac{1}{|A|}\]
 \mymatrix
 
-\section{重要矩阵}
-
-\paragraph{零矩阵}
-每个元素为0，记作\(O\)；
-
-
-\paragraph{单位矩阵}
-主对角线元素为1，其余元素为0，记作\(E\)；
-
-
-\paragraph{数量矩阵}
-数k与单位矩阵的乘积；
-
-
-\paragraph{对角矩阵}
-主对角线以外元素为0；
-
-
-\paragraph{行矩阵}
-行向量
-
-
-\paragraph{列矩阵}
-列向量
-
-
-\section{分块矩阵}
-
-用横线纵线将一个矩阵分成若干小块，每个小块称为子块，把子块看作原矩阵元素，得到分块矩阵。
-
-\subsection{运算}
-
-\[
-\begin{bmatrix}
-A_1 & A_2 \\ 
-A_3 & A_4
-\end{bmatrix} + 
-\begin{bmatrix}
-B_1 & B_2 \\ 
-B_3 & B_4
-\end{bmatrix} = 
-\begin{bmatrix}
-A_1 + B_1 & A_2 + B_2 \\ 
-A_3 + B_3 & A_4 + B_4
-\end{bmatrix}
-\]
-\[k
-\begin{bmatrix}
-A_1 & A_2 \\ 
-A_3 & A_4
-\end{bmatrix} = 
-\begin{bmatrix}
-kA_1 & kA_2 \\ 
-kA_3 & kA_4
-\end{bmatrix}
-\]
-\[
-\begin{bmatrix}
-A & B \\ 
-C & D
-\end{bmatrix}
-\begin{bmatrix}
-X & Y \\ 
-Z & W
-\end{bmatrix} = 
-\begin{bmatrix}
-AX + BZ & AY + BW \\ 
-CX + DZ & CY + DW
-\end{bmatrix}
-\]
-\[
-\begin{bmatrix}
-A & O \\ 
-O & B
-\end{bmatrix}^n = 
-\begin{bmatrix}
-A^n & O \\ 
-O & B^n
-\end{bmatrix}
-\]
-\[
-\begin{bmatrix}
-A & O \\ 
-O & B
-\end{bmatrix}^{-1} = 
-\begin{bmatrix}
-A^{-1} & O \\ 
-O & B^{-1}
-\end{bmatrix}
-\]
-\[
-\begin{bmatrix}
-O & A \\ 
-B & O
-\end{bmatrix}^{-1} = 
-\begin{bmatrix}
-O & B^{-1} \\ 
-A^{-1} & O
-\end{bmatrix}
-\]
-
 
 \section{矩阵的逆}
 
@@ -196,14 +95,12 @@ A可逆的充要条件是\(|A|\neq 0\)
 \section{伴随矩阵}
 
 将行列式|A|的\(n^2\)个元素的代数余子式按如下形式排列的矩阵称为A的伴随矩阵，记作\(A^*\)即
-\[
-\begin{bmatrix}
+\[\begin{bmatrix}
 A_{11} & A_{21} & ... & A_{n1} \\ 
 A_{12} & A_{22} & ... & A_{n2} \\ 
 ... & ... & ... & ... \\ 
 A_{1n} & A_{2n} & ... & A_{nn}
-\end{bmatrix}
-\]
+\end{bmatrix}\]
 
 
 \subsection{性质}
@@ -229,9 +126,16 @@ A_{1n} & A_{2n} & ... & A_{nn}
 \[A^*(A^*)^* = |A^*|E\]
 
 
-
 \subsection{伴随矩阵求逆矩阵}
 \[A^{-1} = \frac{1}{|A|}A^*\]
+
+
+\section{矩阵的迹}
+方阵对角线元素的总和，记作\(tr(A)\)
+
+\subsubsection{性质}
+
+\(tr(A) = \)特征值之和
 
 
 \section{初等变换}
@@ -270,17 +174,14 @@ A_{1n} & A_{2n} & ... & A_{nn}
 
 
 \subsection{初等变换求逆矩阵}
-\[
-\begin{bmatrix}
+\[\begin{bmatrix}
 A:E
 \end{bmatrix}
 \xrightarrow{\text{初等行变换}}
 \begin{bmatrix}
 E:A^{-1}
-\end{bmatrix}
-\]
-\[
-\begin{bmatrix}
+\end{bmatrix}\]
+\[\begin{bmatrix}
 A \\ 
 E
 \end{bmatrix}
@@ -288,22 +189,18 @@ E
 \begin{bmatrix}
 E \\ 
 A^{-1}
-\end{bmatrix}
-\]
+\end{bmatrix}\]
 
 \subsection{初等变换求矩阵方程}
 \(Ax = B, x = A^{-1}B\)
-\[
-\begin{bmatrix}
+\[\begin{bmatrix}
 A:B
 \end{bmatrix}
 \xrightarrow{\text{初等行变换}}
 \begin{bmatrix}
 E:A^{-1}B
-\end{bmatrix}
-\]
-\[
-\begin{bmatrix}
+\end{bmatrix}\]
+\[\begin{bmatrix}
 A \\ 
 B
 \end{bmatrix}
@@ -311,9 +208,97 @@ B
 \begin{bmatrix}
 E \\ 
 A^{-1}B
-\end{bmatrix}
-\]
+\end{bmatrix}\]
 
+
+\section{重要矩阵}
+
+\paragraph{零矩阵}
+每个元素为0，记作\(O\)；
+
+
+\paragraph{单位矩阵}
+主对角线元素为1，其余元素为0，记作\(E\)；
+
+
+\paragraph{数量矩阵}
+数k与单位矩阵的乘积；
+
+
+\paragraph{对角矩阵}
+主对角线以外元素为0；
+
+
+\paragraph{行矩阵}
+行向量
+
+
+\paragraph{列矩阵}
+列向量
+
+
+\section{分块矩阵}
+
+用横线纵线将一个矩阵分成若干小块，每个小块称为子块，把子块看作原矩阵元素，得到分块矩阵。
+
+\subsection{运算}
+
+\[\begin{bmatrix}
+A_1 & A_2 \\ 
+A_3 & A_4
+\end{bmatrix} + 
+\begin{bmatrix}
+B_1 & B_2 \\ 
+B_3 & B_4
+\end{bmatrix} = 
+\begin{bmatrix}
+A_1 + B_1 & A_2 + B_2 \\ 
+A_3 + B_3 & A_4 + B_4
+\end{bmatrix}\]
+\[k\begin{bmatrix}
+A_1 & A_2 \\ 
+A_3 & A_4
+\end{bmatrix} = 
+\begin{bmatrix}
+kA_1 & kA_2 \\ 
+kA_3 & kA_4
+\end{bmatrix}\]
+\[\begin{bmatrix}
+A & B \\ 
+C & D
+\end{bmatrix}
+\begin{bmatrix}
+X & Y \\ 
+Z & W
+\end{bmatrix} = 
+\begin{bmatrix}
+AX + BZ & AY + BW \\ 
+CX + DZ & CY + DW
+\end{bmatrix}\]
+\[\begin{bmatrix}
+A & O \\ 
+O & B
+\end{bmatrix}^n = 
+\begin{bmatrix}
+A^n & O \\ 
+O & B^n
+\end{bmatrix}\]
+\[\begin{bmatrix}
+A & O \\ 
+O & B
+\end{bmatrix}^{-1} = 
+\begin{bmatrix}
+A^{-1} & O \\ 
+O & B^{-1}
+\end{bmatrix}\]
+\[\begin{bmatrix}
+O & A \\ 
+B & O
+\end{bmatrix}^{-1} = 
+\begin{bmatrix}
+O & B^{-1} \\ 
+A^{-1} & O
+\end{bmatrix}\]
 
 
 \section{矩阵方程}
@@ -323,13 +308,10 @@ A^{-1}B
 
 设A，B是m*n阶矩阵，若存在可逆矩阵P，Q使得PAQ=B，则称A，B是等价矩阵，记作\(A \cong B\)；
 
-设A是m*n矩阵，A等价于形如\(
-\begin{bmatrix}
+设A是m*n矩阵，A等价于形如\(\begin{bmatrix}
 E_r & O \\ 
 O & O
-\end{bmatrix}
-\)的矩阵，r=r(A)，称为A的等价标准形；等价标准形是唯一的，即若r(A)=r，则存在可逆矩阵P,Q使得\(PAQ = 
-\begin{bmatrix}
+\end{bmatrix}\)的矩阵，r=r(A)，称为A的等价标准形；等价标准形是唯一的，即若r(A)=r，则存在可逆矩阵P,Q使得\(PAQ = \begin{bmatrix}
 E_r & O \\ 
 O & O
 \end{bmatrix}\)
@@ -347,7 +329,7 @@ O & O
 
 设A，B为n阶矩阵，若
 \[P^{-1}AP = B\]
-则A，B为相似矩阵，对A进行相似变换得到B，记作\(A \sim B\)；
+则A，B为相似矩阵，对A进行\textbf{相似变换}得到B，记作\(A \sim B\)；
 
 \subsection{性质}
 若\(A \sim B\)，则
@@ -474,14 +456,6 @@ O & O
     \item 将特征向量正交化，单位化为\(\eta_1, ..., \eta_n\)
     \item 令\(Q = [\eta_1, ..., \eta_n]\)，则Q为正交矩阵，且\(Q^{-1}AQ = Q^TAQ = \Lambda\)
 \end{enumerate}
-
-
-\section{矩阵的迹}
-方阵对角线元素的总和，记作\(tr(A)\)
-
-\subsubsection{性质}
-
-\(tr(A) = \)特征值之和
 
 
 \section{可交换矩阵}

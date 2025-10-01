@@ -4,7 +4,7 @@
 \section{概述}
 
 \subsection{定义}
-设n阶矩阵A，\(\lambda\)是一个数，若存在n维非零列向量\(\xi\)，使得\(A\xi = \lambda\xi\)，则称\(\lambda\)是A的\textbf{特征值}，\(\xi\)是A的对应特征值\(\lambda\)的\textbf{特征向量}；
+设n阶矩阵A，\(\lambda\)是一个数，若存在n维非零列向量\(\xi\)，使得\(A\xi = \lambda\xi\)，则称\(\lambda\)是A的\textbf{特征值}，\(\xi\)是A的对应特征值\(\lambda\)的\textbf{特征向量}。
 
 \subsection{求法}
 \((\lambda E - A)\xi = 0\)，因\(\xi \neq 0\)，故齐次方程组\((\lambda E - A)x = 0\)有非零解\footnote[1]{\mymatrix}，故特征方程\[|\lambda E - A| = \begin{vmatrix}
@@ -14,7 +14,7 @@
 -a_{n1} & ... & ... & \lambda - a_{nn}
 \end{vmatrix} = 0\]是未知量\(\lambda\)的n次方程，有n个根，\(\lambda E - A\)为\textbf{特征矩阵}，\(|\lambda E - A|\)为\textbf{特性多项式}；
 
-先根据特征方程求出特征值，再解齐次线性方程组的特征向量；
+先根据特征方程求出特征值，再解齐次线性方程组的特征向量。
 
 \subsubsection{技巧}
 \begin{enumerate}
@@ -39,8 +39,10 @@
         |A| = \lambda_1\lambda_2...\lambda_n \\ 
         tr(A) = \lambda_1 + ... + \lambda_n
     \end{cases}\)
+    \item 设\(f(x)\)为多项式，若矩阵A满足\(f(A) = O\)，\(\lambda\)是A的任一特征值，则\(\lambda\)满足\(f(\lambda) = 0\)
 \end{itemize}
 
+\paragraph{主子式}
 以3阶矩阵为例，设\(A = \begin{bmatrix}
 a_{11} & a_{12} & a_{13} \\ 
 a_{21} & a_{22} & a_{23} \\ 
@@ -99,7 +101,6 @@ a_{31} & a_{32} & a_{33}
     -a_{31} & -a_{32} & -a_{33}
 \end{vmatrix}\]
 \[ = \lambda^3 - (a_{11} + a_{22} + a_{33})\lambda^2 + (A_{11} + A_{22} + A_{33})\lambda - |A|\]
-
 设\(|\lambda E - A| = (\lambda - \lambda_1)(\lambda - \lambda_2)(\lambda - \lambda_3) = \lambda^3 - (\lambda_1 + \lambda_2 + \lambda_3)\lambda^2 + (\lambda_1\lambda_2 + \lambda_1\lambda_3 + \lambda_2\lambda_3)\lambda - \lambda_1\lambda_2\lambda_3\)
 
 比较得\(\begin{cases}
@@ -108,7 +109,6 @@ a_{31} & a_{32} & a_{33}
     |A| = \lambda_1\lambda_2\lambda_3
 \end{cases}\)
 
-设\(f(x)\)为多项式，若矩阵A满足\(f(A) = O\)，\(\lambda\)是A的任一特征值，则\(\lambda\)满足\(f(\lambda) = 0\)
 
 \section{特征向量性质}
 \begin{itemize}
