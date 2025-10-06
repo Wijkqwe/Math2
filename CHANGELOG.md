@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 
+## [1.0.0] 2025-10-06
+
+### Changed
+
+- 文件结构
+
+
 ## 0.0.2 2025-09-30
 
 ### Added
@@ -51,5 +58,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 三角函数
 
 
-
-
+[1.0.0]: https://codeberg.org/Wijkzxc/Math2/releases/tag/v1.0.0
