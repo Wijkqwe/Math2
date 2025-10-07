@@ -149,15 +149,23 @@
     \item 当\(\lambda = \infty\)时，若\(\displaystyle\int_a^{+\infty(b)}g(x)dx\)发散，则\(\displaystyle\int_a^{+\infty(b)}f(x)dx\)也发散；
 \end{itemize}
 
+通常有\(\begin{cases}
+    \displaystyle\lim_{x \to +\infty}\dfrac{f(x)}{\frac{1}{x^p}} = \lim_{x \to +\infty}x^pf(x)\ \text{(无穷区间)} \\ 
+    \displaystyle\lim_{x \to a^+}\dfrac{f(x)}{\frac{1}{(x - a)^p}} = \lim_{x \to a^+}(x - a)^pf(x)\ \text{(无界函数)}
+\end{cases}\)
 
-\paragraph{重要结论}
 
+\subsubsection{重要结论}
 \begin{enumerate}
     \item \(\displaystyle\int_0^1\dfrac{1}{x^p}dx
     \begin{cases}
         \text{收敛，}0 < p < 1 \\ 
         \text{发散，}p >= 1
-    \end{cases}\)对与x趋于0的“速度”相同的函数\(f(x)\)均适用，即\(x \to 0,\ f(x) \sim x\)
+    \end{cases}\)对与x趋于0的“速度”相同的函数\(f(x)\)均适用，即\(x \to 0,\ f(x) \sim x\)。
+    \item \(\displaystyle\int_a^b\dfrac{1}{(x - a)^p}dx\text{或}\int_a^b\dfrac{1}{(b - x)^p}dx\begin{cases}
+        \text{收敛，}0 < p < 1 \\ 
+        \text{发散，}p >= 1
+    \end{cases}\)
     \item \(\displaystyle\int_1^{+\infty}\dfrac{1}{x^p}dx
     \begin{cases}
         \text{收敛},\ p > 1 \\ 
