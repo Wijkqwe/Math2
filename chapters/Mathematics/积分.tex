@@ -122,41 +122,31 @@
 
 \subsubsection{敛散性判别}
 
-反常积分中，通常将\(\infty\)与瑕点统称为奇点，在判别积分敛散性时，一个积分只能有一个奇点；若出现两个及以上，需拆分
+反常积分中，通常将\(\infty\)与瑕点统称为\textbf{奇点}。在判别积分敛散性时，一个积分只能有一个奇点；若出现两个及以上，需拆分。
 
-\paragraph{无穷区间}
 
-\subparagraph{比较判别法}
-设函数\(f(x), g(x)\)在区间\([a, +\infty)\)上连续，且\(0 <= f(x) <= g(x), a <= x < +\infty\)则
+\paragraph{比较判别法}
+设函数\(f(x), g(x)\)在区间\(\begin{cases}
+    [a, +\infty)\text{上连续}\ \text{(无穷区间)} \\ 
+    (a, b]\text{上连续，瑕点同为}x = a\ \text{(无界函数)}
+\end{cases}\)，且\(0 <= f(x) <= g(x), \begin{cases}
+    a <= x < +\infty \ \text{(无穷区间)} \\ 
+    a < x <= b \ \text{(无界函数)}
+\end{cases}\)，则
 \begin{itemize}
-    \item 当\(\displaystyle\int_a^{+\infty}g(x)dx\)收敛时，\(\displaystyle\int_a^{+\infty}f(x)dx\)收敛
-    \item 当\(\displaystyle\int_a^{+\infty}f(x)dx\)发散时，\(\displaystyle\int_a^{+\infty}g(x)dx\)发散
+    \item 当\(\displaystyle\int_a^{+\infty(b)}g(x)dx\)收敛时，\(\displaystyle\int_a^{+\infty(b)}f(x)dx\)收敛；
+    \item 当\(\displaystyle\int_a^{+\infty(b)}f(x)dx\)发散时，\(\displaystyle\int_a^{+\infty(b)}g(x)dx\)发散；
 \end{itemize}
 
-\subparagraph{比较判别法的极限形式}
-设函数\(f(x), g(x)\)在区间\([a, +\infty)\)上连续，且\(f(x) >= 0, g(x) > 0, \displaystyle\lim_{x \to +\infty}\dfrac{f(x)}{g(x)} = \lambda\)（有限或\(\infty\)），则
+\paragraph{比较判别法极限形式}
+设函数\(f(x), g(x)\)在区间\(\begin{cases}
+    [a, +\infty)\text{上连续}\ \text{(无穷区间)} \\ 
+    (a, b]\text{上连续，瑕点同为}x = a\ \text{(无界函数)}
+\end{cases}\)且\(f(x) >= 0, g(x) > 0, \displaystyle\lim_{x \to +\infty(a^+)}\dfrac{f(x)}{g(x)} = \lambda\)（有限或\(\infty\)），则
 \begin{itemize}
-    \item 当\(\lambda \neq 0\ \&\&\ \lambda \neq \infty\)时，\(\displaystyle\int_a^{+\infty}f(x)dx\)与\(\displaystyle\int_a^{+\infty}g(x)dx\)有相同的敛散性
-    \item 当\(\lambda = 0\)时，若\(\displaystyle\int_a^{+\infty}g(x)dx\)收敛，则\(\displaystyle\int_a^{+\infty}f(x)dx\)也收敛
-    \item 当\(\lambda = \infty\)时，若\(\displaystyle\int_a^{+\infty}g(x)dx\)发散，则\(\displaystyle\int_a^{+\infty}f(x)dx\)也发散
-\end{itemize}
-
-
-\paragraph{无界函数}
-
-\subparagraph{比较判别法}
-设函数\(f(x), g(x)\)在区间\((a, b]\)上连续，瑕点同为\(x = a\)，且\(0 <= f(x) <= g(x), a < x <= b \)则
-\begin{itemize}
-    \item 当\(\displaystyle\int_a^{b}g(x)dx\)收敛时，\(\displaystyle\int_a^{b}f(x)dx\)收敛
-    \item 当\(\displaystyle\int_a^{b}f(x)dx\)发散时，\(\displaystyle\int_a^{b}g(x)dx\)发散
-\end{itemize}
-
-\subparagraph{比较判别法的极限形式}
-设函数\(f(x), g(x)\)在区间\((a, b]\)上连续，瑕点同为\(x = a\)，且\(f(x) >= 0, g(x) > 0, \displaystyle\lim_{x \to a^+}\dfrac{f(x)}{g(x)} = \lambda\)（有限或\(\infty\)），则
-\begin{itemize}
-    \item 当\(\lambda \neq 0\ \ \&\&\ \ \lambda \neq \infty\)时，\(\displaystyle\int_a^{b}f(x)dx\)与\(\displaystyle\int_a^{b}g(x)dx\)有相同的敛散性
-    \item 当\(\lambda = 0\)时，若\(\displaystyle\int_a^{b}g(x)dx\)收敛，则\(\displaystyle\int_a^{b}f(x)dx\)也收敛
-    \item 当\(\lambda = \infty\)时，若\(\displaystyle\int_a^{b}g(x)dx\)发散，则\(\displaystyle\int_a^{b}f(x)dx\)也发散
+    \item 当\(\lambda \neq 0\ \&\&\ \lambda \neq \infty\)时，\(\displaystyle\int_a^{+\infty(b)}f(x)dx\)与\(\displaystyle\int_a^{+\infty(b)}g(x)dx\)有相同的敛散性；
+    \item 当\(\lambda = 0\)时，若\(\displaystyle\int_a^{+\infty(b)}g(x)dx\)收敛，则\(\displaystyle\int_a^{+\infty(b)}f(x)dx\)也收敛；
+    \item 当\(\lambda = \infty\)时，若\(\displaystyle\int_a^{+\infty(b)}g(x)dx\)发散，则\(\displaystyle\int_a^{+\infty(b)}f(x)dx\)也发散；
 \end{itemize}
 
 
