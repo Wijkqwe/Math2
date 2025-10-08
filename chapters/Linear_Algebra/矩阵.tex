@@ -389,6 +389,17 @@ O & O
 \end{itemize}
 
 
+\subsection{求矩阵P}
+\begin{enumerate}
+    \item 求出A，B特征值\(\lambda_i\)
+    \item 由\(\lambda_iE - A\)得到线性无关的特征向量\(\alpha_i\)
+    \item 由\(\alpha_i\)构造\(P_1\)，则\(P_1^{-1}AP_1 = \Lambda_1\)
+    \item 由\(\lambda_iE - B\)得到线性无关的特征向量\(\beta_i\)
+    \item 由\(\beta_i\)构造\(P_2\)，则\(P_2^{-1}BP_2 = \Lambda_2\)，\(\Lambda_1, \Lambda_2\)特征值顺序应相同
+    \item 由\(P_1^{-1}AP_1 = P_2^{-1}BP_2\)，得\(P = P_1P_2^{-1}\)
+\end{enumerate}
+
+
 \section{矩阵对角化}
 对n阶矩阵A，求相似变换矩阵P，使得\(P^{-1}AP = \Lambda\)，\(\Lambda\)是对角矩阵，则A可\textbf{相似对角化}，记\(A \sim \Lambda\)，称\(\Lambda\)是\(A\)的\textbf{相似标准形}；
 
