@@ -110,6 +110,23 @@
 若要证明\(\exists \xi \in (a, b)\)使得\(f''(\xi)\)大于或小于某个非零常数时，往往利用泰勒公式；
 
 
+\subsubsection{拉格朗日证明不等式}
+已知f(x)在[0, 1]上有二阶导数，且\(f(0) = 0, f(1) = 1, \displaystyle\int_0^1f(x)dx = 1\)，证明：\begin{enumerate}
+    \item 存在\(\xi \in (0 ,1)\)，使得\(f'(\xi) = 0\)
+    \item 存在\(\eta \in (0, 1)\)，使得\(f''(\eta) < -2\)
+\end{enumerate}
+
+\subparagraph{证明1}
+由拉格朗日中值定理得\(\exists c \in (0, 1)\)，使得\(F(1) - F(0) = F'(c) = f(c) = 1\)；\(f(c) = f(1)\)由罗尔定理得\(\exists\xi\)
+
+\subparagraph{证明2}
+令\(\varphi(x) = f(x) + x^2\)，\(\varphi(0) = 0, \varphi(c) = 1 + c^2, \varphi(1) = 2\)。由拉格朗日中值定理得\(\exists\eta_1 \in (0, c), \eta_2 \in(c, 1)\)，使得
+\[\varphi'(\eta_1) = \dfrac{\varphi(c) - \varphi(0)}{c} = c + \dfrac{1}{c}\]
+\[\varphi'(\eta_2) = \dfrac{\varphi(1) - \varphi(c)}{1 - c} = 1 + c\]
+再由拉格朗日中值定理得\(\exists\eta\in(\eta_1, \eta_2)\)，使得\[\varphi''(\eta) = \dfrac{\varphi'(\eta_2) - \varphi'(\eta_1)}{\eta_2 - \eta_1} = \dfrac{1 - \frac{1}{c}}{\eta_2 - \eta_1} < 0\]
+又因为\(\varphi''(x) = f''(x) + 2\)，故\(\varphi''(\eta) = f''(\eta) + 2 < 0, f''(\eta) < 2\)
+
+
 \section{积分}
 
 \subsection{概念性质}
