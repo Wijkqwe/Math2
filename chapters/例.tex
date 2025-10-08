@@ -555,8 +555,7 @@
 \subsubsection{\(x^x\)}
 设积分区域D由曲线\(y = \ln x\)及直线\(x = 2, y = 0\)围成，则\(\displaystyle\iint_D\dfrac{e^{xy}}{x^x - 1}\mathrm{d}\sigma = \)?
 \subparagraph{解}
-由题设知积分区域\(D=\{(x,y)\mid1\leqslant x\leqslant2,\ 0\leqslant y\leqslant\ln x\}\)，从而
-
+由题设知积分区域\(D=\{(x,y)\mid1\leqslant x\leqslant2,\ 0\leqslant y\leqslant\ln x\}\)，从而 \\
 \(\begin{aligned}
     \iint_{D}\frac{e^{xy}}{x^{x} - 1}\mathrm{d}\sigma & = \int_{1}^{2}\mathrm{d}x\int_{0}^{\ln x}\frac{\mathrm{e}^{xy}}{x^{x} - 1}\mathrm{d}y \\
     & = \int_{1}^{2}\frac{\mathrm{d}x}{x^{x} - 1}\int_{0}^{\ln x}\mathrm{e}^{xy}\mathrm{d}y \\
@@ -564,6 +563,12 @@
     & = \int_{1}^{2}\frac{\mathrm{e}^{xy}}{x(x^{x} - 1)}\bigg|_{y=0}^{y=\ln x}\mathrm{d}x \\ 
     & = \int_{1}^{2}\frac{e^{x\ln x} - 1}{x(x^{x} - 1)}dx=\int_{1}^{2}\frac{dx}{x}=\ln2
 \end{aligned}\)
+
+
+\subsubsection{对称性}
+已知平面区域\(D = \{(x, y)\bigg||x| <= y, (x^2 + y^2)^3 <= y^4\}\)，计算\(\displaystyle\iint_D\dfrac{x + y}{\sqrt{x^2 + y^2}}dxdy\)
+\subparagraph{解}
+将\(x\)替换为\(-x\)得D关于y轴对称，被积函数\(f(x, y) = \dfrac{x + y}{\sqrt{x^2 + y^2}} = \dfrac{x}{\sqrt{x^2 + y^2}} + \dfrac{y}{\sqrt{x^2 + y^2}}\)。其中\(\dfrac{x}{\sqrt{x^2 + y^2}}\)是关于x的奇函数，\(\dfrac{y}{\sqrt{x^2 + y^2}}\)是关于x的偶函数。故原式\(= \displaystyle\iint_D\dfrac{y}{\sqrt{x^2 + y^2}}dxdy\)
 
 
 \section{几何应用}
