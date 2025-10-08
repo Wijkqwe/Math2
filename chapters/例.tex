@@ -627,6 +627,12 @@
 \end{flalign}
 
 
+\subsubsection{条件判断}
+已知f(x),g(x)2阶可导且2阶导数在\(x = a\)连续，则\(\displaystyle\lim_{x \to a}\dfrac{f(x) - g(x)}{(x - a)^2} = 0\)是曲线\(y = f(x)\)和\(y = g(x)\)在\(x = a\)处相切且曲率相等的：\underline{充分非必要条件}
+\subparagraph{解}
+由\(\displaystyle\lim_{x \to a}\dfrac{f(x) - g(x)}{(x - a)^2} = 0\)得\(f(a) = g(a)\)；由\(\displaystyle\lim_{x \to a}\dfrac{f'(x) - g'(x)}{2(x - a)} = 0\)得\(f'(x) = g'(x)\)；由\(0 = \displaystyle\lim_{x \to a}\dfrac{f'(x) - g'(x)}{x - a} = \lim_{x \to a}(\dfrac{f'(x) - f'(a)}{x - a} - \dfrac{g'(x) - g'(a)}{x - a}) = f''(a) - g''(a)\)得\(f''(a) = g''(a)\)。故可推出相切且曲率相等。
+但\(|f''(a)| = |g''(a)|\)不能推出原式。
+
 
 \section{物理应用}
 
