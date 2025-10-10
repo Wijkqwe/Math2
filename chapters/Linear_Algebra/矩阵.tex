@@ -303,6 +303,28 @@ A^{-1} & O
 
 \section{矩阵方程}
 
+\subsection{求逆法}
+
+
+\subsection{待定系数法}
+
+
+\subsection{不可逆}
+\begin{enumerate}
+    \item 判断是否有解\begin{enumerate}
+        \item 构建增广矩阵[A, B]
+        \item 做初等行变换，化为行阶梯形
+        \item \begin{itemize}
+            \item 若\(r(A) \neq r(A, B)\)，无解
+        \end{itemize}
+    \end{enumerate}
+    \item 若有解，解可表示为\textbf{通解+特解}形式\begin{enumerate}
+        \item 求\(AX = 0\)基础解系\(\xi_1, ..., \xi_{n - r(A,B)}\)
+        \item 求\(AX_0 = B\)一个特解\(X_0\)
+        \item 得通解\(X = k_1\xi_1 + ... + k_{n - r}\xi_{n - r} + X_0\)
+    \end{enumerate}
+\end{enumerate}
+
 
 \section{等价矩阵}
 
