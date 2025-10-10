@@ -53,6 +53,18 @@
 \end{itemize}
 
 
+\section{数列}
+
+\subsubsection{单调有界收敛}
+设数列\(\{x_n\}\)满足：\(x_1 > 0, x_ne^{x_{n + 1}} = e^{x_{n}} - 1\,\,\,(n = 1, 2, ...)\)，证明\(\{x_n\}\)收敛，并求\(\displaystyle\lim_{n \to \infty}x_n\)
+
+\subparagraph{解}
+先证有界。 \\
+已知\(x_1 > 0\)，设\(x_k > 0\)，由\(x > 0\)时\(e^x - 1 > x\)，得\(x_{k + 1} = \ln\dfrac{e^{x_{k}} - 1}{x_k} > \ln 1 > 0\)，故数列有下界0. \\
+而\(e^{x_{n + 1}} = \dfrac{e^{x_{n}} - 1}{x_n} = \dfrac{e^{x_{n}} - e^0}{x_n} = e^\xi\,\,(0 <= \xi <= x_{n})\)，所以\(x_{n + 1} = \xi < x_n\)，即数列递减，故收敛。 \\
+设\(\displaystyle\lim_{n \to \infty}x_n = A\)，得\(A = 0\)
+
+
 \section{导数}
 
 \subsubsection{极值二阶导}
