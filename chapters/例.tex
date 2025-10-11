@@ -613,6 +613,20 @@
 将\(x\)替换为\(-x\)得D关于y轴对称，被积函数\(f(x, y) = \dfrac{x + y}{\sqrt{x^2 + y^2}} = \dfrac{x}{\sqrt{x^2 + y^2}} + \dfrac{y}{\sqrt{x^2 + y^2}}\)。其中\(\dfrac{x}{\sqrt{x^2 + y^2}}\)是关于x的奇函数，\(\dfrac{y}{\sqrt{x^2 + y^2}}\)是关于x的偶函数。故原式\(= \displaystyle\iint_D\dfrac{y}{\sqrt{x^2 + y^2}}dxdy\)
 
 
+\subsubsection{参数方程}
+设平面区域D由\(\begin{cases}
+    x = t - \sin t \\
+    y = 1 - \cos t
+\end{cases}(0 <= t <= 2\pi)\)与x轴围成，计算二重积分\(\displaystyle\iint_D(x + 2y)dxdy\)
+
+\subparagraph{解}
+\begin{align*}
+    \text{原积分} & = \int_0^{2\pi}dx\int_0^{\varphi(x)}(x + 2y)dy = \int_0^{2\pi}[x\varphi(x) + \varphi^2(x)]dx \\
+    & \rightarrow \int_0^{2\pi}[(t - \sin t)(1 - \cos t) + (1 - \cos t)^2]d(t - \sin t) \\
+    & = \int_0^{2\pi}[(t - \sin t)(1 - \cos t)^2]dt + \int_0^{2\pi}[(1 - \cos t)^3]dt = 3\pi^2 + 5\pi
+\end{align*}
+
+
 \section{几何应用}
 
 \subsubsection{参数方程/微分/旋转体体积}
@@ -683,13 +697,21 @@
 
 \section{物理应用}
 
-
 \subsubsection{对水作功}
 一容器是由\(y = x^2,\ (0 <= x <= 2)\)绕y轴旋转而成，若容器内水量是容量的1/4，水密度为\(\rho\)，则将容器中水全部抽出需作的功为？
 \subparagraph{解}
 \(V_{\text{容}} = \pi\displaystyle\int_0^4(\sqrt{y})^2dy = 8\pi\)，容器内水面水量\(V(h) = \pi\displaystyle\int_0^hydy = \dfrac{\pi h}{2} = \dfrac{1}{4} * 8\pi\)，故水面高度\(h = 2\)。
 在高度y处取一层水厚度为dy，该层水体积\(dV = \pi r^2dy = \pi ydy\)，质量\(dm = \rho dV = \rho\pi ydy\)，该层水到出口高度为\(4 - y\)，功的微元为\(dW = dm * g * (4 - y)\)，故总功为\[W = \rho\pi g\int_0^2y(4 - y)dy = \dfrac{16}{3}\pi\rho g\]
 
+
+\subsubsection{面积关于时间的变化率}
+已知曲线\(L:y = \dfrac{4}{9}x^2\,(x >= 0)\)，点O\((0, 0)\)，点A\((0, 1)\)，设P是L上动点，S是OA与AP与L所围图形的面积。若P移动到点\((3, 4)\)时，沿x轴正向的速度是4，求此时S关于时间t的变化率
+
+\subparagraph{解}
+t时刻，P坐标为\((x(t), \dfrac{4}{9}x^2(t))\)，则
+\[S(t) = \dfrac{1}{2}[1 + \dfrac{4}{9}x^2(t)]x(t) - \int_0^{x(t)}\dfrac{4}{9}u^2du = \dfrac{x(t)}{2} + \dfrac{2}{27}x^3(t)\]
+\[S'(t) = \dfrac{1}{2}x'(t) + \dfrac{2}{9}x^2(t)x'(t)\]
+由题可知\(x(t) = 3\)时，\(x'(t) = 4\)，代入得\(S'(t)\bigg|_{x = 3} = 10\)
 
 
 \section{微分方程}
