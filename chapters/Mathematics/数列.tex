@@ -18,6 +18,28 @@
 单调递增，\(\displaystyle\lim_{x \to \infty}(1 + \dfrac{1}{n})^n = e\)
 
 
+\section{递推}
+
+\subsection{二阶线性齐次递推}
+\[x_n = p * x_{n - 1} + q * x_{n - 2}\]
+
+\subsubsection{求解步骤}
+\begin{enumerate}
+    \item 写出特征方程\(r^2 - pr - q = 0\)
+    \item 求出两根\(r_1, r_2\)
+    \item \begin{itemize}
+        \item \(r_1 \neq r_2\)且实根\[x_n = A * r_1^n + B * r_2^n\]
+        \item \(r_1 = r_2 = r\)\[x_n = (A + Bn)r^n\]
+        \item \(r = \alpha \pm \beta i\)保留指数形式或写成三角形式
+        \[x_n = A ⋅ (α + βi)^n + B ⋅ (α − βi)^n\]
+        \[x_n = R^n(A\cos nθ + B\sin nθ),\ R = \sqrt{\alpha^2 + \beta^2},\ \theta = \arg(\alpha + \beta i)\footnotemark\]
+        \footnotetext{\(\arctan\dfrac{\beta}{\alpha}\)}
+    \end{itemize}
+    \item 代入初始条件，求出A, B
+    \item A, B代入通解，得到特解
+\end{enumerate}
+
+
 \section{数列极限}
 
 \subsection{定义}
