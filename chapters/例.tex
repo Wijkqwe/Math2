@@ -708,6 +708,35 @@
 但\(|f''(a)| = |g''(a)|\)不能推出原式。
 
 
+\subsubsection{平均值}
+f(x)在\([0, \dfrac{3\pi}{2}]\)上连续，在\((0, \dfrac{3\pi}{2})\)上是函数\(\dfrac{\cos x}{2x - 3\pi}\)的一个原函数，且\(f(0) = 0\)\begin{enumerate}
+    \item 求\(f(x)\)在\([0, \dfrac{3\pi}{2}]\)上的平均值
+    \item 证明f(x)在区间\((0, \dfrac{3\pi}{2})\)内存在唯一零点
+\end{enumerate}
+
+\paragraph{解1}
+不妨设\(f(x) = \displaystyle\int_0^x\dfrac{\cos t}{2t - 3\pi}dt + C\)，由\(f(0) = 0\)，得C=0，则平均值
+\[A = \dfrac{\displaystyle\int_0^{\frac{3\pi}{2}}f(x)dx}{\dfrac{3\pi}{2}} = \dfrac{\displaystyle\int_0^{\frac{3\pi}{2}}(\int_0^x\dfrac{\cos t}{2t - 3\pi}dt)dx}{\dfrac{3\pi}{2}}\]
+\subparagraph{法1}
+分部积分，\begin{align*}
+    \int_0^{\frac{3\pi}{2}}f(x)dx & = \dfrac{1}{2}\int_0^{\frac{3\pi}{2}}f(x)d(2x - 3\pi) \\
+    & = \dfrac{1}{2}f(x)(2x - 3\pi)\bigg|_0^{\frac{3\pi}{2}} - \dfrac{1}{2}\int_0^{\frac{3\pi}{2}}(2x - 3\pi)d[f(x)] \\
+    & = - \dfrac{1}{2}\int_0^{\frac{3\pi}{2}}(2x - 3\pi)f'(x)dx = - \dfrac{1}{2}\int_0^{\frac{3\pi}{2}}\cos xdx \\
+    & = \dfrac{1}{2}
+\end{align*}
+故\(A = \dfrac{1}{3\pi}\)
+\subparagraph{法2}
+二重积分，交换\(x,t\)积分次序。
+
+\paragraph{证明2}
+\(f'(x) = \dfrac{\cos x}{2x - 3\pi}\)，因\(f(0) = 0\)，故\((0, \dfrac{\pi}{2})\)单调减少，\((\dfrac{\pi}{2}, \dfrac{3\pi}{2})\)单调增。若\(f(\dfrac{3\pi}{2}) > 0\)则唯一零点，故问题转化为证明\(f(\dfrac{3\pi}{2}) > 0\)
+\subparagraph{法1}
+由问题1得\[\int_0^{\frac{3\pi}{2}}f(x)dx = A * \dfrac{3\pi}{2} = \dfrac{1}{2} > 0\]
+若\(f(\dfrac{3\pi}{2}) <= 0\)，则\(\displaystyle\int_0^{\frac{3\pi}{2}}f(x)dx < 0\)，矛盾，故\(f(\dfrac{3\pi}{2}) > 0\)
+\subparagraph{法2}
+换元估计。
+
+
 \section{物理应用}
 
 \subsubsection{对水作功}
