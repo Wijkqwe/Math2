@@ -255,7 +255,7 @@
 \subsubsection{反常积分敛散性判别}
 讨论\(\displaystyle\int_2^{+\infty}\dfrac{1}{x\ln^px}dx\)敛散性，其中p为任意实数
 
-\paragraph{解}
+\subparagraph{解}
 \begin{enumerate}
     \item 当p = 1时，\(\displaystyle\int_2^{+\infty}\dfrac{1}{x\ln x}dx = \ln|\ln x|\bigg|_2^{+\infty} = +\infty\)，发散
     \item 当\(p \neq 1\)时，\[\int_2^{+\infty}\dfrac{dx}{x\ln^px} = \dfrac{1}{1 - p}(\ln x)^{1 - p}\bigg|_2^{+\infty}\]\begin{itemize}
@@ -269,6 +269,21 @@
 \end{cases}\)
 
 
+\subsubsection{反常积分敛散性判别}
+反常积分\(1)\displaystyle\int_{-\infty}^0\dfrac{1}{x^2}e^{\frac{1}{x}}dx, 2)\int_0^{+\infty}\dfrac{1}{x^2}e^{\frac{1}{x}}dx\)的敛散性为?
+
+\subparagraph{解}
+设\(R < c < 0.\)\begin{align*}
+    \int_{-\infty}^0\dfrac{1}{x^2}e^{\frac{1}{x}}dx & = \lim_{c \to 0^- R \to -\infty}\int_{R}^c\dfrac{1}{x^2}e^{\frac{1}{x}}dx \\
+    & = \lim_{c \to 0^- R \to -\infty}\int_{R}^c-e^{\frac{1}{x}}d(\dfrac{1}{x}) \\
+    & = \lim_{x \to 0^-}(-e^{\frac{1}{x}}) - \lim_{x \to -\infty}(-e^{\frac{1}{x}}) = 1
+\end{align*}
+设\(0 < c < R.\)\begin{align*}
+    \int_0^{+\infty}\dfrac{1}{x^2}e^{\frac{1}{x}}dx = \lim_{x \to +\infty}(-e^{\frac{1}{x}}) - \lim_{x \to 0^+}(-e^{\frac{1}{x}})
+\end{align*}
+发散
+
+
 \subsection{计算}
 
 \subsubsection{换元，分部积分}
@@ -278,7 +293,7 @@
 令\(u = \sqrt{e^x - 1},\ x = \ln(1 + u^2),\ dx = \dfrac{2u}{1 + u^2}du\)，则
 \begin{flalign}
     \int\dfrac{xe^x}{\sqrt{e^x - 1}}dx & = \int\dfrac{(1 + u^2)\ln(1 + u^2)}{u} * \dfrac{2u}{1 + u^2}du = 2\int\ln(1 + u^2)du \nonumber \\ 
-    & = 2u\ln(1 + u^2) - \int\dfrac{4u^2}{1 + u^2}du
+    & = 2u\ln(1 + u^2) - \int\dfrac{4u^2}{1 + u^2}du \nonumber
 \end{flalign}
 
 
