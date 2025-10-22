@@ -192,23 +192,34 @@ A^{-1}
 \end{bmatrix}\]
 
 \subsection{初等变换求矩阵方程}\label{初等变换求矩阵方程}
-\(Ax = B, x = A^{-1}B\)
-\[\begin{bmatrix}
-A:B
-\end{bmatrix}
-\xrightarrow{\text{初等行变换}}
-\begin{bmatrix}
-E:A^{-1}B
-\end{bmatrix}\]
-\[\begin{bmatrix}
-A \\ 
-B
-\end{bmatrix}
-\xrightarrow{\text{初等列变换}}
-\begin{bmatrix}
-E \\ 
-A^{-1}B
-\end{bmatrix}\]
+对\(Ax = B\)\begin{itemize}
+    \item 若\(A\)可逆，\(x = A^{-1}B\)
+    \[\displaystyle
+    \begin{bmatrix}
+        A:B
+    \end{bmatrix}\xrightarrow{\text{初等行变换}}
+    \begin{bmatrix}
+        E:A^{-1}B
+    \end{bmatrix}
+    \]
+    \[\begin{bmatrix}
+        A \\ 
+        B
+    \end{bmatrix}\xrightarrow{\text{初等列变换}}
+    \begin{bmatrix}
+        E \\ 
+        A^{-1}B
+    \end{bmatrix}\]
+
+    \item 若\(A_{m*n}\)不可逆（\(m < n\)）\begin{itemize}
+        \item 构建增广矩阵\([A:B_{m * s}]\)
+        \item 初等行变换为\([E, T_{m*(n - m)}:X]\)
+        \item \(x_{n * s} = \begin{bmatrix}
+            X \\
+            O_{(n - m) * s}
+        \end{bmatrix}\)
+    \end{itemize}
+\end{itemize}
 
 
 \section{重要矩阵}
