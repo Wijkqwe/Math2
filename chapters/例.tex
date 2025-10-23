@@ -185,6 +185,19 @@
 由\(f(0) = f(b) = 0\)，得\(\exists c \in (0, b)\)，使\(f'(c) = 0\)，设\(F(x) = f(x)f'(x)\)，得证。
 
 
+\subsubsection{单调性证明不等式}
+设函数\(f(x),g(x)\)在\([a, b]\)上连续，且\(f(x)\)单调增加，\(0 <= g(x) <= 1\)，证明：
+\begin{enumerate}
+    \item \(0 <= \displaystyle\int_a^xg(t)dt < = x - a, x \in [a, b]\)
+    \item \(\displaystyle\int_a^{a + \int_a^bg(t)dt}f(x)dx <= \int_a^bf(x)g(x)dx\)
+\end{enumerate}
+
+\textbf{解2：}
+设\(p(x) = \displaystyle\int_a^xf(u)g(u)du - \int_a^{a + \int_a^xg(t)dt}f(u)du\)，则
+\[p'(x) = f(x)g(x) - g(x)f[a + \int_a^xg(t)dt]\]
+由(1)得\(\displaystyle\int_a^xg(t)dt < = x - a\)，故\(a + \int_a^xg(t)dt <= x\)，又\(f(x)\)单调增，故\(p'(x) >= 0\)，故\(p(x)\)单调不减，又\(p(a) = 0\)，故\(p(b) >= 0\)，得证。
+
+
 \section{积分}
 
 \subsection{概念性质}
@@ -1007,7 +1020,7 @@ x = 0, y = 0代入得z = 0
 
 \subsection{齐次}
 
-\subsubsection{通解}
+\subsubsection{矩阵方程通解}
 设\(A = \begin{bmatrix}
     1 & -2 & 0 \\ 
     2 & 1 & 5 \\ 
