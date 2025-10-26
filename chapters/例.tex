@@ -5,7 +5,8 @@
 
 \subsubsection{间断连续}
 设\(f(x)\)与\(g(x)\)在\((-\infty. +\infty)\)内有定义，\(x = x_1\)为f(x)唯一间断点，\(x = x_2\)为g(x)唯一间断点，则：
-\subparagraph{解}
+
+\textbf{解：}
 当\(x_1 \neq x_2\)时，\(f(x) + g(x)\)必有两个间断点。
 
 令\(w(x) = f(x) + g(x)\)，设w(x)在\(x_1\)处连续，\(f(x) = w(x) - g(x)\)，由题知\(g(x)\)仅在\(x_2\)间断，则\(f(x)\)在\(x_1\)亦应连续，矛盾。
@@ -13,7 +14,8 @@
 
 \subsubsection{间断判断}
 设f(x)在\((a, b)\)内可导，\(x_0 \in (a, b)\)是\(f'(x)\)的间断点，则该间断点一定是：非无穷型第二类间断点（振荡间断点）
-\subparagraph{解}
+
+\textbf{解：}
 \begin{itemize}
     \item 若\(\displaystyle\lim_{x \to x_0^{\pm}}f(x) = A_{\pm}\)均存在 \(\Rightarrow\) \(f_{\pm}'(x_0) = \displaystyle\lim_{x \to x_0^{\pm}}\dfrac{f(x) - f(x_0)}{x - x_0} = \displaystyle\lim_{x \to x_0^{\pm}}f'(x) = A_{\pm}\)，则在\(x_0\)连续，矛盾。
     \item 若\(\displaystyle\lim_{x \to x_0^{\pm}}f(x) = \infty\)，则在\(x_0\)处不存在，矛盾
@@ -45,7 +47,8 @@
 
 \subsubsection{夹逼准则}
 若\(x >= 0\)，则\(\displaystyle\lim_{n \to \infty}\sqrt[n]{1 + x^n + (\dfrac{x^2}{2})^n} = \)?
-\subparagraph{解}
+
+\textbf{解：}
 \begin{itemize}
     \item 当\(0 <= x < 1\)时，\(\max\{1, x^n, (\dfrac{x^2}{2})^n\} = 1\)
     \item 当\(1 <= x < 2\)时，\(\max\{1, x^n, (\dfrac{x^2}{2})^n\} = x^n\)
@@ -91,7 +94,7 @@
 \subsubsection{单调有界收敛}
 设数列\(\{x_n\}\)满足：\(x_1 > 0, x_ne^{x_{n + 1}} = e^{x_{n}} - 1\,\,\,(n = 1, 2, ...)\)，证明\(\{x_n\}\)收敛，并求\(\displaystyle\lim_{n \to \infty}x_n\)
 
-\subparagraph{解}
+\textbf{解：}
 先证有界。 \\
 已知\(x_1 > 0\)，设\(x_k > 0\)，由\(x > 0\)时\(e^x - 1 > x\)，得\(x_{k + 1} = \ln\dfrac{e^{x_{k}} - 1}{x_k} > \ln 1 > 0\)，故数列有下界0. \\
 而\(e^{x_{n + 1}} = \dfrac{e^{x_{n}} - 1}{x_n} = \dfrac{e^{x_{n}} - e^0}{x_n} = e^\xi\,\,(0 <= \xi <= x_{n})\)，所以\(x_{n + 1} = \xi < x_n\)，即数列递减，故收敛。 \\
@@ -126,7 +129,7 @@
 \subsubsection{罗尔定理}
 设实数\(a_0, a_1, ..., a_n\)满足\(a_0 + \dfrac{a_1}{2} + ... + \dfrac{a_n}{n + 1} = 0\)，证明：方程\(a_0 + a_1x + a_2x^2 + ... + a_nx^n = 0\)在 \((0, 1)\)内至少一根。
 
-\subparagraph{解}
+\textbf{解：}
 设\(F(x) = a_0x + \dfrac{a_1}{2}x^2 + \dfrac{a_2}{3}x^3 + ... + \dfrac{a_n}{n + 1}x^{n + 1}, 0 <= x <= 1\)，显然\(F(0) = 0\)，且\(F(1) = a_0 + ... + \dfrac{a_n}{n + 1} = 0\)，由罗尔定理知，存在\(\xi \in (0, 1), F'(\xi) = 0\)
 
 
@@ -301,7 +304,7 @@
 \subsubsection{反常积分敛散性判别}
 讨论\(\displaystyle\int_2^{+\infty}\dfrac{1}{x\ln^px}dx\)敛散性，其中p为任意实数
 
-\subparagraph{解}
+\textbf{解：}
 \begin{enumerate}
     \item 当p = 1时，\(\displaystyle\int_2^{+\infty}\dfrac{1}{x\ln x}dx = \ln|\ln x|\bigg|_2^{+\infty} = +\infty\)，发散
     \item 当\(p \neq 1\)时，\[\int_2^{+\infty}\dfrac{dx}{x\ln^px} = \dfrac{1}{1 - p}(\ln x)^{1 - p}\bigg|_2^{+\infty}\]\begin{itemize}
@@ -318,7 +321,7 @@
 \subsubsection{反常积分敛散性判别}
 反常积分\(1)\displaystyle\int_{-\infty}^0\dfrac{1}{x^2}e^{\frac{1}{x}}dx, 2)\int_0^{+\infty}\dfrac{1}{x^2}e^{\frac{1}{x}}dx\)的敛散性为?
 
-\subparagraph{解}
+\textbf{解：}
 设\(R < c < 0.\)\begin{align*}
     \int_{-\infty}^0\dfrac{1}{x^2}e^{\frac{1}{x}}dx & = \lim_{c \to 0^- R \to -\infty}\int_{R}^c\dfrac{1}{x^2}e^{\frac{1}{x}}dx \\
     & = \lim_{c \to 0^- R \to -\infty}\int_{R}^c-e^{\frac{1}{x}}d(\dfrac{1}{x}) \\
@@ -579,7 +582,7 @@
 \subsubsection{定积分定义夹逼}
 \(\displaystyle\lim_{n \to \infty}\sum_{i = 1}^n\dfrac{n}{n^2 + i^2 + 1} = \)
 
-\subparagraph{解}
+\textbf{解：}
 \[\sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{(i + 1)^2}{n^2}} <= \sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{i^2 + 1}{n^2}} <= \sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{i^2}{n^2}}\]
 \[\sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{(1 + i)^2}{n^2}} = \sum_{i = 1}^n\dfrac{1}{n}\dfrac{1}{1 + \dfrac{i^2}{n^2}} - \dfrac{1}{n}\dfrac{1}{1 + \dfrac{1}{n^2}} + \dfrac{1}{n}\dfrac{1}{1 + \dfrac{(n + 1)^2}{n^2}}\]
 \[\therefore\ \lim_{n \to \infty}\sum_{i = 1}^n\dfrac{n}{n^2 + i^2 + 1} = \dfrac{\pi}{4}\]
@@ -588,7 +591,7 @@
 \subsubsection{反常函数积分}
 \(\displaystyle\int_0^{+\infty}\dfrac{xe^{-x}}{(1 + e^{-x})^2}dx = \)
 
-\subparagraph{解}
+\textbf{解：}
 \begin{flalign}
     \text{原式} & = \lim_{b \to +\infty}\int_0^bxd(\dfrac{1}{1 + e^{-x}}) = \lim_{b \to +\infty}(\dfrac{x}{1 + e^{-x}}\bigg|_0^b - \int_0^b\dfrac{dx}{1 + e^{-x}}) \nonumber \\ 
     & = \lim_{b \to +\infty}(\dfrac{b}{1 + e^{-b}} - \ln(1 + e^{-x})\bigg|_0^b) = \ln2 + \lim_{b \to +\infty}(\dfrac{b}{1 + e^{-b}} - \ln(e^b + 1)) \nonumber \\ 
@@ -616,7 +619,8 @@
 
 \subsubsection{\(e^{tx - t^2}\)变限积分换元}
 \(F(x) = \displaystyle\int_0^xe^{tx - t^2}dt\)，求\(F'(x)\)
-\subparagraph{解}
+
+\textbf{解：}
 \begin{flalign}
     F(x) & = \int_0^xe^{\frac{x^2}{4} - (\frac{x}{2} - t)^2}dt = e^{\frac{x^2}{4}}\int_0^xe^{- (\frac{x}{2} - t)^2}d(t - \dfrac{x}{2}) \nonumber \\ 
     & \xrightarrow{u = \frac{x}{2} - t} -e^{\frac{x^2}{4}}\int_{\frac{x}{2}}^{-\frac{x}{2}}e^{-u^2}du = 2e^{\frac{x^2}{4}}\int_{0}^{\frac{x}{2}}e^{-u^2}du \nonumber
@@ -625,7 +629,8 @@
 
 \subsubsection{三角函数，原函数}
 \(\displaystyle f(x) = \dfrac{1}{1 + \sin^2x}, x\in[0, \pi]\)，则\(f(x)\)在\([0, \pi]\)上全体原函数为
-\subparagraph{解}
+
+\textbf{解：}
 \begin{flalign}
     \int\dfrac{dx}{1 + \sin^2x} & = \int\dfrac{\dfrac{1}{\cos^2x}dx}{\dfrac{1}{\cos^2x} + \tan^2x} \nonumber \\ 
     & = \int\dfrac{d\tan x}{1 + 2\tan^2x} \nonumber \\ 
@@ -644,7 +649,8 @@
 
 \subsubsection{分段三角函数}
 设n正整数，\(S_n\)为曲线\(y = e^{-x}\sin x\,(0 <= x <= n\pi)\)与x轴所围图形的面积，求\(S_n\)及\(\displaystyle\lim_{n \to \infty}S_n\)
-\subparagraph{解}
+
+\textbf{解：}
 \begin{align}
     S_n & = \sum_{k = 0}^{n  -1}(-1)^k\int_{k\pi}^{(k + 1)\pi}e^{-x}\sin xdx \nonumber \\
     & = \sum_{k = 0}^{n  -1}(-1)^k[-\dfrac{1}{2}e^{-x}(\sin x + \cos x)]\bigg|_{k\pi}^{(k + 1)\pi} \nonumber \\ 
@@ -659,7 +665,8 @@
 
 \subsubsection{极坐标平移}
 设D为圆域\(x^2 + y^2 <= 2x + 2y\)，则\(\displaystyle\iint_Dxydxdy = \) ?
-\subparagraph{解}
+
+\textbf{解：}
 \((x - 1)^2 + (y - 1)^2 = 2\)，令\(x = 1 + \rho\cos\theta, y = 1 + \rho\sin\theta\)，则
 \begin{flalign}
     \iint_Dxydxdy & = \int_0^{2\pi}d\theta\int_0^{\sqrt{2}}(1 + \rho\cos\theta)(1 + \rho\sin\theta)\rho d\rho \nonumber \\ 
@@ -670,7 +677,8 @@
 
 \subsubsection{\(x^x\)}
 设积分区域D由曲线\(y = \ln x\)及直线\(x = 2, y = 0\)围成，则\(\displaystyle\iint_D\dfrac{e^{xy}}{x^x - 1}\mathrm{d}\sigma = \)?
-\subparagraph{解}
+
+\textbf{解：}
 由题设知积分区域\(D=\{(x,y)\mid1\leqslant x\leqslant2,\ 0\leqslant y\leqslant\ln x\}\)，从而 \\
 \(\begin{aligned}
     \iint_{D}\frac{e^{xy}}{x^{x} - 1}\mathrm{d}\sigma & = \int_{1}^{2}\mathrm{d}x\int_{0}^{\ln x}\frac{\mathrm{e}^{xy}}{x^{x} - 1}\mathrm{d}y \\
@@ -683,7 +691,8 @@
 
 \subsubsection{对称性}
 已知平面区域\(D = \{(x, y)\bigg||x| <= y, (x^2 + y^2)^3 <= y^4\}\)，计算\(\displaystyle\iint_D\dfrac{x + y}{\sqrt{x^2 + y^2}}dxdy\)
-\subparagraph{解}
+
+\textbf{解：}
 将\(x\)替换为\(-x\)得D关于y轴对称，被积函数\(f(x, y) = \dfrac{x + y}{\sqrt{x^2 + y^2}} = \dfrac{x}{\sqrt{x^2 + y^2}} + \dfrac{y}{\sqrt{x^2 + y^2}}\)。其中\(\dfrac{x}{\sqrt{x^2 + y^2}}\)是关于x的奇函数，\(\dfrac{y}{\sqrt{x^2 + y^2}}\)是关于x的偶函数。故原式\(= \displaystyle\iint_D\dfrac{y}{\sqrt{x^2 + y^2}}dxdy\)
 
 
@@ -930,7 +939,8 @@ x = 0, y = 0代入得z = 0
 
 \paragraph{对角化判断}
 设A为3阶矩阵，已知\(|E + A| = 0, (3E - A)x = 0\text{有非零解}, E - 3A\)不可逆，问A是否相似于对角矩阵，说明理由
-\subparagraph{解}
+
+\textbf{解：}
 由题可知：\(|E + A| = 0, |3E - A| = 0, |E - 3A| = 0\)，得A得三个特征值：\(-1, 3, \dfrac{1}{3}\)，故有三个线性无关特征向量，故A相似于对角矩阵
 
 \paragraph{特征向量定义，对角化判断}
@@ -983,7 +993,8 @@ x = 0, y = 0代入得z = 0
      & 1 \\ 
      & & -1
 \end{bmatrix}, P = (\alpha_1, \alpha_2, \alpha_3)\)可逆，则矩阵A关于特征值\(\lambda = 1\)的特征向量是?
-\subparagraph{解}
+
+\textbf{解：}
 当\(P^{-1}AP = \Lambda\)时，P的每一列都是A的相应的特征向量，故\(\lambda = 1\)的特征向量为\(k_1\alpha + k_2\alpha,\ \ k_1, k_2\)不全为0。
 
 
@@ -993,7 +1004,8 @@ x = 0, y = 0代入得z = 0
     2 & -2 & 4 \\ 
     1 & -1 & 2
 \end{bmatrix},\ P = (\alpha_1, \alpha_2, \alpha_3)\)，则矩阵A关于特征值\(\lambda = 0\)的特征向量为?
-\subparagraph{解}
+
+\textbf{解：}
 \(0E - B = \begin{bmatrix}
     1 & -1 & 2 \\ 
     0 & 0 & 0 \\ 
@@ -1007,13 +1019,22 @@ x = 0, y = 0代入得z = 0
     0 & 2 & a \\ 
     0 & 0 & 3
 \end{bmatrix}\)和对角矩阵相似，则\(a=\)?
-\subparagraph{解}
+
+\textbf{解：}
 \begin{flalign}
     A \sim \Lambda & \Leftrightarrow \lambda = 3\text{有两个线性无关特征向量} \nonumber \\ 
     & \Leftrightarrow (3E - A)x = 0\text{有两个线性无关解} \nonumber \\ 
     & \Leftrightarrow r(3E - A) = 1 \nonumber
 \end{flalign}
 故\(a = -2\)
+
+
+\subsubsection{伴随矩阵定义}
+设\(A = (a_{ij})\)是三阶非零矩阵，|A|为A的行列式，\(A_{ij}\)为\(a_{ij}\)的代数余子式，若\(A_{ij} + a_{ij} = 0, (i,j = 0,1,2)\)，则\(|A| = \)\underline{-1}
+
+\textbf{解：}
+由\(A_{ij} + a_{ij} = 0\)得\(a_{ij} = -A_{ij}\)，由定义得\(A^T = -A^*\) \\
+故\(|A| = |A^T| = |-A^*| = -|A|^2\)，故\(|A| = -1\).
 
 
 \section{线性方程组}
@@ -1026,7 +1047,8 @@ x = 0, y = 0代入得z = 0
     2 & 1 & 5 \\ 
     0 & 1 & 1
 \end{bmatrix}\)，B是三阶矩阵，则满足AB = O的所有B=?
-\subparagraph{解}
+
+\textbf{解：}
 \(B = \begin{bmatrix}
     2k & 2l & 2\lambda \\ 
     k & l & \lambda \\ 
@@ -1042,7 +1064,7 @@ x = 0, y = 0代入得z = 0
 \eta_3 + 2\eta_2 = \alpha_3
 \end{cases}\)，求\(Ax = b\)通解
 
-\subparagraph{解}
+\textbf{解：}
 \(Ax = \beta\)通解结构为\[k_1\xi_1 + k_2\xi_2 + \eta\]，因为\(A(\eta_1 - \eta_2) = b - b = 0, A[3(\eta_1 + \eta_2) - 2(\eta_3 + 2\eta_2)] = 6b - 6b = 0\)，故\(\eta_1 - \eta_2, 3(\eta_1 + \eta_2) - 2(\eta_3 + 2\eta_2)\)是\(Ax = 0\)的解向量，又\(A[\dfrac{1}{2}(\eta_1 + \eta_2)] = \dfrac{1}{2}(b + b) = b\)，因此\(\dfrac{1}{2}(\eta_1 + \eta_2)\)是\(Ax = b\)的一个特解，因此\(Ax = b\)通解为\[k_1\alpha_1 + k_2(3\alpha_2 - 2\alpha_3) + \dfrac{1}{2}\alpha_2\]
 
 \subsubsection{例2}
@@ -1070,7 +1092,7 @@ x = 0, y = 0代入得z = 0
     ... \\ 
 \end{cases}\)有特解\(\eta = [-2, 1, 4, 2]^T\)，则\(B_{3 * 4}x = b\)的通解为?
 
-\subparagraph{解}
+\textbf{解：}
 \(r(A) = r(A, b) = 3,\ \therefore\ r(B) = r(B, b) = 3, \eta_1 = [1, 2, 3, 0]^T\)是\(B_{3 * 4}x = b\)的另一特解。故Bx = 0基础解系仅一个向量，为\(\eta - \eta_1\)，故通解为\(k(\eta - \eta_1) + \eta\)
 
 
@@ -1079,7 +1101,7 @@ x = 0, y = 0代入得z = 0
 \subsubsection{行元素之和求代数余子式和}
 设\(A = (a_{ij})\)为3阶矩阵，\(A_{ij}\)为\(a_{ij}\)的代数余子式，若A每行元素之和均为2，且\(|A| = 3\)，则\(A_{11} + A_{21} + A_{31} = ?\)
 
-\subparagraph{解}
+\textbf{解：}
 由\(A\begin{bmatrix}
     1 \\ 
     1 \\ 
@@ -1117,7 +1139,7 @@ x = 0, y = 0代入得z = 0
     1 & 1 & 2
 \end{bmatrix}\)，求k及\(\alpha\)对应的\(A^{-1}\)的特征值
 
-\subparagraph{解}
+\textbf{解：}
 由题可知\(A^{-1}\alpha = \lambda\alpha\)，\(\lambda\)是\(A^{-1}\)对应\(\alpha\)的特征值，两端左乘A得\(\alpha = \lambda A\alpha\)
 \(\because \alpha \neq 0,\ \therefore \lambda \neq 0, A\alpha = \dfrac{1}{\lambda}\alpha\)，记\(\mu = \dfrac{1}{\lambda}\)，则
 \[A\begin{bmatrix}
@@ -1143,7 +1165,7 @@ x = 0, y = 0代入得z = 0
     0 & 0 & 0 & 2
 \end{bmatrix}\)，求\(A^n, n >= 2\)
 
-\subparagraph{解}
+\textbf{解：}
 记\(B = \begin{bmatrix}
     1 & -2 \\ 
     -1 & 0
@@ -1182,7 +1204,8 @@ x = 0, y = 0代入得z = 0
 
 \subsubsection{特征值和特征向量求矩阵}
 已知1，1，-1是实对称矩阵A的特征值，向量\(\xi_1 = [1, 1, 1]^T,\ \xi_2 = [2, 2, 1]^T\)是对应于\(\lambda_1 = \lambda_2 = 1\)的特征向量，求A
-\subparagraph{解}
+
+\textbf{解：}
 设\(\lambda_3 = -1\)对应特征向量\(\xi_3 = [x_1, x_2, x_3]^T,\ \because A\)为实对称矩阵，有\[\begin{cases}
     (\xi_1, \xi_3) = x_1 + x_2 + x_3 = 0 \\ 
     (\xi_2, \xi_3) = 2x_1 + 2x_2 + x_3 = 0
@@ -1208,7 +1231,8 @@ x = 0, y = 0代入得z = 0
 
 \subsubsection{实对称矩阵求特征向量}
 已知A三阶实对称矩阵，特征值为1，3，-2，其中\(\alpha_1 = (1, 2, -2)^T, \alpha_2 = (4, -1, a)^T\)分别属于\(\lambda = 1, \lambda = 3\)的特征向量，则属于\(\lambda = 2\)的特征向量为?
-\subparagraph{解}
+
+\textbf{解：}
 \(\because\)实对称矩阵，因此特征向量正交，\(\alpha_1^T\alpha_2 = 0\)得\(a = 1\)，由\(\begin{cases}
     x_1 + 2x_2 - 2x_3 = 0 \\ 
     4x_1 - x_2 + x_3 = 0
